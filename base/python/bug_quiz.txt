@@ -1,0 +1,8 @@
+In C se dimentichi il punto e virgola cosa succede?|Il programma funziona lo stesso|Errore di compilazione|Crash del PC|Stampa numeri a caso|Errore di compilazione
+In Python se metti una tabulazione sbagliata cosa succede?|IndentationError|SyntaxError|RuntimeError|TypeError|IndentationError
+In C se usi una variabile non inizializzata cosa ottieni?|Zero|Valore casuale/imprevedibile|Errore di compilazione|Segmentation fault|Valore casuale/imprevedibile
+In Python se dividi per zero cosa ottieni?|ValueError|ZeroDivisionError|OverflowError|Crash del sistema|ZeroDivisionError
+In C se dimentichi un #include cosa succede?|Nulla|Funzioni non riconosciute|Errore di runtime|Stack overflow|Funzioni non riconosciute
+In Python se scrivi Print invece di print cosa ottieni?|NameError|SyntaxError|IndentationError|Nessun errore|NameError
+In C se accedi a memoria che non ti appartiene cosa ottieni?|Segmentation fault|Errore di compilazione|Loop infinito|Stack overflow|Segmentation fault
+In Python se provi ad accedere a un indice inesistente di una lista cosa ottieni?|ValueError|IndexError|KeyError|SyntaxError|IndexError
