@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug C (macOS)",
+      "type": "lldb",                      // 👈 usa il debugger LLDB nativo
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "MIDebuggerPath": "/usr/bin/lldb",
+      "preLaunchTask": "build"
+    }
+  ]
+}

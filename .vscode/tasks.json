@@ -1,12 +1,24 @@
 {
+    "version": "2.0.0",
     "tasks": [
         {
-            "type": "cppbuild",
-            "label": "C/C++: clang compila il file attivo",
-            "command": "/usr/bin/clang",
+            "label": "build",
+            "type": "shell",
+            "command": "clang",
             "args": [
-                "-fcolor-diagnostics",
-                "-fansi-escape-codes",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc compila il file attivo",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
                 "-o",
@@ -24,6 +36,5 @@
             },
             "detail": "Attività generata dal debugger."
         }
-    ],
-    "version": "2.0.0"
+    ]
 }
