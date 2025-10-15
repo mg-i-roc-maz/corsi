@@ -23,10 +23,10 @@ typedef struct
 } BMPInfoHeader;
 #pragma pack(pop)
 
-unsigned char to_bw(unsigned char r, unsigned char g, unsigned char b)
+// Funzione per invertire un canale colore
+unsigned char invert(unsigned char c)
 {
-    // Luminance formula
-    return (unsigned char)(0.299 * r + 0.587 * g + 0.114 * b);
+    return 255 - c;
 }
 
 int main(void)
@@ -81,10 +81,9 @@ int main(void)
             unsigned char b = row[j * 3];
             unsigned char g = row[j * 3 + 1];
             unsigned char r = row[j * 3 + 2];
-            unsigned char bw = to_bw(r, g, b);
-            row[j * 3] = row[j * 3 + 1] = row[j * 3 + 2] = bw;
-
-            // row[j * 3] = 255;
+            row[j * 3] = invert(b);
+            row[j * 3 + 1] = invert(g);
+            row[j * 3 + 2] = invert(r);
         }
         fwrite(row, 1, row_padded, fout);
     }
