@@ -874,3 +874,174 @@ Scrivi un programma che:
 - Sperimenta con altri operatori e stampa i risultati
 
 ---
+
+# Approfondimento: Tipi di Dato, Dimensioni e Architetture
+
+---
+
+## Dimensione in Byte dei Tipi di Dato Principali
+
+Ogni tipo di dato in C occupa una quantità di memoria diversa, misurata in **byte**. La dimensione può variare in base all’architettura e al compilatore, ma questi sono i valori tipici su sistemi a 32 bit:
+
+| Tipo             | Dimensione (byte) | Esempio dichiarazione      |
+|------------------|------------------|----------------------------|
+| `char`           | 1                | `char c;`                  |
+| `unsigned char`  | 1                | `unsigned char uc;`        |
+| `short`          | 2                | `short s;`                 |
+| `unsigned short` | 2                | `unsigned short us;`       |
+| `int`            | 4                | `int i;`                   |
+| `unsigned int`   | 4                | `unsigned int ui;`         |
+
+---
+| Tipo             | Dimensione (byte) | Esempio dichiarazione      |
+|------------------|------------------|----------------------------|
+| `long`           | 4                | `long l;`                  |
+| `unsigned long`  | 4                | `unsigned long ul;`        |
+| `float`          | 4                | `float f;`                 |
+| `double`         | 8                | `double d;`                |
+
+<sub>Nota: su sistemi a 64 bit, `long` e `unsigned long` possono occupare 8 byte.</sub>
+
+--- 
+
+## Differenza tra `long` e `int` in C
+
+- **`int`** e **`long`** sono entrambi tipi di dato interi, ma differiscono per la **dimensione** (numero di byte) e quindi per l’intervallo di valori rappresentabili.
+- Su molti sistemi a 32 bit:
+  - `int` occupa **4 byte** (32 bit)
+  - `long` occupa **4 byte** (32 bit)
+- Su sistemi a 64 bit (come Linux/Mac a 64 bit):
+  - `int` occupa **4 byte** (32 bit)
+  - `long` occupa **8 byte** (64 bit)
+- L’intervallo di valori di `long` è quindi **maggiore** rispetto a `int` su sistemi dove `long` è più grande.
+- Per portabilità, non dare per scontato che abbiano la stessa dimensione: usa sempre `sizeof()` per verificarlo.
+
+---
+
+| Tipo   | Dimensione tipica | Intervallo valori (signed)         |
+|--------|-------------------|------------------------------------|
+| int    | 4 byte            | -2.147.483.648 a 2.147.483.647     |
+| long   | 4 o 8 byte        | -2.147.483.648 a 2.147.483.647 (4b)<br>-9.223.372.036.854.775.808 a 9.223.372.036.854.775.807 (8b) |
+
+**Esempio:**
+```c
+printf("int: %zu byte\n", sizeof(int));
+printf("long: %zu byte\n", sizeof(long));
+```
+
+> **Nota:**  
+> Prova a compilare ed eseguire questo codice sul tuo computer per vedere le dimensioni effettive dei tipi di dato nel tuo ambiente!
+
+
+
+---
+
+### Come verificare la dimensione con `sizeof`
+
+Puoi usare l’operatore `sizeof` per scoprire quanti byte occupa un tipo di dato sul tuo sistema:
+
+```c
+#include <stdio.h>
+
+int main() {
+  printf("char: %zu byte\n", sizeof(char));
+  printf("int: %zu byte\n", sizeof(int));
+  printf("float: %zu byte\n", sizeof(float));
+  printf("double: %zu byte\n", sizeof(double));
+  return 0;
+}
+```
+
+---
+
+## Dettaglio sullo Specificatore `%zu`
+
+- Lo **specificatore di formato** `%zu` si usa con `printf` per stampare valori di tipo `size_t`.
+- `size_t` è il tipo restituito da `sizeof` e rappresenta una quantità di memoria o il numero di elementi (sempre non negativa).
+- `%zu` garantisce la corretta stampa di `size_t` su tutte le architetture (32 o 64 bit).
+
+### Esempio
+
+```c
+size_t n = 10;
+printf("Numero di elementi: %zu\n", n);
+```
+
+> **Nota:**  
+> Non usare `%d` o `%u` per `size_t`, perché la dimensione può variare tra sistemi diversi.
+
+---
+
+---
+
+## Bit, Byte e Architetture Moderne
+
+### Cos’è un Bit? Cos’è un Byte?
+
+- **Bit**: la più piccola unità di informazione, può valere 0 o 1.
+- **Byte**: gruppo di 8 bit. È l’unità base per misurare la memoria nei computer.
+
+| Unità   | Equivalenza         |
+|---------|---------------------|
+| 1 bit   | 0 o 1               |
+| 1 byte  | 8 bit               |
+| 1 KB    | 1024 byte           |
+| 1 MB    | 1024 KB             |
+| 1 GB    | 1024 MB             |
+
+---
+
+### Architetture a 32 e 64 bit
+
+- L’**architettura** di un processore indica quanta memoria può gestire e la dimensione dei dati che può elaborare in un’operazione.
+- **32 bit**: può indirizzare fino a 4 GB di memoria (2<sup>32</sup> byte).
+- **64 bit**: può indirizzare fino a 16 exabyte (2<sup>64</sup> byte), molto più della RAM disponibile oggi.
+
+| Architettura | RAM massima indirizzabile | Dimensione tipica di `int` | Dimensione tipica di `long` |
+|--------------|--------------------------|----------------------------|-----------------------------|
+| 32 bit       | 4 GB                     | 4 byte                     | 4 byte                      |
+| 64 bit       | Molto superiore (TB/EB)  | 4 byte                     | 8 byte                      |
+
+---
+
+### Esempi Pratici: Computer e Cellulari
+
+- **PC moderni**: quasi tutti sono a 64 bit (Windows, Linux, Mac).
+- **Smartphone**:
+  - Android e iPhone recenti usano processori ARM a 64 bit.
+  - Esempio: un iPhone 14 ha un processore A15/A16 a 64 bit.
+  - Anche molti telefoni economici Android sono ormai a 64 bit.
+- **Vecchi telefoni** (prima del 2015 circa) spesso avevano CPU a 32 bit.
+
+---
+
+### Perché è importante?
+
+- Un’architettura a 64 bit permette di usare più RAM e gestire dati più grandi in modo più efficiente.
+- Alcuni programmi (app, giochi) richiedono dispositivi a 64 bit per funzionare.
+- Le dimensioni dei tipi (`int`, `long`, puntatori) possono cambiare tra 32 e 64 bit: attenzione quando si scrive codice portabile!
+
+---
+
+## Curiosità
+
+Apple dal 2017 accetta solo app a 64 bit su App Store.  
+Android richiede il supporto a 64 bit per tutte le nuove app dal 2019.
+
+---
+
+## Altre Curiosità su Bit, Byte e Architetture
+
+- **Origine del termine "byte"**: Il termine "byte" fu coniato da Werner Buchholz nel 1956 durante lo sviluppo dei primi computer IBM. Inizialmente poteva indicare gruppi di bit di lunghezza variabile, ma oggi indica quasi sempre 8 bit.
+- **Perché 1024 e non 1000?**: In informatica, le unità di misura della memoria (KB, MB, GB) sono basate su potenze di 2, quindi 1 KB = 1024 byte (2<sup>10</sup>), non 1000. Tuttavia, nei dischi e nelle memorie commerciali spesso si usa la definizione decimale (1 KB = 1000 byte).
+- **Unità IEC**: Per evitare confusione, esistono anche le unità IEC: 1 KiB (kibibyte) = 1024 byte, 1 MiB = 1024 KiB, ecc.
+
+---
+
+- **Overflow**: Se una variabile supera il valore massimo rappresentabile dal suo tipo (ad esempio, un `unsigned int` che va oltre 4.294.967.295), si verifica un "overflow" e il valore riparte da zero.
+- **Endianess**: L’ordine in cui i byte vengono memorizzati in memoria può essere "little endian" (il byte meno significativo viene prima) o "big endian" (il più significativo viene prima). Questo può influenzare la portabilità dei dati tra sistemi diversi.
+- **Puntatori**: Su architetture a 64 bit, i puntatori occupano 8 byte, mentre su 32 bit ne occupano 4. Questo influisce sulla quantità di memoria usata dai programmi che fanno largo uso di puntatori.
+- **Performance**: I programmi compilati per 64 bit possono essere più veloci, ma occupano anche più memoria, soprattutto per strutture dati che contengono molti puntatori.
+- **Compatibilità**: Molti sistemi operativi a 64 bit possono eseguire programmi a 32 bit, ma non sempre vale il contrario.
+
+--- 

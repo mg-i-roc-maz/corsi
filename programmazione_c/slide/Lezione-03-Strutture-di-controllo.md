@@ -78,6 +78,35 @@ if (eta >= 18) {
 
 ---
 
+## Attenzione: parentesi graffe mancanti
+
+Se si omettono le parentesi graffe `{}` dopo un `if`, solo la prima istruzione viene considerata parte del blocco condizionale. Questo può portare a errori difficili da individuare.
+
+**Esempio di errore:**
+
+```c
+int eta = 17;
+if (eta >= 18)
+    printf("Sei maggiorenne\n");
+    printf("Benvenuto!\n");
+```
+
+In questo esempio, `printf("Benvenuto!\n");` viene sempre eseguito, indipendentemente dalla condizione, perché non è racchiuso tra parentesi graffe.
+
+---
+
+**Corretto:**
+
+```c
+int eta = 17;
+if (eta >= 18) {
+    printf("Sei maggiorenne\n");
+    printf("Benvenuto!\n");
+}
+```
+
+---
+
 ## if-else e else if
 
 <div style="display: flex; gap: 2em;">
@@ -176,6 +205,33 @@ u: pizza
 p: con o senza funghi?
 u: con
 p: la pizza con funghi è deliziosa!
+
+---
+
+## Diagramma di flusso: Scelta tra pizza, pasta o gelato
+
+```
+Inizio
+    |
+    v
+Chiedi: "Preferisci pizza, pasta o gelato?"
+    |
+    +-- pizza --> Chiedi: "Con o senza funghi?"
+    |               |
+    |               +-- con ------> "La pizza con funghi è deliziosa!"
+    |               |
+    |               +-- senza ----> "La pizza senza funghi è ottima!"
+    |
+    +-- pasta --------------------> "La pasta è sempre una buona scelta!"
+    |
+    +-- gelato --> Chiedi: "Alla fragola o al cioccolato?"
+    |               |
+    |               +-- fragola --> "Il gelato alla fragola è fresco!"
+    |               |
+    |               +-- cioccolato -> "Il gelato al cioccolato è goloso!"
+    |
+    +-- altro --------------------> "Scelta interessante!"
+```
 
 ---
 
@@ -322,6 +378,25 @@ Suggerimento: usa sia `if-else` che `switch` e stampa i risultati in modo chiaro
 - Programma che chiede un anno e stampa se è bisestile
 
 ---
+## Esercizio Pratico Divertente (Livello Avanzato)
+
+Scrivi un programma che chiede all’utente di inserire **due linguaggi di programmazione** tra "C", "Python", "Java" o "JavaScript" (puoi chiedere due volte o accettare una stringa separata da virgola). Il programma deve:
+
+1. Per ciascun linguaggio inserito, stampare un messaggio simpatico diverso, ad esempio:
+    - "C: Il classico intramontabile!"
+    - "Python: Il serpente più amato dagli sviluppatori!"
+    - "Java: Sempre pronto per un caffè!"
+    - "JavaScript: Il re del web!"
+2. Se uno dei linguaggi non è tra quelli proposti, stampa "Ottima scelta, ogni linguaggio ha il suo fascino!" per quel linguaggio.
+3. Se i due linguaggi sono **uguali**, stampa anche "Hai scelto lo stesso linguaggio due volte, la passione si vede!"
+4. Se i due linguaggi sono **diversi**, stampa un messaggio che li confronta, ad esempio:
+    - "C e Python: dal classico all’innovazione!"
+    - "Java e JavaScript: attenzione a non confonderli!"
+    - "Python e JavaScript: perfetti per il web moderno!"
+    - (Puoi aggiungere altri confronti a piacere, oppure stampare un messaggio generico se la combinazione non è tra quelle elencate.)
+
+Suggerimento: usa sia `if-else` che `switch` per gestire i messaggi e i confronti tra linguaggi.
+
 
 ## Riepilogo della Lezione
 
