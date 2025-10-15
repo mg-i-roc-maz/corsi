@@ -352,6 +352,292 @@ Il programma stampa `7`.
 
 ---
 
+## Mini-Challenge: Incrementi con float e double
+
+Cosa succede se usiamo gli operatori di incremento con variabili float o double?
+
+```c
+float f = 1.5f;
+f++;
+printf("%f\n", f); // Cosa stampa?
+```
+
+**Curiosità:**  
+Gli operatori `++` e `--` funzionano anche con float e double, aggiungendo o sottraendo 1.0.
+
+---
+
+## Mini-Challenge: Incrementi su char
+
+Cosa succede se incrementiamo una variabile di tipo `char`?
+
+```c
+char c = 'A';
+c++;
+printf("%c\n", c); // Cosa stampa?
+```
+
+**Curiosità:**  
+I caratteri sono rappresentati da numeri (codici ASCII). Incrementando `'A'` otteniamo `'B'`.
+
+---
+
+## Approfondimento: Il Cifrario di Cesare
+
+Il **cifrario di Cesare** è uno dei più semplici e antichi sistemi di cifratura. Prende il nome da Giulio Cesare, che lo utilizzava per comunicare con i suoi generali. Il metodo consiste nello spostare ogni lettera del messaggio originale di un numero fisso di posizioni nell’alfabeto. Ad esempio, con uno spostamento di 3, la lettera `A` diventa `D`, `B` diventa `E` e così via. Se si supera la `Z`, si ricomincia dall’inizio dell’alfabeto.
+
+---
+### Come funziona
+
+- Si sceglie uno **spostamento** (ad esempio 3).
+- Ogni lettera del messaggio viene sostituita dalla lettera che si trova “più avanti” di tante posizioni quante indica lo spostamento.
+- Se si supera la Z, si ricomincia dall’inizio dell’alfabeto.
+
+---
+
+**Esempio con spostamento 3:**
+
+- Messaggio originale: `CIAO`
+- Messaggio cifrato: `FLDR`
+
+| Lettera | +3 posizioni | Risultato |
+| ------- | ------------ | --------- |
+| C       | D E F        | F         |
+| I       | J K L        | L         |
+| A       | B C D        | D         |
+| O       | P Q R        | R         |
+
+---
+### Decifrare
+
+Per decifrare, basta **spostare indietro** di 3 posizioni.
+
+---
+### Implementazione in C (con array: cifratura di una parola intera)
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  char parola[100];
+  int shift = 3;
+  int i, n;
+
+  printf("Inserisci una parola (lettere maiuscole e/o minuscole): ");
+  scanf("%s", parola);
+
+  n = strlen(parola);
+
+  for (i = 0; i < n; i++) {
+    char ch = parola[i];
+    if (ch >= 'A' && ch <= 'Z') {
+      parola[i] = ((ch - 'A' + shift) % 26) + 'A';
+    } else if (ch >= 'a' && ch <= 'z') {
+      parola[i] = ((ch - 'a' + shift) % 26) + 'a';
+    }
+    // Se non è una lettera, la lasciamo invariata
+  }
+
+  printf("Parola cifrata: %s\n", parola);
+
+  return 0;
+}
+```
+
+---
+## Tabella ASCII — Solo Lettere
+
+| Dec | Sim | Dec | Sim | Dec | Sim | Dec | Sim | Dec | Sim | Dec | Sim | Dec | Sim |
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| 65  |  A  | 66  |  B  | 67  |  C  | 68  |  D  | 69  |  E  | 70  |  F  | 71  |  G  |
+| 72  |  H  | 73  |  I  | 74  |  J  | 75  |  K  | 76  |  L  | 77  |  M  | 78  |  N  |
+| 79  |  O  | 80  |  P  | 81  |  Q  | 82  |  R  | 83  |  S  | 84  |  T  | 85  |  U  |
+| 86  |  V  | 87  |  W  | 88  |  X  | 89  |  Y  | 90  |  Z  | 97  |  a  | 98  |  b  |
+| 99  |  c  |100  |  d  |101  |  e  |102  |  f  |103  |  g  |104  |  h  |105  |  i  |
+|106  |  j  |107  |  k  |108  |  l  |109  |  m  |110  |  n  |111  |  o  |112  |  p  |
+|113  |  q  |114  |  r  |115  |  s  |116  |  t  |117  |  u  |118  |  v  |119  |  w  |
+|120  |  x  |121  |  y  |122  |  z  |     |     |     |     |     |     |     |     |
+
+<sub>Legenda: Dec = valore decimale ASCII, Sim = lettera</sub>
+
+## Mini-Challenge: Incrementi multipli
+
+Prevedi il risultato di questo codice:
+
+```c
+int a = 3;
+int b = a++ + ++a;
+printf("%d\n", b); // ?
+```
+
+**Soluzione:**
+
+- `a++` restituisce 3 (poi a diventa 4)
+- `++a` incrementa a a 5 e restituisce 5
+- `b = 3 + 5 = 8`
+
+---
+
+## Mini-Challenge: Incrementi e tipi unsigned
+
+Cosa succede se decrementiamo una variabile unsigned che vale 0?
+
+```c
+unsigned int u = 0;
+u--;
+printf("%u\n", u); // ?
+```
+
+**Curiosità:**  
+Le variabili unsigned non possono essere negative. Se scendono sotto 0, "girano" al valore massimo rappresentabile (overflow).
+
+---
+
+## Tabella: Intervallo di Valori per i Tipi di Dato Principali (1/2)
+
+| Tipo            | Valore Minimo      | Valore Massimo       |
+|-----------------|--------------------|----------------------|
+| `int`           | -2.147.483.648     | 2.147.483.647        |
+| `unsigned int`  | 0                  | 4.294.967.295        |
+| `short`         | -32.768            | 32.767               |
+| `unsigned short`| 0                  | 65.535               |
+| `long`          | -2.147.483.648     | 2.147.483.647        |
+| `unsigned long` | 0                  | 4.294.967.295        |
+
+---
+
+## Tabella: Intervallo di Valori per i Tipi di Dato Principali (2/2)
+
+| Tipo            | Valore Minimo                | Valore Massimo                |
+|-----------------|-----------------------------|-------------------------------|
+| `char`          | -128                        | 127                           |
+| `unsigned char` | 0                           | 255                           |
+| `float`         | ~1.2 × 10<sup>-38</sup>     | ~3.4 × 10<sup>38</sup>        |
+| `double`        | ~2.2 × 10<sup>-308</sup>    | ~1.8 × 10<sup>308</sup>       |
+
+<sub>I valori possono variare a seconda dell’implementazione e dell’architettura, ma questi sono i più comuni su sistemi a 32 bit.</sub>
+
+---
+
+## Mini-Challenge: Incrementi in espressioni complesse
+
+Prevedi il valore finale di `x` e `y`:
+
+```c
+int x = 5;
+int y = x++ * 2 + --x;
+printf("x = %d, y = %d\n", x, y);
+```
+
+**Soluzione:**
+
+- `x++` restituisce 5 (x diventa 6)
+- `--x` decrementa x a 5 e restituisce 5
+- `y = 5 * 2 + 5 = 15`
+- Alla fine: `x = 5`, `y = 15`
+
+---
+
+## Priorità degli Operatori in C
+
+Gli operatori in C hanno una priorità (precedenza) che determina l’ordine di valutazione nelle espressioni. Gli operatori con priorità più alta vengono valutati per primi.
+
+| Priorità | Operatori              | Descrizione                                    |
+| -------- | ---------------------- | ---------------------------------------------- |
+| 1        | `()`                   | Parentesi                                      |
+| 2        | `++` `--` `!` `(tipo)` | Incremento, decremento, negazione logica, cast |
+| 3        | `*` `/` `%`            | Moltiplicazione, divisione, modulo             |
+| 4        | `+` `-`                | Addizione, sottrazione                         |
+| 5        | `<` `<=` `>` `>=`      | Relazionali                                    |
+
+---
+
+## Priorità degli Operatori in C
+
+| Priorità | Operatori                              | Descrizione                                    |
+| -------- | -------------------------------------- | ---------------------------------------------- |
+| 6        | `==` `!=`                              | Uguaglianza, diversità                         |
+| 7        | `&&`                                   | AND logico                                     |
+| 8        | <code>&#124;&#124;</code>              | OR logico                                      |
+| 9        | `=` `+=` `-=` `*=` `/=` `%=`           | Assegnamento                                   |
+
+**Nota:**  
+Quando operatori hanno la stessa priorità, l’ordine di valutazione è da sinistra a destra (associatività sinistra), tranne che per l’assegnamento (associatività destra).
+
+---
+
+## Esempi Pratici sulla Priorità degli Operatori
+
+### Esempio 1: Parentesi e Priorità
+
+```c
+int risultato1 = 2 + 3 * 4;      // = 14 (moltiplicazione prima di addizione)
+int risultato2 = (2 + 3) * 4;    // = 20 (parentesi prima di moltiplicazione)
+printf("%d %d\n", risultato1, risultato2);
+```
+
+### Esempio 2: Operatori Relazionali e Logici
+
+```c
+int a = 5, b = 10, c = 15;
+int condizione = a < b && b < c; // true (1), perché entrambe le condizioni sono vere
+printf("%d\n", condizione);
+```
+
+---
+
+## Esempi Pratici sulla Priorità degli Operatori
+
+### Esempio 3: Assegnamento e Incremento
+
+```c
+int x = 2;
+x += 3 * 2; // equivale a x = x + (3 * 2) = 8
+printf("%d\n", x);
+```
+
+### Esempio 4: Uso del Cast
+
+```c
+int a = 7, b = 2;
+float divisione = a / b;           // = 3 (divisione tra interi)
+```
+
+---
+
+## Perché si fa il cast di uno solo?
+
+Quando si esegue una divisione tra due variabili di tipo `int`, il risultato sarà anch’esso un intero (la parte decimale viene eliminata). Per ottenere un risultato con la parte decimale, basta fare il cast di **almeno uno** degli operandi a `float` o `double`. Questo è sufficiente perché il compilatore converte automaticamente anche l’altro operando al tipo più "ampio" (promozione di tipo).
+
+### Esempio
+
+```c
+int a = 7, b = 2;
+float risultato = (float)a / b; // = 3.5
+```
+
+Qui solo `a` viene convertito a `float`, ma anche `b` viene promosso a `float` per la divisione.
+
+---
+
+## Perché si fa il cast di uno solo?
+
+Fare il cast di entrambi è possibile, ma non necessario:
+
+```c
+float risultato = (float)a / (float)b; // = 3.5
+```
+
+**In sintesi:**  
+Basta il cast di uno solo degli operandi per ottenere una divisione con risultato reale.
+
+```
+printf("%f %f\n", divisione, divisione_corretto);
+```
+
+---
+
 ## Operatori Relazionali
 
 | Operatore | Significato     | Esempio |
@@ -432,6 +718,107 @@ printf("%d", x);
 - Usare il tipo sbagliato nel `scanf`/`printf`
 - Dimenticare `&` nel `scanf`
 - Confondere `=` (assegnazione) con `==` (uguaglianza)
+
+---
+
+## Lo Specificatore di Formato `%` in C
+
+Lo specificatore di formato `%` viene usato nelle funzioni `printf` e `scanf` per indicare il tipo di dato da stampare o leggere.
+### Dettagli d'Uso
+
+- `%d` / `%i`: interi decimali (es. `printf("%d", 42);`)
+- `%u`: interi senza segno (`unsigned int`)
+- `%f`: numeri reali (float/double in `printf`, solo float in `scanf`)
+- `%lf`: per double in `scanf` (in `printf` si usa comunque `%f`)
+- `%c`: caratteri singoli
+- `%s`: stringhe (array di char)
+- `%x` / `%X`: interi in esadecimale (minuscolo/maiuscolo)
+- `%o`: interi in ottale
+- `%p`: indirizzi di memoria (puntatori)
+---
+#### Opzioni aggiuntive
+
+- **Precisione**: controlla il numero di cifre decimali stampate per float/double  
+  Esempio: `%.2f` stampa due cifre decimali (`3.14`)
+
+- **Larghezza minima**: imposta la larghezza minima del campo  
+  Esempio: `%8d` stampa l’intero in almeno 8 spazi
+
+- **Segno**: stampa sempre il segno (`+` o `-`)  
+  Esempio: `%+d` stampa `+42` invece di `42`
+
+- **Combinazioni**: puoi combinare larghezza, precisione e segno  
+  Esempio: `%+8.2f` stampa un float con segno, almeno 8 spazi, 2 decimali
+
+---
+
+#### Esempi
+
+```c
+printf("%+8.2f\n", 3.14159); // stampa: "   +3.14"
+printf("%08d\n", 42);        // stampa: "00000042"
+printf("%.3s\n", "ciao");    // stampa: "cia"
+printf("%8d\n", 123);      // stampa "     123"
+printf("%.2f\n", 3.14159); // stampa "3.14"
+printf("%8.2f\n", 3.14159);// stampa "    3.14"
+```
+
+---
+
+### Stampare Sempre il Segno (+/-) con printf
+
+Per stampare sempre il segno di un numero (anche il `+` per i numeri positivi), puoi usare il modificatore `%+d` per gli interi e `%+f` per i float/double.
+
+```c
+int x = 42;
+int y = -7;
+float z = 3.14;
+float w = -2.5;
+
+printf("%+d\n", x); // stampa: +42
+printf("%+d\n", y); // stampa: -7
+printf("%+f\n", z); // stampa: +3.140000
+printf("%+f\n", w); // stampa: -2.500000
+```
+
+Puoi anche combinare il segno con la precisione:
+
+```c
+printf("%+.2f\n", z); // stampa: +3.14
+```
+
+---
+
+### Esempi Pratici
+
+```c
+int a = 42;
+float b = 3.1415;
+char c = 'Z';
+char nome[] = "Anna";
+
+printf("Intero: %d\n", a);
+printf("Float: %.2f\n", b);
+printf("Carattere: %c\n", c);
+printf("Stringa: %s\n", nome);
+```
+
+---
+
+### Attenzione con `scanf`
+
+- Per `float` si usa `%f`
+- Per `double` si usa `%lf`
+- Per `char` e `int` si usano `%c` e `%d`
+- Per stringhe: `%s` (senza `&` davanti al nome dell’array)
+
+---
+
+### Riepilogo
+
+- Usa sempre lo specificatore corretto per il tipo di dato
+- Puoi combinare larghezza e precisione (`%8.3f`)
+- `%` è fondamentale per input/output formattato in C
 
 ---
 
