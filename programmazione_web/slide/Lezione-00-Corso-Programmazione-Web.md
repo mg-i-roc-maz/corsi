@@ -4,10 +4,10 @@ marp: true
 
 # Corso di Programmazione Web
 
-## Programma del corso (40 ore)
+## Programma del corso
 
 1. **Storia e architettura del WWW**
-2. **Interfaccia HTML**
+2. **HTML**
 3. **CSS: Stili e layout**
 4. **JavaScript, AJAX e HTML5**
 5. **Dati e protocolli: REST**

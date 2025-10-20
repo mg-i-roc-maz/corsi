@@ -407,4 +407,3 @@ Le risposte 404 e 500 sono utili per testare la gestione degli errori nelle appl
 - **Dati**: archiviazione e gestione delle informazioni (database, file, API)
 - Separazione dei livelli = maggiore manutenibilità e scalabilità
 
----
