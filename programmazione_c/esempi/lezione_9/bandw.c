@@ -1,90 +1,64 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#pragma pack(push, 1)
-typedef struct
-{
-    unsigned short type;
-    unsigned int size;
-    unsigned short reserved1, reserved2;
-    unsigned int offset;
-} BMPHeader;
-
-typedef struct
-{
-    unsigned int size;
-    int width, height;
-    unsigned short planes;
-    unsigned short bitCount;
-    unsigned int compression;
-    unsigned int sizeImage;
-    int xPelsPerMeter, yPelsPerMeter;
-    unsigned int clrUsed, clrImportant;
-} BMPInfoHeader;
-#pragma pack(pop)
-
-unsigned char to_bw(unsigned char r, unsigned char g, unsigned char b)
-{
-    // Luminance formula
-    return (unsigned char)(0.299 * r + 0.587 * g + 0.114 * b);
-}
-
 int main(void)
 {
-    const char *input_file = "input.bmp";
-    const char *output_file = "output.bmp";
-
-    FILE *fin = fopen(input_file, "rb");
-    if (!fin)
+    FILE *fin = fopen("input.bmp", "rb");
+    FILE *fout = fopen("output.bmp", "wb");
+    if (!fin || !fout)
     {
-        perror("Errore apertura file input");
+        printf("Errore apertura file.\n");
         return 1;
     }
 
-    FILE *fout = fopen(output_file, "wb");
-    if (!fout)
-    {
-        perror("Errore apertura file output");
-        fclose(fin);
-        return 1;
-    }
+    unsigned char header[54];
+    fread(header, 1, 54, fin); // Leggi header BMP
+    fwrite(header, 1, 54, fout);
 
-    BMPHeader header;
-    BMPInfoHeader info;
-    fread(&header, sizeof(BMPHeader), 1, fin);
-    fread(&info, sizeof(BMPInfoHeader), 1, fin);
-
-    if (header.type != 0x4D42 || info.bitCount != 24)
-    {
-        printf("Solo immagini BMP 24 bit supportate.\n");
-        fclose(fin);
-        fclose(fout);
-        return 1;
-    }
-
-    fwrite(&header, sizeof(BMPHeader), 1, fout);
-    fwrite(&info, sizeof(BMPInfoHeader), 1, fout);
-
-    int width = info.width;
-    int height = info.height;
+    int width = *(int *)&header[18];
+    int height = *(int *)&header[22];
     int row_padded = (width * 3 + 3) & (~3);
     unsigned char *row = malloc(row_padded);
-
-    fseek(fin, header.offset, SEEK_SET);
-    fseek(fout, header.offset, SEEK_SET);
 
     for (int i = 0; i < height; i++)
     {
         fread(row, 1, row_padded, fin);
         for (int j = 0; j < width; j++)
         {
-            unsigned char b = row[j * 3];
-            unsigned char g = row[j * 3 + 1];
-            unsigned char r = row[j * 3 + 2];
-            unsigned char bw = to_bw(r, g, b);
-            row[j * 3] = row[j * 3 + 1] = row[j * 3 + 2] = bw;
+            // Ogni pixel BMP a 24 bit è composto da 3 byte (B, G, R), ciascuno con valori da 0 a 255.
+            // Ogni canale è memorizzato come un valore intero senza segno a 8 bit, cioè un unsigned char in C.
+            // Un valore a 8 bit può rappresentare 2^8 = 256 valori distinti, che vanno da 0 a 255. Quindi:
+            // 0 rappresenta l'assenza totale del colore (nero)
+            // 255 rappresenta la massima intensità del colore (pieno)
+            // Valori intermedi tra 0 e 255 rappresentano diverse intensità del colore.
 
-            // row[j * 3] = 255;
+            // Esempi di manipolazione dei pixel:
+
+            // inversione colori
+            row[j * 3] = 255 - row[j * 3];         // B
+            row[j * 3 + 1] = 255 - row[j * 3 + 1]; // G
+            row[j * 3 + 2] = 255 - row[j * 3 + 2]; // R
+
+            // conversione in bianco e nero
+            // Imposta il pixel a bianco o nero in base alla media dei canali
+            // unsigned char gray = (row[j * 3] + row[j * 3 + 1] + row[j * 3 + 2]) / 3;
+            // unsigned char bw = (gray > 127) ? 255 : 0;
+            // row[j * 3] = bw;
+            // row[j * 3 + 1] = bw;
+            // row[j * 3 + 2] = bw;
+
+            // scala di grigi
+            // unsigned char gray = (row[j * 3] + row[j * 3 + 1] + row[j * 3 + 2]) / 3;
+            // row[j * 3] = gray;
+            // row[j * 3 + 1] = gray;
+            // row[j * 3 + 2] = gray;
+
+            // annullo solo il canale rosso
+            // row[j * 3 + 2] = 0;
+            // annullo solo il canale verde
+            // row[j * 3 + 1] = 0;
+            // annullo solo il canale blu
+            // row[j * 3] = 0;
         }
         fwrite(row, 1, row_padded, fout);
     }
