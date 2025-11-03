@@ -69,6 +69,7 @@ Un puntatore è come un segnaposto che indica dove si trova un valore in memoria
 |   10    |        |  &a     | ---> [indirizzo di a]
 +---------+        +---------+
 ```
+
 - `a` contiene il valore `10`
 - `p` contiene l’indirizzo di `a`
 
@@ -106,14 +107,39 @@ printf("%d\n", *p);  // stampa 20
 
 ---
 
+## Funzione che Incrementa il Valore Puntato
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+void incremento(int *p){
+    (*p)++;
+
+}
+
+int main() {
+
+    int a = 10;
+    int *p = &a;
+
+    printf("%d\n", a); // stampa 10
+    incremento(p);
+    printf("%d\n", a); // stampa 11
+
+    return 0;
+}
+```
+
+---
+
 ## Puntatori e Array
 
-
-| Indice | Valore | Indirizzo      |
-|--------|--------|----------------|
-| arr[0] |   1    | `0x1000`       |
-| arr[1] |   2    | `0x1004`       |
-| arr[2] |   3    | `0x1008`       |
+| Indice | Valore | Indirizzo |
+| ------ | ------ | --------- |
+| arr[0] | 1      | `0x1000`  |
+| arr[1] | 2      | `0x1004`  |
+| arr[2] | 3      | `0x1008`  |
 
 - `p` punta a `arr[0]` (`p = arr`) mentre `*(p+1)` accede a `arr[1]`
 
@@ -121,7 +147,7 @@ printf("%d\n", *p);  // stampa 20
 +---------+      +---------+      +---------+
 | arr[0]  | ---> | arr[1]  | ---> | arr[2]  |
 +---------+      +---------+      +---------+
-    ^ 
+    ^
     |
     p
 ```
@@ -145,6 +171,7 @@ int **pp = &p;
 |  5  |      | &a  |      | &p  |
 +-----+      +-----+      +-----+
 ```
+
 ---
 
 ## Esempio di Uso
@@ -181,6 +208,32 @@ Scrivi un programma che stampa tutti gli elementi di un array usando i puntatori
 
 ---
 
+## Soluzione Esercizio Pratico 2
+
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    int *p = arr;
+
+    for (int i = 0; i < 5; i++) {
+        printf("%d\n", *(p + i));
+        //printf("%d\n", p[i]); //equivalente ?
+    }
+
+    return 0;
+}
+```
+
+---
+
+## Esercizio Pratico 3
+
+Scrivi una funzione che scambia il valore di due variabili intere usando i puntatori.
+
+---
+
 ## Passaggio per riferimento alle funzioni
 
 - Passando l’indirizzo di una variabile, si può modificarla dentro la funzione
@@ -197,13 +250,31 @@ void scambia(int *a, int *b) {
 
 ---
 
-## Esercizio Pratico 3
+## Domanda da "Milionario dei Puntatori"
 
-Scrivi una funzione che scambia il valore di due variabili intere usando i puntatori.
+È possibile scambiare il valore di due variabili intere usando i puntatori **senza** utilizzare una variabile temporanea (`temp`)? Se sì, come si potrebbe fare? Discutete vantaggi e svantaggi di questa soluzione.
+
+---
+### Risposta
+
+Sì, è possibile scambiare il valore di due variabili intere usando i puntatori senza una variabile temporanea, sfruttando l’aritmetica:
+
+```c
+void scambia(int *a, int *b) {
+    *a = *a + *b;    // *a = valore_a + valore_b
+    *b = *a - *b;    // *b = (valore_a + valore_b) - valore_b = valore_a
+    *a = *a - *b;    // *a = (valore_a + valore_b) - valore_a = valore_b
+}
+```
+**Svantaggi:**  
+- Può causare overflow se i valori sono molto grandi.
+- Meno leggibile e più soggetto a errori rispetto all’uso di una variabile temporanea.
+- Non funziona correttamente se `a` e `b` puntano allo stesso indirizzo.
+- In generale, è preferibile usare una variabile tmp per chiarezza e sicurezza.
 
 ---
 
-## Puntatori a funzioni (avanzato)
+## Puntatori a funzioni
 
 - Un puntatore può riferirsi a una funzione
 
@@ -239,6 +310,10 @@ Scrivi una funzione che inverte un array di N elementi usando i puntatori.
 
 Cosa succede se stampi il valore di un puntatore non inizializzato?
 
+---
+
+### Risposta
+Se si stampa il valore di un puntatore non inizializzato, il risultato è indefinito: potrebbe essere un indirizzo casuale, zero, o causare errori di esecuzione. Accedere o dereferenziare un puntatore non inizializzato può portare a crash o comportamenti imprevedibili. È buona pratica inizializzare sempre i puntatori prima dell’uso.
 ---
 
 ## Esercizi di approfondimento

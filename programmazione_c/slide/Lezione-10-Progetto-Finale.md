@@ -328,6 +328,7 @@ La sintassi corretta è `while (condizione) { ... }`.
 **Soluzione:** a  
 **Commento:**  
 `p->campo` accede a un membro tramite puntatore a struct.
+`p.campo` usato se p è una variabile struct, non un puntatore.
 
 ---
 

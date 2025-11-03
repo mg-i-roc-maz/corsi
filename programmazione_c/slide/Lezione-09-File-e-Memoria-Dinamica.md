@@ -61,21 +61,16 @@ fclose(fp);
 
 ## Modalità di apertura file
 
-| Modalità | Descrizione             |
-| -------- | ----------------------- |
-| "r"      | sola lettura            |
-| "w"      | scrittura (sovrascrive) |
-| "a"      | aggiunta                |
+| Tipo                | Testo | Binario |
+| ------------------- | ----- | ------- |
+| Lettura             | "r"   | "rb"    |
+| Scrittura           | "w"   | "wb"    |
+| Append              | "a"   | "ab"    |
+| Lettura & Scrittura | "r+"  | "rb+"   |
+| Scrittura & Lettura | "w+"  | "wb+"   |
+| Append & Lettura    | "a+"  | "ab+"   |
 
 ---
-
-## Esercizio Pratico 1
-
-Scrivi un programma che chiede 5 numeri all’utente e li salva su file, poi li rilegge e li stampa.
-
----
-
-## Altri Esercizi su File I/O
 
 ### Esercizio 1: Conta le righe di un file
 
@@ -292,6 +287,10 @@ int main() {
 ## Mini-Challenge
 
 Cosa succede se provi a scrivere su un file aperto in sola lettura?
+
+> Se provi a scrivere su un file aperto in sola lettura (`"r"`), la funzione di scrittura (`fprintf`, `fputs`, ecc.) fallirà e non verrà scritto nulla.  
+> In genere, queste funzioni restituiscono un valore negativo o zero per indicare l’errore.  
+> È buona pratica controllare il valore di ritorno delle funzioni di scrittura e gestire eventuali errori.
 
 ---
 

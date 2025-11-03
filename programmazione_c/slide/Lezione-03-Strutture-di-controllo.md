@@ -380,22 +380,56 @@ Suggerimento: usa sia `if-else` che `switch` e stampa i risultati in modo chiaro
 ---
 ## Esercizio Pratico Divertente (Livello Avanzato)
 
-Scrivi un programma che chiede all’utente di inserire **due linguaggi di programmazione** tra "C", "Python", "Java" o "JavaScript" (puoi chiedere due volte o accettare una stringa separata da virgola). Il programma deve:
+```c
+#include <stdio.h>
+#include <string.h>
 
-1. Per ciascun linguaggio inserito, stampare un messaggio simpatico diverso, ad esempio:
-    - "C: Il classico intramontabile!"
-    - "Python: Il serpente più amato dagli sviluppatori!"
-    - "Java: Sempre pronto per un caffè!"
-    - "JavaScript: Il re del web!"
-2. Se uno dei linguaggi non è tra quelli proposti, stampa "Ottima scelta, ogni linguaggio ha il suo fascino!" per quel linguaggio.
-3. Se i due linguaggi sono **uguali**, stampa anche "Hai scelto lo stesso linguaggio due volte, la passione si vede!"
-4. Se i due linguaggi sono **diversi**, stampa un messaggio che li confronta, ad esempio:
-    - "C e Python: dal classico all’innovazione!"
-    - "Java e JavaScript: attenzione a non confonderli!"
-    - "Python e JavaScript: perfetti per il web moderno!"
-    - (Puoi aggiungere altri confronti a piacere, oppure stampare un messaggio generico se la combinazione non è tra quelle elencate.)
+int main() {
+    char lang1[20], lang2[20];
 
-Suggerimento: usa sia `if-else` che `switch` per gestire i messaggi e i confronti tra linguaggi.
+    printf("Inserisci il primo linguaggio (C, Python, Java, JavaScript): ");
+    scanf("%19s", lang1);
+    printf("Inserisci il secondo linguaggio (C, Python, Java, JavaScript): ");
+    scanf("%19s", lang2);
+
+    // Messaggi simpatici per ciascun linguaggio
+    for (int i = 0; i < 2; i++) {
+        char *lang = (i == 0) ? lang1 : lang2;
+        if (strcmp(lang, "C") == 0) {
+            printf("C: Il classico intramontabile!\n");
+        } else if (strcmp(lang, "Python") == 0) {
+            printf("Python: Il serpente più amato dagli sviluppatori!\n");
+        } else if (strcmp(lang, "Java") == 0) {
+            printf("Java: Sempre pronto per un caffè!\n");
+        } else if (strcmp(lang, "JavaScript") == 0) {
+            printf("JavaScript: Il re del web!\n");
+        } else {
+            printf("%s: Ottima scelta, ogni linguaggio ha il suo fascino!\n", lang);
+        }
+    }
+
+    // Controllo se i linguaggi sono uguali
+    if (strcmp(lang1, lang2) == 0) {
+        printf("Hai scelto lo stesso linguaggio due volte, la passione si vede!\n");
+    } else {
+        // Confronto tra linguaggi
+        if ((strcmp(lang1, "C") == 0 && strcmp(lang2, "Python") == 0) ||
+            (strcmp(lang1, "Python") == 0 && strcmp(lang2, "C") == 0)) {
+            printf("C e Python: dal classico all’innovazione!\n");
+        } else if ((strcmp(lang1, "Java") == 0 && strcmp(lang2, "JavaScript") == 0) ||
+                   (strcmp(lang1, "JavaScript") == 0 && strcmp(lang2, "Java") == 0)) {
+            printf("Java e JavaScript: attenzione a non confonderli!\n");
+        } else if ((strcmp(lang1, "Python") == 0 && strcmp(lang2, "JavaScript") == 0) ||
+                   (strcmp(lang1, "JavaScript") == 0 && strcmp(lang2, "Python") == 0)) {
+            printf("Python e JavaScript: perfetti per il web moderno!\n");
+        } else {
+            printf("%s e %s: Ottima combinazione, la varietà è la chiave!\n", lang1, lang2);
+        }
+    }
+
+    return 0;
+}
+```
 
 
 ## Riepilogo della Lezione

@@ -66,6 +66,25 @@ struct Persona rubrica[5];
 
 ---
 
+## Puntatori a struct
+
+- È possibile creare puntatori a strutture per gestire i dati in modo più flessibile.
+
+### Dichiarazione e utilizzo
+
+```c
+struct Persona p1;
+struct Persona *ptr = &p1;
+
+strcpy(ptr->nome, "Anna");
+ptr->eta = 28;
+```
+
+- Si accede ai membri tramite l’operatore `->` (freccia).
+- L’operatore `.` si usa con variabili, `->` con puntatori.
+
+---
+
 ## Esercizio Pratico 2
 
 Crea una rubrica di 3 persone e stampa i dati di tutti.
@@ -239,18 +258,44 @@ if (stato == CONNESSO) {
 
 ## Typedef
 
-- Crea un alias per un tipo
+### Uso di typedef
+
+Il costrutto `typedef` permette di creare un alias per un tipo di dato, semplificando la dichiarazione delle variabili.
+
+#### Esempio di typedef su variabili
 
 ```c
-typedef struct Persona Persona;
-Persona p2;
+typedef unsigned int uint;
+
+uint a = 10;
+printf("%u\n", a);
 ```
+
+In questo esempio, `uint` diventa un alias per `unsigned int`, rendendo il codice più leggibile.
 
 ---
 
-## Esercizio Pratico 4
+## Esempio di utilizzo di struct con typedef
 
-Crea un enum per i mesi dell’anno e stampa il mese corrispondente a un numero inserito dall’utente.
+```c
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {  char nome[20]; int eta; } Persona;
+
+int main() {
+    Persona p;
+
+    strcpy(p.nome, "Giulia");
+    p.eta = 27;
+
+    printf("Nome: %s\n", p.nome);
+    printf("Età: %d\n", p.eta);
+    return 0;
+}
+```
+
+Nell'esempio viene utilizzato `typedef` per creare un alias del tipo `struct Persona`, semplificando la dichiarazione delle variabili.
 
 ---
 
