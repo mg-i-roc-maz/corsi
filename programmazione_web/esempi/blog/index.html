@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container py-4">
+  <h1 class="mb-4">Blog</h1>
+
+  <!-- Form nuovo post -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Crea nuovo post</h5>
+      <form id="newPostForm">
+        <div class="mb-2">
+          <input type="text" class="form-control" id="titolo" placeholder="Titolo" required>
+        </div>
+        <div class="mb-2">
+          <textarea class="form-control" id="contenuto" placeholder="Contenuto" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Pubblica</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lista dei post -->
+  <div id="posts"></div>
+
+  <!-- Dettaglio post -->
+  <div id="postDetail" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="detailContent"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const apiUrl = 'http://localhost:8080/api/posts';
+
+function loadPosts() {
+  fetch(apiUrl)
+    .then(res => res.json())
+    .then(posts => {
+      const postsDiv = document.getElementById('posts');
+      postsDiv.innerHTML = '';
+      posts.slice().reverse().forEach(post => {
+        const card = document.createElement('div');
+        card.className = 'card mb-3';
+        card.innerHTML = `
+          <div class="card-body">
+            <h5 class="card-title">${post.titolo}</h5>
+            <p class="card-text">${post.contenuto.substring(0, 100)}...</p>
+            <p class="text-muted"><small>Creato il: ${post.dataCreazione ? new Date(post.dataCreazione).toLocaleString() : ''}</small></p>
+            <div class="d-flex align-items-center mb-2">
+              <button class="btn btn-outline-danger btn-sm me-2" onclick="addLike(${post.id})">
+                ❤️ Like (<span id="like-count-${post.id}">${post.postLike ?? 0}</span>)
+              </button>
+              <button class="btn btn-link" onclick="showPost(${post.id})">Leggi tutto</button>
+            </div>
+          </div>
+        `;
+        postsDiv.appendChild(card);
+      });
+
+    });
+}
+
+let currentPosts = [];
+
+function renderPosts(posts) {
+  const postsDiv = document.getElementById('posts');
+  postsDiv.innerHTML = '';
+  posts.slice().reverse().forEach(post => {
+    const card = document.createElement('div');
+    card.className = 'card mb-3';
+    card.id = `post-card-${post.id}`;
+    card.innerHTML = `
+      <div class="card-body">
+        <h5 class="card-title">${post.titolo}</h5>
+        <p class="card-text">${post.contenuto.substring(0, 100)}...</p>
+        <p class="text-muted"><small>Creato il: ${post.dataCreazione ? new Date(post.dataCreazione).toLocaleString() : ''}</small></p>
+        <div class="d-flex align-items-center mb-2">
+          <button class="btn btn-outline-danger btn-sm me-2" onclick="addLike(${post.id})">
+            ❤️ Like (<span id="like-count-${post.id}">${post.postLike ?? 0}</span>)
+          </button>
+          <button class="btn btn-link" onclick="showPost(${post.id})">Leggi tutto</button>
+        </div>
+      </div>
+    `;
+    postsDiv.appendChild(card);
+  });
+}
+
+function updatePosts() {
+  fetch(apiUrl)
+    .then(res => res.json())
+    .then(posts => {
+      // Se è la prima volta, renderizza tutto
+      if (currentPosts.length === 0) {
+        currentPosts = posts;
+        renderPosts(posts);
+        return;
+      }
+      // Aggiorna solo i post modificati
+      posts.forEach(newPost => {
+        const oldPost = currentPosts.find(p => p.id === newPost.id);
+        if (!oldPost) {
+          // Nuovo post, ricarica tutto
+          currentPosts = posts;
+          renderPosts(posts);
+          return;
+        }
+        // Se è cambiato qualcosa
+        if (JSON.stringify(oldPost) !== JSON.stringify(newPost)) {
+          // Aggiorna solo il card corrispondente
+          const card = document.getElementById(`post-card-${newPost.id}`);
+          if (card) {
+            card.innerHTML = `
+              <div class="card-body">
+                <h5 class="card-title">${newPost.titolo}</h5>
+                <p class="card-text">${newPost.contenuto.substring(0, 100)}...</p>
+                <p class="text-muted"><small>Creato il: ${newPost.dataCreazione ? new Date(newPost.dataCreazione).toLocaleString() : ''}</small></p>
+                <div class="d-flex align-items-center mb-2">
+                  <button class="btn btn-outline-danger btn-sm me-2" onclick="addLike(${newPost.id})">
+                    ❤️ Like (<span id="like-count-${newPost.id}">${newPost.postLike ?? 0}</span>)
+                  </button>
+                  <button class="btn btn-link" onclick="showPost(${newPost.id})">Leggi tutto</button>
+                </div>
+              </div>
+            `;
+          }
+        }
+      });
+      // Aggiorna la lista corrente
+      currentPosts = posts;
+    });
+}
+
+
+function addLike(id) {
+  fetch(`${apiUrl}/${id}/like`, { method: 'POST' })
+    .then(res => res.json())
+    .then(post => {
+      const likeSpan = document.getElementById(`like-count-${id}`);
+      if (likeSpan) likeSpan.textContent = post.postLike;
+      // Aggiorna anche il post in currentPosts
+      const idx = currentPosts.findIndex(p => p.id === id);
+      if (idx !== -1) currentPosts[idx].postLike = post.postLike;
+    });
+}
+
+// Funzione per mettere like a un post
+function addLike(id) {
+  fetch(`${apiUrl}/${id}/like`, { method: 'POST' })
+    .then(res => res.json())
+    .then(post => {
+      const likeSpan = document.getElementById(`like-count-${id}`);
+      if (likeSpan) likeSpan.textContent = post.postLike;
+    });
+}
+
+function showPost(id) {
+  fetch(`${apiUrl}/${id}`)
+    .then(res => res.json())
+    .then(post => {
+  document.getElementById('detailTitle').textContent = post.titolo;
+  document.getElementById('detailContent').innerHTML = `<p>${post.contenuto}</p><p class='text-muted'><small>Creato il: ${post.dataCreazione ? new Date(post.dataCreazione).toLocaleString() : ''}</small></p>`;
+      new bootstrap.Modal(document.getElementById('postDetail')).show();
+    });
+}
+
+document.getElementById('newPostForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const titolo = document.getElementById('titolo').value;
+  const contenuto = document.getElementById('contenuto').value;
+  fetch(apiUrl, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({titolo, contenuto})
+  })
+  .then(res => {
+    if (res.ok) {
+  loadPosts();
+  this.reset();
+  showFeedback('Post pubblicato con successo!');
+// Messaggio di feedback
+function showFeedback(msg) {
+  let fb = document.getElementById('feedbackMsg');
+  if (!fb) {
+    fb = document.createElement('div');
+    fb.id = 'feedbackMsg';
+    fb.className = 'alert alert-success mt-2';
+    document.querySelector('.container').insertBefore(fb, document.getElementById('posts'));
+  }
+  fb.textContent = msg;
+  fb.style.display = 'block';
+  setTimeout(() => { fb.style.display = 'none'; }, 2000);
+}
+    } else {
+      alert('Errore nella creazione del post');
+    }
+  });
+});
+
+loadPosts();
+updatePosts();
+setInterval(updatePosts, 5000);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,5 +1,14 @@
 ---
 marp: true
+theme: gaia
+_class: lead
+paginate: true
+backgroundColor: #fff
+backgroundImage: url('https://marp.app/assets/hero-background.svg')
+style: |
+  section {
+    font-size: 2.3em;
+  }
 ---
 
 <!-- Slide 1 -->
@@ -89,6 +98,8 @@ Gli attributi più comuni sono: `id`, `class`, `style`, `src`, `href`, `alt`, `t
 ### Online
 
 Puoi validare i tuoi file HTML tramite il [W3C Markup Validation Service](https://validator.w3.org/). Basta caricare il file o inserire l'URL della pagina per ricevere un report sugli errori e sulle best practice.
+
+---
 
 ### In locale con VS Code
 
@@ -221,10 +232,13 @@ Il tag `<body>` è la sezione principale del documento HTML dove vengono inserit
 </body>
 ```
 
-- Può contenere qualsiasi altro tag HTML che rappresenta contenuto o struttura.
-- È unico per ogni documento HTML: non possono esserci più `<body>`.
+- Il tag `<body>` può contenere qualsiasi altro tag HTML che rappresenta contenuto o struttura della pagina.
 
 ---
+
+## Tag `<body>` - Dettagli aggiuntivi
+
+- In ogni documento HTML deve esserci **un solo** `<body>`, non sono ammessi più tag `<body>`.
 
 - Gli stili CSS e gli script JavaScript possono agire sugli elementi all’interno del `<body>`.
 - Il `<body>` viene visualizzato dopo che il browser ha caricato i metadati definiti nel `<head>`.
@@ -287,6 +301,8 @@ Collegamento ipertestuale.
 ```
 
 <!-- Slide 13 -->
+
+---
 
 ## Tag `<img>`
 

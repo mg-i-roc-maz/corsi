@@ -1,5 +1,14 @@
 ---
 marp: true
+theme: gaia
+_class: lead
+paginate: true
+backgroundColor: #fff
+backgroundImage: url('https://marp.app/assets/hero-background.svg')
+style: |
+  section {
+    font-size: 2.3em;
+  }
 ---
 
 # Corso di Programmazione Web
@@ -370,7 +379,8 @@ Le risposte 404 e 500 sono utili per testare la gestione degli errori nelle appl
 
 - **HTTP**: dati trasmessi in chiaro, non sicuro
 - **HTTPS**: HTTP su TLS/SSL, dati cifrati e autenticati
-- HTTPS è lo standard attuale per la sicurezza delle comunicazioni web
+
+##### HTTPS è lo standard attuale per la sicurezza delle comunicazioni web
 
 ---
 
@@ -379,6 +389,11 @@ Le risposte 404 e 500 sono utili per testare la gestione degli errori nelle appl
 - **HTTPS** (HyperText Transfer Protocol Secure) è la versione sicura di HTTP.
 - Utilizza **SSL/TLS** (Secure Sockets Layer / Transport Layer Security) per cifrare i dati trasmessi tra client e server.
 - La cifratura protegge da intercettazioni e manomissioni dei dati (es. password, dati personali).
+
+---
+
+# Approfondimento: HTTPS e SSL/TLS (2)
+
 - HTTPS garantisce:
   - **Confidenzialità**: i dati non possono essere letti da terzi.
   - **Integrità**: i dati non possono essere modificati durante il transito.
@@ -406,4 +421,3 @@ Le risposte 404 e 500 sono utili per testare la gestione degli errori nelle appl
 - **Logica**: elaborazione dati, regole di business (JavaScript lato client, Node.js lato server, PHP, ...)
 - **Dati**: archiviazione e gestione delle informazioni (database, file, API)
 - Separazione dei livelli = maggiore manutenibilità e scalabilità
-
