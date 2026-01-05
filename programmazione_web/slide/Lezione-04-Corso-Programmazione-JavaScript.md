@@ -50,6 +50,24 @@ console.log('Ciao dal browser!');
 
 ---
 
+## Hello World online: prova JavaScript senza installare nulla
+
+- Puoi provare JavaScript direttamente online senza installare nulla, usando editor come:
+  - [JSFiddle](https://jsfiddle.net/)
+  - [CodePen](https://codepen.io/)
+  - [PlayCode](https://playcode.io/)
+  - [JSBin](https://jsbin.com/)
+
+**Esempio di Hello World:**
+
+```javascript
+console.log('Hello World!');
+```
+
+- Incolla questo codice nell'editor JavaScript del sito scelto e premi "Run" o "Esegui" per vedere il risultato nella console.
+
+---
+
 ## Inserire JavaScript in un file esterno
 
 - È buona pratica separare il codice JavaScript dall'HTML.
@@ -91,6 +109,8 @@ const eta = 25;
 - **`let`**: ha scope di blocco. È visibile solo all'interno del blocco in cui è dichiarata (ad esempio dentro `{ ... }`).
 - **`const`**: come `let`, ha scope di blocco. Il valore non può essere riassegnato, ma se è un oggetto o array, le sue proprietà possono essere modificate.
 
+---
+
 **Esempio:**
 
 ```javascript
@@ -108,8 +128,6 @@ console.log(z); // ReferenceError
 let nome = 'Mario';
 const eta = 25;
 ```
-
----
 ---
 
 ## Challenge 1: Dichiarazione di variabili

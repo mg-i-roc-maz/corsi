@@ -17,6 +17,14 @@ style: |
 
 Introduzione ai tag HTML e loro utilizzo.
 
+```js
+/**
+ * @author Rocco Mazzeo
+ * @email rocco.mazzeo@gmail.com
+ * @linkedin https://www.linkedin.com/in/roccomazzeo
+ */
+```
+
 ---
 
 <!-- Slide 2 -->
@@ -438,7 +446,7 @@ Crea un pulsante.
 <button>Clicca qui</button>
 ```
 
-<!-- Slide 19 -->
+---
 
 ## Tag `<label>`
 
@@ -447,8 +455,6 @@ Etichetta per un campo modulo.
 ```html
 <label for="email">Email:</label> <input id="email" type="email" />
 ```
-
----
 
 <!-- Slide 20 -->
 
@@ -475,8 +481,6 @@ Area di testo multilinea.
 <textarea rows="4" cols="50"></textarea>
 ```
 
----
-
 <!-- Slide 22 -->
 
 ## Tag `<div>`
@@ -498,8 +502,6 @@ Contenitore inline.
 ```html
 <span>Testo evidenziato</span>
 ```
-
----
 
 <!-- Slide 24 -->
 
@@ -733,9 +735,33 @@ Sezione espandibile.
 
 ---
 
+<!-- Slide: Come impostare una pagina HTML -->
+
+## Come impostare una pagina HTML
+
+```html
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Titolo della Pagina</title>
+  </head>
+  <body>
+    <!-- Contenuto visibile qui -->
+  </body>
+</html>
+```
+
+- **`<!DOCTYPE html>`**: indica al browser che si tratta di un documento HTML5.
+- **`<html lang="it">`**: elemento radice, con attributo per la lingua.
+- **`<head>`**: contiene metadati, titolo, link a risorse esterne.
+- **`<body>`**: contiene tutto il contenuto visibile della pagina.
+
+---
+
 <!-- Slide: Esercizi HTML - Complessità crescente -->
 
-## Esercizi HTML - Complessità crescente
+## Esercizi HTML
 
 1. **Crea una pagina HTML con titolo e due paragrafi.**
 2. **Inserisci un'immagine con attributo `alt` e una linea orizzontale (`<hr>`).**
@@ -752,3 +778,108 @@ Sezione espandibile.
 10. **Incorpora un video e un audio nella pagina, aggiungi uno stile CSS interno che cambia il colore di sfondo del `<body>`.**
 
 **Consiglio:** Dopo ogni esercizio, valida il codice e verifica la compatibilità dei tag usati!
+
+---
+
+<!-- Slide: Altri concetti fondamentali HTML -->
+
+## Altri elementi e concetti importanti in HTML
+
+### 1. Commenti HTML
+
+I commenti servono per annotare il codice e non vengono visualizzati dal browser.
+
+```html
+<!-- Questo è un commento -->
+```
+
+---
+
+### 2. Entità HTML
+
+Le entità permettono di inserire caratteri speciali che altrimenti verrebbero interpretati come codice.
+
+- `&lt;` per `<`
+- `&gt;` per `>`
+- `&amp;` per `&`
+- `&quot;` per `"`
+- `&copy;` per ©
+
+---
+
+### 3. Attributi globali
+
+Questi attributi possono essere usati su quasi tutti i tag HTML:
+
+- `id`: identificatore univoco
+- `class`: una o più classi CSS
+- `style`: stili CSS inline
+- `title`: testo descrittivo (tooltip)
+- `tabindex`: ordine di tabulazione
+- `hidden`: nasconde l’elemento
+
+---
+
+### 4. Accessibilità (a11y)
+
+Scrivere HTML accessibile significa rendere le pagine utilizzabili da tutti, anche da persone con disabilità.
+
+- Usa sempre `alt` per le immagini.
+- Struttura i titoli in modo gerarchico (`<h1>`, `<h2>`, ...).
+- Usa le etichette (`<label>`) per i campi modulo.
+- Preferisci tag semantici (`<nav>`, `<main>`, `<footer>`, ecc.).
+
+---
+
+### 5. Tag semantici
+
+I tag semantici descrivono il significato del contenuto, migliorando SEO e accessibilità:
+
+- `<header>`, `<footer>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`
+
+---
+
+### 6. Best practice
+
+- Indenta il codice per renderlo leggibile.
+- Chiudi sempre i tag (anche quelli opzionali, per chiarezza).
+- Usa nomi significativi per `id` e `class`.
+- Valida spesso il codice.
+
+---
+
+### 7. Struttura annidata
+
+Gli elementi HTML possono essere annidati, ma bisogna rispettare la gerarchia e chiudere correttamente i tag.
+
+```html
+<ul>
+  <li>Elemento <strong>importante</strong></li>
+</ul>
+```
+
+---
+
+### 8. Responsive design
+
+HTML lavora insieme a CSS per rendere le pagine adattabili a diversi dispositivi. Usa il tag `<meta name="viewport" ...>` per migliorare la visualizzazione su mobile.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+---
+
+### 9. Collegamento tra file
+
+Puoi collegare file CSS, JavaScript, immagini e altre risorse tramite i tag `<link>`, `<script>`, `<img>`, ecc.
+
+---
+
+### 10. Strumenti di ispezione
+
+I browser moderni offrono strumenti per ispezionare e modificare il codice HTML in tempo reale (tasto destro → "Ispeziona").
+
+---
+
+**Consiglio:** Approfondisci questi concetti per scrivere pagine HTML più efficaci, accessibili e professionali!

@@ -15,6 +15,14 @@ style: |
 
 ## Lezione 1 — Storia e architettura del WWW
 
+```js
+/**
+ * @author Rocco Mazzeo
+ * @email rocco.mazzeo@gmail.com
+ * @linkedin https://www.linkedin.com/in/roccomazzeo
+ */
+```
+
 ---
 
 # Origini del World Wide Web
@@ -59,6 +67,14 @@ La pila ISO/OSI (Open Systems Interconnection) è un modello a 7 livelli che des
 5. **Sessione**: gestione delle sessioni di comunicazione
 6. **Presentazione**: traduzione, cifratura, compressione dei dati
 7. **Applicazione**: servizi di rete per le applicazioni (es. HTTP, FTP, SMTP)
+
+---
+
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/OSI_Model_Italiano.svg" alt="Pila ISO/OSI" width="400" />
+</p>
+
+_Figura: Rappresentazione grafica dei 7 livelli del modello ISO/OSI. HTTP si trova al livello Applicazione (7)._
 
 ---
 
@@ -421,3 +437,94 @@ Le risposte 404 e 500 sono utili per testare la gestione degli errori nelle appl
 - **Logica**: elaborazione dati, regole di business (JavaScript lato client, Node.js lato server, PHP, ...)
 - **Dati**: archiviazione e gestione delle informazioni (database, file, API)
 - Separazione dei livelli = maggiore manutenibilità e scalabilità
+
+---
+
+# Domande di verifica
+
+**1. Chi è considerato l’inventore del World Wide Web?**
+
+- [ ] Bill Gates
+- [ ] Steve Jobs
+- [ ] Tim Berners-Lee
+- [ ] Mark Zuckerberg
+
+---
+
+**2. Quale dei seguenti protocolli opera al livello 7 (Applicazione) del modello OSI?**
+
+- [ ] TCP
+- [ ] IP
+- [ ] HTTP
+- [ ] Ethernet
+
+---
+
+**3. Qual è la principale differenza tra HTTP e HTTPS?**
+
+- [ ] HTTPS è più veloce di HTTP
+- [ ] HTTP utilizza la porta 443
+- [ ] HTTPS cifra i dati trasmessi
+- [ ] HTTP non usa certificati digitali
+
+---
+
+**4. Quale status code HTTP indica che una risorsa non è stata trovata?**
+
+- [ ] 200
+- [ ] 404
+- [ ] 500
+- [ ] 301
+
+---
+
+**5. Quale strumento è comunemente usato per testare le API web?**
+
+- [ ] Photoshop
+- [ ] Excel
+- [ ] Postman
+- [ ] WordPress
+
+---
+
+## Domande aperte
+
+**1. Spiega brevemente cosa si intende per “stateless” nel protocollo HTTP.**
+
+---
+
+**2. Descrivi i principali vantaggi dell’utilizzo di HTTPS rispetto a HTTP.**
+
+---
+
+**3. Riassumi la funzione dei livelli della pila ISO/OSI e indica dove si colloca HTTP.**
+
+---
+
+**4. Fai un esempio pratico di richiesta e risposta HTTP, indicando i principali elementi coinvolti.**
+
+---
+
+**5. Perché è importante separare la presentazione, la logica e i dati nell’architettura di un’applicazione web?**
+
+---
+
+# Soluzioni alle domande di verifica
+
+## Risposte a scelta multipla
+
+1. Tim Berners-Lee
+2. HTTP
+3. HTTPS cifra i dati trasmessi
+4. 404
+5. Postman
+
+---
+
+## Risposte alle domande aperte
+
+1. HTTP è stateless perché ogni richiesta è indipendente e il server non mantiene informazioni sullo stato tra richieste.
+2. HTTPS protegge i dati tramite cifratura, garantisce integrità e autenticità grazie ai certificati digitali.
+3. La pila ISO/OSI ha 7 livelli che gestiscono la comunicazione di rete; HTTP si trova al livello Applicazione (7).
+4. Esempio: il client invia una richiesta `GET /index.html`, il server risponde con `HTTP/1.1 200 OK`, header e body.
+5. Separare presentazione, logica e dati rende l’applicazione più manutenibile, scalabile e modulare.

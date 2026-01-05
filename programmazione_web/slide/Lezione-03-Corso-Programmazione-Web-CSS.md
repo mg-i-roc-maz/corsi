@@ -1,14 +1,31 @@
 ---
 marp: true
+theme: gaia
+_class: lead
+paginate: true
+backgroundColor: #fff
+backgroundImage: url('https://marp.app/assets/hero-background.svg')
+style: |
+  section {
+    font-size: 2.3em;
+  }
 ---
 
 <!-- Slide 1 -->
 
 # Introduzione al CSS
 
-Cos'è il CSS e perché è fondamentale per la progettazione web.
+```js
+/**
+ * @author Rocco Mazzeo
+ * @email rocco.mazzeo@gmail.com
+ * @linkedin https://www.linkedin.com/in/roccomazzeo
+ */
+```
 
-## Cosa fa il CSS?
+---
+
+## Cos'è il CSS ?
 
 Il CSS (Cascading Style Sheets) permette di separare la struttura (HTML) dalla presentazione (stili) di una pagina web. Consente di controllare colori, spaziature, layout, tipografia e molto altro.
 

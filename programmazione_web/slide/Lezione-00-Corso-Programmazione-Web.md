@@ -13,6 +13,16 @@ style: |
 
 # Corso di Programmazione Web
 
+```js
+/**
+ * @author Rocco Mazzeo
+ * @email rocco.mazzeo@gmail.com
+ * @linkedin https://www.linkedin.com/in/roccomazzeo
+ */
+```
+
+---
+
 ## Programma del corso
 
 1. **Storia e architettura del WWW**
