@@ -11,10 +11,13 @@ public class Post {
 
     private String titolo;
     private String contenuto;
+    private LocalDateTime dataCreazione;
 
     @Column(name = "post_like")
     private int postLike = 0;
-    private LocalDateTime dataCreazione;
+
+    @Column(name = "post_dislike")
+    private int postDislike = 0;
 
     public Post() {
     }
@@ -60,5 +63,13 @@ public class Post {
 
     public void setPostLike(int postLike) {
         this.postLike = postLike;
+    }
+
+    public int getPostDislike() {
+        return postDislike;
+    }
+
+    public void setPostDislike(int postDislike) {
+        this.postDislike = postDislike;
     }
 }

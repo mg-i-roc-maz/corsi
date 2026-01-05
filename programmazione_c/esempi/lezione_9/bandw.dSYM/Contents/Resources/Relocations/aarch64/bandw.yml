@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/rocco/Developer/corsi/programmazione_c/esempi/lezione_9/bandw'
+relocations:     []
+...

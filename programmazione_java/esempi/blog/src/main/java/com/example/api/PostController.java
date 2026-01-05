@@ -36,4 +36,14 @@ public class PostController {
         }
         return null;
     }
+
+    @PostMapping("/{id}/dislike")
+    public Post addDislike(@PathVariable Long id) {
+        Post post = postRepository.findById(id).orElse(null);
+        if (post != null) {
+            post.setPostDislike(post.getPostDislike() + 1);
+            return postRepository.save(post);
+        }
+        return null;
+    }
 }

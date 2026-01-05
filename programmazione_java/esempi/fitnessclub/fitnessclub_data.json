@@ -1,0 +1,41 @@
+{
+  "sale": [],
+  "utenti": [
+    {
+      "nome": "Rocco",
+      "cognome": "Mazzeo",
+      "dataNascita": "1982-09-22",
+      "abbonamento": {
+        "tipo": "Full ABS",
+        "dataInizio": "2025-01-01",
+        "dataFine": "2025-12-31",
+        "attivo": true
+      }
+    },
+    {
+      "nome": "Mario",
+      "cognome": "Rossi",
+      "dataNascita": "1982-09-22"
+    }
+  ],
+  "istruttori": [
+    {
+      "nome": "Mike",
+      "specializzazioni": [
+        "core",
+        " full abs"
+      ],
+      "orariDisponibili": []
+    }
+  ],
+  "abbonamenti": [
+    {
+      "tipo": "Full ABS",
+      "dataInizio": "2025-01-01",
+      "dataFine": "2025-12-31",
+      "attivo": true
+    }
+  ],
+  "corsi": [],
+  "prenotazioni": []
+}
