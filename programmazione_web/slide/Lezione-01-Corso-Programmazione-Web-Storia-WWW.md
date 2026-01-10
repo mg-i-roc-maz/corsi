@@ -1,14 +1,13 @@
 ---
 marp: true
-theme: gaia
-_class: lead
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 style: |
-  section {
-    font-size: 2.3em;
+  html, body, section, .marp-slide, .marp-slide * {
+    font-size: 2.1em !important;
   }
+  `
 ---
 
 # Corso di Programmazione Web
@@ -157,6 +156,42 @@ Content-Type: text/html; charset=ISO-8859-1
 - Postman permette anche di salvare richieste e creare collezioni di test.
 
 ---
+
+## Esercizio: Visualizzare richiesta e risposta HTTP con Postman
+
+1. Apri Postman e crea una nuova richiesta.
+2. Seleziona il metodo **GET**.
+3. Inserisci l’URL:  
+  `https://jsonplaceholder.typicode.com/posts/1`
+4. Premi **Send**.
+
+---
+
+**Osserva:**
+- Nella scheda **Request** puoi vedere i dettagli della richiesta inviata (metodo, URL, header).
+- Nella scheda **Response** puoi vedere lo status code, gli header e il body della risposta.
+
+---
+
+**Esempio di risposta:**
+```
+GET /posts/1 HTTP/1.1
+Host: jsonplaceholder.typicode.com
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+...
+
+{
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit..."
+}
+```
+
+---
+
 
 # Struttura di una risposta HTTP
 
@@ -366,9 +401,9 @@ Content-Type: application/json; charset=utf-8
 
 ### 2. Ottenere una risposta **500 Internal Server Error**
 
-- Per simulare un errore 500, puoi usare servizi di test come [httpstat.us](https://httpstat.us).
+- Per simulare un errore 500, puoi usare servizi di test come [https://mock.httpstatus.io/](https://mock.httpstatus.io/).
 - Crea una richiesta **GET** su:  
-  `https://httpstat.us/500`
+  `https://mock.httpstatus.io/500`
 - Premi **Send**.
 
 **Esempio di risposta:**
@@ -416,6 +451,27 @@ Le risposte 404 e 500 sono utili per testare la gestione degli errori nelle appl
   - **Autenticità**: il client può verificare l’identità del server tramite certificati digitali.
 - I certificati SSL/TLS sono rilasciati da **Certificate Authority** (CA) affidabili.
 - Oggi HTTPS è fondamentale per la sicurezza di qualsiasi sito web.
+
+---
+
+# Schema: Certificato HTTPS e Certificate Authority (CA)
+
+```mermaid
+sequenceDiagram
+  participant Browser
+  participant WebServer
+  participant CA as "Certificate Authority"
+
+  Browser->>WebServer: Richiesta HTTPS (Client Hello)
+  WebServer->>Browser: Invio certificato SSL/TLS
+  Browser->>CA: Verifica certificato (firma digitale)
+  CA-->>Browser: Certificato valido (o errore)
+  Browser->>WebServer: Scambio chiavi e negoziazione TLS
+  WebServer-->>Browser: Connessione cifrata stabilita
+  Browser->>WebServer: Richiesta HTTP sicura (GET/POST...)
+  WebServer-->>Browser: Risposta HTTP cifrata
+```
+
 
 ---
 
@@ -528,3 +584,4 @@ Le risposte 404 e 500 sono utili per testare la gestione degli errori nelle appl
 3. La pila ISO/OSI ha 7 livelli che gestiscono la comunicazione di rete; HTTP si trova al livello Applicazione (7).
 4. Esempio: il client invia una richiesta `GET /index.html`, il server risponde con `HTTP/1.1 200 OK`, header e body.
 5. Separare presentazione, logica e dati rende l’applicazione più manutenibile, scalabile e modulare.
+

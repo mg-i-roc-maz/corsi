@@ -7,7 +7,7 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 style: |
   section {
-    font-size: 2.3em;
+    font-size: 2.1em;
   }
 ---
 

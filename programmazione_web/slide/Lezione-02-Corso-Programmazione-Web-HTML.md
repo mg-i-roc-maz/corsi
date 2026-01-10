@@ -1,14 +1,13 @@
 ---
 marp: true
-theme: gaia
-_class: lead
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 style: |
-  section {
-    font-size: 2.3em;
+  html, body, section, .marp-slide, .marp-slide * {
+    font-size: 2.1em !important;
   }
+  `
 ---
 
 <!-- Slide 1 -->
@@ -83,6 +82,14 @@ Un tag HTML è racchiuso tra parentesi angolari `< >`. La maggior parte dei tag 
 
 I tag possono avere attributi, che aggiungono informazioni o modificano il comportamento del tag. Gli attributi sono scritti all'interno del tag di apertura, nella forma `nome="valore"`.
 
+```html
+<tag-nome attributo1="valore1" attributo2="valore2">Contenuto</tag-nome>
+```
+
+- `<tag-nome>`: nome del tag HTML.
+- `attributo="valore"`: attributi opzionali che modificano il comportamento del tag.
+- `Contenuto`: ciò che viene visualizzato tra il tag di apertura e quello di chiusura (se previsto).
+
 ---
 
 **Esempio:**
@@ -94,6 +101,80 @@ I tag possono avere attributi, che aggiungono informazioni o modificano il compo
 
 - `href` e `target` sono attributi del tag `<a>`.
 - `src` e `alt` sono attributi del tag `<img>`.
+
+---
+
+<!-- Slide: Attributi principali dei tag HTML -->
+
+## Attributi principali dei tag HTML
+
+Ecco una panoramica degli attributi più importanti per i principali tag HTML e il loro significato:
+
+<!-- Slide: Attributi principali dei tag HTML (parte 1) -->
+
+| Tag       | Attributi principali            | Significato                                                |
+| --------- | ------------------------------- | ---------------------------------------------------------- |
+| `<html>`  | `lang`, `dir`                   | Lingua del documento, direzione del testo                  |
+| `<head>`  | Nessuno specifico               | Contenitore di metadati                                    |
+| `<title>` | Nessuno                         | Titolo della pagina                                        |
+| `<body>`  | Nessuno                         | Contenuto visibile                                         |
+| `<a>`     | `href`, `target`, `title`       | URL destinazione, dove aprire il link, descrizione tooltip |
+| `<img>`   | `src`, `alt`, `width`, `height` | Percorso immagine, testo alternativo, dimensioni           |
+
+---
+
+<!-- Slide: Attributi principali dei tag HTML (parte 2) -->
+
+| Tag          | Attributi principali                                                             | Significato                                                                                        |
+| ------------ | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `<form>`     | `action`, `method`, `enctype`                                                    | URL invio dati, metodo invio, tipo codifica dati                                                   |
+| `<input>`    | `type`, `name`, `id`, `value`, `placeholder`, `required`, `readonly`, `disabled` | Tipo campo, nome, identificatore, valore, suggerimento, obbligatorietà, sola lettura, disabilitato |
+| `<label>`    | `for`                                                                            | Associa etichetta a campo tramite id                                                               |
+| `<select>`   | `name`, `id`, `multiple`                                                         | Nome, identificatore, selezione multipla                                                           |
+| `<option>`   | `value`, `selected`                                                              | Valore inviato, selezionato di default                                                             |
+| `<textarea>` | `name`, `id`, `rows`, `cols`, `placeholder`                                      | Nome, identificatore, dimensioni, suggerimento                                                     |
+
+
+---
+
+<!-- Slide: Attributi principali dei tag HTML (parte 3) -->
+
+| Tag                    | Attributi principali                   | Significato                                               |
+| ---------------------- | -------------------------------------- | --------------------------------------------------------- |
+| `<button>`   | `type`, `name`, `value`, `disabled`                                              | Tipo pulsante, nome, valore, disabilitato                                                          |
+| `<table>`              | `border`, `cellpadding`, `cellspacing` | Bordo, spaziatura celle                                   |
+| `<tr>`, `<td>`, `<th>` | `colspan`, `rowspan`                   | Celle unite orizzontalmente/verticalmente                 |
+| `<link>`               | `rel`, `href`, `type`                  | Relazione, percorso risorsa, tipo file                    |
+| `<script>`             | `src`, `type`, `async`, `defer`        | Percorso script, tipo, caricamento asincrono/differito    |
+| `<meta>`               | `charset`, `name`, `content`           | Codifica caratteri, nome metadato, valore                 |
+
+
+---
+| Tag                    | Attributi principali                   | Significato                                               |
+| ---------------------- | -------------------------------------- | --------------------------------------------------------- |
+| `<div>`, `<span>`      | `id`, `class`, `style`                 | Identificatore, classi CSS, stili inline                  |
+| `<audio>`, `<video>`   | `src`, `controls`, `autoplay`, `loop`  | Percorso file, controlli, riproduzione automatica, ripeti |
+| `<iframe>`             | `src`, `width`, `height`, `title`      | Percorso pagina, dimensioni, descrizione                  |
+
+---
+**Nota:** Quasi tutti i tag accettano attributi globali come `id`, `class`, `style`, `title`, `tabindex`, `hidden`.
+
+---
+
+### Esempio di utilizzo attributi
+
+```html
+<a href="https://www.example.com" target="_blank" title="Vai a Example"
+  >Visita Example</a
+>
+<img src="foto.jpg" alt="Descrizione immagine" width="200" height="100" />
+<input
+  type="email"
+  name="user_email"
+  placeholder="Inserisci la tua email"
+  required
+/>
+```
 
 Gli attributi più comuni sono: `id`, `class`, `style`, `src`, `href`, `alt`, `title`, `value`, `type`, ecc.
 
@@ -127,9 +208,16 @@ Non tutti i tag e attributi HTML sono supportati allo stesso modo da tutti i bro
 
 ### Come verificare la compatibilità
 
-Puoi usare siti come [Can I use](https://caniuse.com/) per controllare quali browser supportano un determinato tag, attributo o tecnologia web. Basta cercare la funzionalità desiderata per vedere una tabella aggiornata con il supporto nei vari browser e versioni.
+Puoi usare siti come [Can I use](https://caniuse.com/) per controllare quali browser supportano un determinato tag, attributo o tecnologia web.
 
 **Consiglio:** Consulta sempre la compatibilità prima di usare nuove funzionalità, soprattutto se il sito deve funzionare su dispositivi e browser diversi.
+
+---
+
+### Documentazione online
+
+[w3schools](https://www.w3schools.com/tags/) <- Ottima risorsa per imparare i tag HTML con esempi pratici.>
+[spec.whatwg.org](https://html.spec.whatwg.org/multipage/tables.html) <- Specifica ufficiale HTML5.>
 
 ---
 
@@ -320,6 +408,76 @@ Inserisce un'immagine.
 <img src="immagine.jpg" alt="Descrizione" />
 ```
 
+<!-- Slide: Attributi principali del tag `<img>` (parte 1) -->
+
+| Attributo | Descrizione                                                               | Obbligatorio |
+| --------- | ------------------------------------------------------------------------- | ------------ |
+| `src`     | Percorso o URL dell’immagine da visualizzare                              | Sì           |
+| `alt`     | Testo alternativo per l’accessibilità e in caso di errore nel caricamento | Sì           |
+| `width`   | Larghezza dell’immagine (in pixel o percentuale)                          | No           |
+| `height`  | Altezza dell’immagine (in pixel o percentuale)                            | No           |
+| `title`   | Testo visualizzato come tooltip al passaggio del mouse                    | No           |
+
+
+---
+
+<!-- Slide: Attributi principali del tag `<img>` (parte 2) -->
+
+| Attributo        | Descrizione                                                          | Obbligatorio |
+| ---------------- | -------------------------------------------------------------------- | ------------ |
+| `loading` | Modalità di caricamento: `lazy` (differito) o `eager` (immediato)         | No           |
+| `srcset`         | Elenco di immagini alternative per dispositivi e risoluzioni diverse | No           |
+| `sizes`          | Dimensioni da usare con `srcset` per immagini responsive             | No           |
+| `crossorigin`    | Gestione delle richieste CORS (`anonymous`, `use-credentials`)       | No           |
+| `referrerpolicy` | Politica di invio del referrer                                       | No           |
+| `usemap`         | Collega una mappa immagine                                           | No           |
+| `ismap`          | Indica che l’immagine è una mappa lato server                        | No           |
+
+---
+
+**Esempio:**
+
+```html
+<img
+  src="logo.png"
+  alt="Logo del sito"
+  width="150"
+  height="50"
+  loading="lazy"
+/>
+```
+
+---
+
+### Esercizio con il tag `<img>`
+
+inserire un tag con un'immagine esistente e poi provare a inserire un'immagine errata per vedere l'importanza dell'attributo `alt`.
+
+#### immagine errata
+
+```html
+<img
+  src="logo.svg"
+  alt="Logo del sito"
+  width="150"
+  height="50"
+  loading="lazy"
+/>
+```
+---
+
+#### immagine esistente
+
+```html
+<img
+  src="https://resources.whatwg.org/logo.svg"
+  alt="Logo del sito"
+  width="150"
+  height="50"
+  loading="lazy"
+/>
+```
+
 ---
 
 <!-- Slide 14 -->
@@ -364,25 +522,19 @@ Crea una tabella.
 
 <!-- Slide: Esercizi pratici HTML -->
 
-## Esercizi HTML - Livello Base
+## Esercizi HTML (valida il codice online o su vscode)
 
 1. **Crea una pagina HTML di base**  
    Scrivi il codice per una pagina che contiene un titolo, un paragrafo e un'immagine.
 
 2. **Aggiungi un link**  
-   Inserisci un collegamento che porta a [https://www.wikipedia.org](https://www.wikipedia.org).
+   Inserisci un collegamento che porta a [https://www.wikipedia.org](https://www.wikipedia.org) - verificare online gli attributi del tag `<a>` e provare a utilizzare valori diversi per `target`.
 
----
-
-## Esercizi HTML - Livello Intermedio
-
-3. **Costruisci una lista**  
+3. **Aggiungi una lista**  
    Crea una lista non ordinata con almeno tre elementi e una lista ordinata con almeno due elementi.
 
-4. **Tabella semplice**  
-   Realizza una tabella con due colonne (Nome, Età) e tre righe di dati.
-
-**Consiglio:** Prova a validare il tuo codice con uno strumento online o con HTMLHint in VS Code dopo ogni esercizio!
+4. **Aggiungi una tabella semplice**  
+   Realizza una tabella con tre colonne (Nome, Età, Avatar) e tre righe di dati. Valorizzare la tabella con immagini per gli avatar e dei contenuti di esempio.
 
 ---
 
@@ -398,6 +550,8 @@ Crea un modulo.
   <input type="submit" value="Invia" />
 </form>
 ```
+
+---
 
 ### Dettagli sul tag `<form>`
 
@@ -436,6 +590,57 @@ Campo di input.
 <input type="text" placeholder="Inserisci testo" />
 ```
 
+---
+
+### Attributi principali del tag `<input>`
+
+Gli attributi più comuni e utili per il campo `<input>` sono:
+
+- `type` — Tipo di campo (es: text, password, email, number, checkbox, radio, file, date, ecc.)
+- `name` — Nome del campo (usato per l’invio dei dati)
+- `id` — Identificatore univoco (utile per collegare una `<label>`)
+- `value` — Valore predefinito del campo
+- `placeholder` — Testo suggerito all’interno del campo
+- `required` — Rende il campo obbligatorio
+- `readonly` — Campo di sola lettura
+- `disabled` — Campo disabilitato (non modificabile né inviato)
+
+---
+
+- `maxlength` — Numero massimo di caratteri inseribili
+- `minlength` — Numero minimo di caratteri richiesti
+- `min` / `max` — Valore minimo/massimo (per numeri, date, ecc.)
+- `step` — Incremento consentito (per numeri, date, ecc.)
+- `pattern` — Espressione regolare per la validazione del formato
+- `autocomplete` — Suggerisce valori già usati (on/off o tipo di dato)
+- `autofocus` — Il campo riceve automaticamente il focus all’apertura della pagina
+- `checked` — Seleziona di default (solo per checkbox/radio)
+- `multiple` — Permette selezioni multiple (solo per file/email)
+- `size` — Larghezza visibile del campo (in caratteri)
+- `form` — Associa l’input a un form specifico tramite id
+
+---
+
+- `list` — Collega un `<datalist>` per suggerimenti automatici
+- `accept` — Tipi di file accettati (solo per input type="file")
+- `tabindex` — Ordine di tabulazione
+
+**Esempio:**
+
+```html
+<input
+  type="email"
+  name="user_email"
+  id="email"
+  placeholder="Inserisci la tua email"
+  required
+  maxlength="50"
+  autocomplete="email"
+  autofocus
+/>
+```
+---
+
 <!-- Slide 18 -->
 
 ## Tag `<button>`
@@ -445,6 +650,64 @@ Crea un pulsante.
 ```html
 <button>Clicca qui</button>
 ```
+
+### Dettagli sul tag `<button>`
+
+- Il tag `<button>` crea un pulsante cliccabile che può essere usato per inviare form, eseguire script o attivare azioni sulla pagina.
+- Può contenere testo, HTML o elementi come immagini e icone.
+
+---
+
+- Attributi principali:
+  - `type`: specifica il tipo di pulsante (`button`, `submit`, `reset`). Il valore predefinito è `submit` se il pulsante è dentro un form.
+  - `name`: nome del pulsante, utile per l'invio dei dati del form.
+  - `value`: valore inviato quando il form viene inviato.
+  - `disabled`: disabilita il pulsante.
+  - `autofocus`: il pulsante riceve il focus all'apertura della pagina.
+  - `form`: associa il pulsante a un form specifico tramite id.
+
+---
+
+**Esempi:**
+
+```html
+<button type="button">Normale</button>
+<button type="submit">Invia</button>
+<button type="reset">Resetta</button>
+<button disabled>Disabilitato</button>
+<button>
+  <img src="icon.png" alt="" /> Con icona
+</button>
+```
+
+- Il contenuto del pulsante può essere personalizzato con testo, immagini o HTML.
+- Per accessibilità, aggiungi sempre un testo descrittivo all'interno del pulsante.
+
+---
+
+## Esercizio: Form di autenticazione
+
+Crea un form HTML per l'autenticazione che richieda username e password. Al click su "Accedi", il form deve inviare i dati tramite POST a un servizio di test online, ad esempio [https://httpbin.org/post](https://httpbin.org/post).
+
+---
+
+**Esercizio:**
+
+```html
+<form action="https://httpbin.org/post" method="post">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required />
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required />
+
+  <button type="submit">Accedi</button>
+</form>
+```
+
+- Usa l’attributo `required` per rendere obbligatori i campi.
+- Puoi vedere la risposta del servizio di test dopo l’invio.
+- **Consiglio:** Non inserire dati reali, è solo un esempio didattico.
 
 ---
 
@@ -718,6 +981,29 @@ Media audio e video.
 <video controls src="video.mp4"></video>
 ```
 
+### Esempio di tag `<audio>`
+
+```html
+<audio
+  controls
+  src="https://samplelib.com/lib/preview/mp3/sample-3s.mp3"
+></audio>
+```
+
+---
+
+### Esempio di tag `<video>`
+
+```html
+<video controls width="320" height="240">
+  <source
+    src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4"
+    type="video/mp4"
+  />
+  Il tuo browser non supporta il tag video.
+</video>
+```
+
 ---
 
 <!-- Slide 40 -->
@@ -820,7 +1106,7 @@ Questi attributi possono essere usati su quasi tutti i tag HTML:
 
 ---
 
-### 4. Accessibilità (a11y)
+### 4. Accessibilità
 
 Scrivere HTML accessibile significa rendere le pagine utilizzabili da tutti, anche da persone con disabilità.
 
@@ -870,6 +1156,60 @@ HTML lavora insieme a CSS per rendere le pagine adattabili a diversi dispositivi
 
 ---
 
+### Responsive design: dettagli e implementazione
+
+Il **responsive design** permette alle pagine web di adattarsi automaticamente a schermi di dimensioni diverse (desktop, tablet, smartphone), migliorando l’esperienza utente.
+
+#### Principi chiave
+
+- **Layout fluido:** usa unità relative come `%`, `em`, `rem`, `vw`, `vh` invece di pixel fissi.
+- **Media queries:** regole CSS che applicano stili diversi in base alla larghezza dello schermo.
+- **Immagini responsive:** usa attributi come `srcset` e CSS `max-width: 100%` per adattare le immagini.
+- **Tipografia scalabile:** dimensioni dei font che si adattano al dispositivo.
+
+---
+
+#### Esempio pratico
+
+Aggiungi nel `<head>`:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+Esempio di media query CSS:
+
+```html
+<style>
+  body {
+    font-size: 1.2em;
+    background-color: #f00;
+  }
+  @media (max-width: 600px) {
+    body {
+      font-size: 1em;
+      background-color: #0f0;
+    }
+  }
+</style>
+<p>Hello World!</p>
+```
+
+---
+
+#### Best practice
+
+- Progetta “mobile first”: scrivi prima gli stili per dispositivi piccoli, poi aggiungi media query per schermi più grandi.
+- Testa la pagina su diversi dispositivi e simulatori.
+- Usa strumenti come Chrome DevTools per simulare varie risoluzioni.
+
+**Risorse utili:**
+
+- [MDN Responsive design](https://developer.mozilla.org/it/docs/Learn/CSS/CSS_layout/Responsive_Design)
+- [Google Web Fundamentals: Responsive Web Design Basics](https://web.dev/responsive-web-design-basics/)
+
+---
+
 ### 9. Collegamento tra file
 
 Puoi collegare file CSS, JavaScript, immagini e altre risorse tramite i tag `<link>`, `<script>`, `<img>`, ecc.
@@ -880,6 +1220,51 @@ Puoi collegare file CSS, JavaScript, immagini e altre risorse tramite i tag `<li
 
 I browser moderni offrono strumenti per ispezionare e modificare il codice HTML in tempo reale (tasto destro → "Ispeziona").
 
+**Consiglio:** Approfondisci questi concetti per scrivere pagine HTML più efficaci, accessibili e professionali!
+
 ---
 
-**Consiglio:** Approfondisci questi concetti per scrivere pagine HTML più efficaci, accessibili e professionali!
+<!-- Slide: Esercizi finali HTML -->
+
+## Esercizi finali - Metti in pratica!
+
+1. **Crea una pagina HTML completa**  
+   Realizza una pagina che includa:
+
+- Un `<header>` con titolo e navigazione
+- Un `<main>` con almeno due `<section>`, una con un `<article>` e una con una tabella
+- Un `<aside>` con informazioni aggiuntive
+- Un `<footer>` con i tuoi contatti
+
+---
+
+2. **Modulo di contatto**  
+   Inserisci un `<form>` con:
+
+- Campi per nome, email, messaggio
+- Etichette associate ai campi
+- Un pulsante di invio
+- Assicurati di usare gli attributi corretti per l’accessibilità
+
+---
+
+3. **Media e stili**
+
+- Aggiungi un’immagine con didascalia usando `<figure>` e `<figcaption>`
+- Incorpora un video o un audio
+- Inserisci uno stile CSS interno che cambi il colore di sfondo e il colore dei titoli
+
+4. **Link e ancore**
+
+- Crea almeno due link esterni che si aprono in una nuova scheda
+- Aggiungi un link interno che porta a una sezione specifica della pagina
+
+5. **Validazione e compatibilità**
+
+- Valida il tuo file HTML con il [W3C Validator](https://validator.w3.org/)
+- Controlla la compatibilità dei tag usati su [Can I use](https://caniuse.com/)
+
+---
+
+**Sfida extra:**  
+Prova a rendere la pagina responsive aggiungendo il tag `<meta name="viewport" ...>` e verifica come si adatta su dispositivi diversi.

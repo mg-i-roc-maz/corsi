@@ -1,14 +1,13 @@
 ---
 marp: true
-theme: gaia
-_class: lead
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 style: |
-  section {
-    font-size: 2.5em;
+  html, body, section, .marp-slide, .marp-slide * {
+    font-size: 2.1em !important;
   }
+  `
 ---
 
 # Corso di Programmazione Web
