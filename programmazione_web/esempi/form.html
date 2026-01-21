@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Layout con display, position e float</title>
+    <link rel="stylesheet" href="form-style.css" />
+  </head>
+  <body>
+    <div>
+      <a href="#1">Vai a 1</a>
+      <a href="#2" target="_blank">Vai a 2</a>
+      <a href="#3">Vai a 3</a>
+    </div>
+    <form action="/submit_form" method="post">
+      <h1>Registrazione utente</h1>
+      <label for="username">Nome utente:</label>
+      <input type="text" id="username" name="username" required />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+      <button type="submit">Registrati</button>
+      <button class="button-animato" type="reset">Reset button animato</button>
+      
+    </form>
+    <div class="box">Div con classe box1</div>
+    <div>Div senza classi</div>
+    <div class="box2">Div con classe box2</div>
+    <ul>
+      <li id="1">Elemento 1</li>
+      <li id="2">Elemento 2</li>
+      <li id="3">Elemento 3</li>
+      <li id="4">Elemento 4</li>
+      <li id="5">Elemento 5</li>
+      <li id="6">Elemento 6</li>
+    </ul>
+  </body>
+</html>

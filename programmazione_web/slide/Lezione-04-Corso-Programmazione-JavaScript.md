@@ -1,13 +1,11 @@
 ---
 marp: true
-theme: gaia
-_class: lead
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 style: |
   section {
-    font-size: 2.3em;
+    font-size: 2.1em;
   }
 ---
 
@@ -20,6 +18,7 @@ style: |
  * @linkedin https://www.linkedin.com/in/roccomazzeo
  */
 ```
+
 ---
 
 # Introduzione a JavaScript
@@ -27,8 +26,6 @@ style: |
 JavaScript è un linguaggio di programmazione nato nel 1995 per aggiungere interattività alle pagine web. Creato da Brendan Eich, è diventato uno standard del web, supportato da tutti i principali browser. JavaScript permette di manipolare il DOM, gestire eventi e comunicare con server tramite AJAX.
 
 ---
-
-
 
 ## Statistiche di utilizzo dei linguaggi di programmazione (2004-2024)
 
@@ -41,12 +38,9 @@ JavaScript è un linguaggio di programmazione nato nel 1995 per aggiungere inter
 
 Fonte: [TIOBE Index](https://www.tiobe.com/tiobe-index/)
 
-
 ---
 
-
 - **Top 5 linguaggi per il web nel 2025**:
-
   1. JavaScript
   2. TypeScript
   3. Python
@@ -55,8 +49,7 @@ Fonte: [TIOBE Index](https://www.tiobe.com/tiobe-index/)
 
 - **JavaScript** e **TypeScript** dominano lo sviluppo web moderno, seguiti da Python (soprattutto per backend e API), PHP (ancora molto usato per siti e CMS), e Java (popolare per applicazioni enterprise).
 
---- 
-
+---
 
 ## Sintassi base di JavaScript in HTML
 
@@ -71,7 +64,7 @@ Per includere JavaScript in una pagina HTML, si utilizza il tag `<script>`:
   <body>
     <h1>Ciao JavaScript!</h1>
     <script>
-      document.querySelector('h1').textContent = 'Benvenuto in JavaScript!';
+      document.querySelector("h1").textContent = "Benvenuto in JavaScript!";
     </script>
   </body>
 </html>
@@ -95,7 +88,7 @@ Per includere JavaScript in una pagina HTML, si utilizza il tag `<script>`:
 4. Scrivi e esegui codice JavaScript, ad esempio:
 
 ```javascript
-console.log('Ciao dal browser!');
+console.log("Ciao dal browser!");
 ```
 
 ---
@@ -111,7 +104,7 @@ console.log('Ciao dal browser!');
 **Esempio di Hello World:**
 
 ```javascript
-console.log('Hello World!');
+console.log("Hello World!");
 ```
 
 - Incolla questo codice nell'editor JavaScript del sito scelto e premi "Run" o "Esegui" per vedere il risultato nella console.
@@ -159,15 +152,15 @@ console.log('Hello World!');
 - **Confronto**: `==`, `===`, `!=`, `!==`, `<`, `>`, `<=`, `>=`
 - **Logici**: `&&` (and), `||` (or), `!` (not)
 
- * Nota sugli operatori === e !==:
- * - L'operatore `===` (strettamente uguale) confronta sia il valore che il tipo delle due espressioni. Restituisce `true` solo se entrambi sono uguali e dello stesso tipo.
- *   Esempio: `5 === '5'` restituisce `false`, mentre `5 === 5` restituisce `true`.
+* Nota sugli operatori === e !==:
+* - L'operatore `===` (strettamente uguale) confronta sia il valore che il tipo delle due espressioni. Restituisce `true` solo se entrambi sono uguali e dello stesso tipo.
+* Esempio: `5 === '5'` restituisce `false`, mentre `5 === 5` restituisce `true`.
 
- ---
+---
 
- * - L'operatore `!==` (strettamente diverso) confronta sia il valore che il tipo delle due espressioni. Restituisce `true` solo se sono diversi o di tipo diverso.
- *   Esempio: `5 !== '5'` restituisce `true`, mentre `5 !== 5` restituisce `false`.
- * Questi operatori sono preferibili rispetto a `==` e `!=` perché evitano conversioni implicite di tipo rendendo il confronto più prevedibile e sicuro.
+- - L'operatore `!==` (strettamente diverso) confronta sia il valore che il tipo delle due espressioni. Restituisce `true` solo se sono diversi o di tipo diverso.
+- Esempio: `5 !== '5'` restituisce `true`, mentre `5 !== 5` restituisce `false`.
+- Questi operatori sono preferibili rispetto a `==` e `!=` perché evitano conversioni implicite di tipo rendendo il confronto più prevedibile e sicuro.
 
 ---
 
@@ -188,9 +181,9 @@ console.log(a > b && b > 0); // true
 ```javascript
 let eta = 18;
 if (eta >= 18) {
-  console.log('Sei maggiorenne');
+  console.log("Sei maggiorenne");
 } else {
-  console.log('Sei minorenne');
+  console.log("Sei minorenne");
 }
 ```
 
@@ -199,16 +192,16 @@ if (eta >= 18) {
 ## Strutture di controllo: switch
 
 ```javascript
-let giorno = 'lunedì';
+let giorno = "lunedì";
 switch (giorno) {
-  case 'lunedì':
-    console.log('Inizio settimana');
+  case "lunedì":
+    console.log("Inizio settimana");
     break;
-  case 'venerdì':
-    console.log('Quasi weekend!');
+  case "venerdì":
+    console.log("Quasi weekend!");
     break;
   default:
-    console.log('Giorno normale');
+    console.log("Giorno normale");
 }
 ```
 
@@ -218,7 +211,7 @@ switch (giorno) {
 
 ```javascript
 for (let i = 0; i < 5; i++) {
-  console.log('Valore di i:', i);
+  console.log("Valore di i:", i);
 }
 ```
 
@@ -262,11 +255,67 @@ const moltiplica = (x, y) => x * y;
 console.log(moltiplica(2, 5)); // 10
 ```
 
-/**
- * Questa funzione è definita come arrow function (funzione freccia), una sintassi introdotta in ES6 che consente di scrivere funzioni in modo più conciso.
- * Le arrow function non hanno il proprio `this`, `arguments`, `super` o `new.target`, e sono spesso utilizzate per funzioni anonime o callback.
- * Utilizzare le arrow function può rendere il codice più leggibile e mantenere il contesto di `this` dalla funzione esterna.
- */
+- Questa funzione è definita come arrow function (funzione freccia), una sintassi introdotta in ES6 che consente di scrivere funzioni in modo più conciso.
+- Le arrow function non hanno il proprio `this`, `arguments`, `super` o `new.target`, e sono spesso utilizzate per funzioni anonime o callback.
+- Utilizzare le arrow function può rendere il codice più leggibile e mantenere il contesto di `this` dalla funzione esterna.
+
+---
+
+## Esercizio: Funzioni classiche vs arrow function
+
+Scrivi due funzioni che calcolano il quadrato di un numero:
+
+1. Una funzione classica chiamata `quadratoClassico`.
+2. Una arrow function chiamata `quadratoFreccia`.
+
+Entrambe devono restituire il quadrato del valore passato come argomento. Prova a chiamare entrambe le funzioni con il valore `5` e stampa il risultato in console.
+
+---
+
+### Soluzione
+
+```javascript
+function quadratoClassico(x) {
+  return x * x;
+}
+
+const quadratoFreccia = (x) => x * x;
+
+console.log(quadratoClassico(5)); // 25
+console.log(quadratoFreccia(5)); // 25
+```
+
+---
+
+### Differenza del `this` tra funzioni classiche e arrow function
+
+- **Funzioni classiche**: il valore di `this` dipende da come la funzione viene chiamata. Se usata come metodo di un oggetto, `this` fa riferimento all’oggetto stesso.
+
+  ```javascript
+  const persona = {
+    nome: "Luca",
+    saluta: function () {
+      console.log(this.nome); // 'Luca'
+    },
+  };
+  persona.saluta(); // 'Luca'
+  ```
+
+---
+
+- **Arrow function**: non hanno il proprio `this`. Ereditano il `this` dal contesto esterno in cui sono state definite.
+
+  ```javascript
+  const persona = {
+    nome: "Luca",
+    saluta: () => {
+      console.log(this.nome); // undefined (non è l’oggetto persona)
+    },
+  };
+  persona.saluta(); // undefined
+  ```
+
+> **Nota:** Usa funzioni classiche per i metodi degli oggetti quando serve accedere a `this`. Le arrow function sono utili per callback e funzioni anonime dove non serve un proprio `this`.
 
 ---
 
@@ -274,12 +323,11 @@ console.log(moltiplica(2, 5)); // 10
 
 ```javascript
 const persona = {
-  nome: 'Luca',
-  eta: 30
+  nome: "Luca",
+  eta: 30,
 };
 console.log(persona.nome); // 'Luca'
 ```
-
 
 > **Nota:** In JavaScript, gli oggetti sono strutture fondamentali che permettono di raggruppare dati e funzionalità. Ogni oggetto è una collezione di coppie chiave-valore, dove le chiavi sono stringhe (o simboli) e i valori possono essere di qualsiasi tipo, incluse altre funzioni (metodi).
 
@@ -297,15 +345,15 @@ console.log(persona.nome); // 'Luca'
 
 ```javascript
 const persona = {
-  nome: 'Luca',
+  nome: "Luca",
   eta: 30,
-  saluta: function() {
-    console.log('Ciao, sono ' + this.nome);
-  }
+  saluta: function () {
+    console.log("Ciao, sono " + this.nome);
+  },
 };
 
-persona.cognome = 'Rossi'; // aggiunta di una nuova proprietà
-console.log(persona['cognome']); // accesso tramite parentesi quadre
+persona.cognome = "Rossi"; // aggiunta di una nuova proprietà
+console.log(persona["cognome"]); // accesso tramite parentesi quadre
 persona.saluta(); // chiamata di un metodo
 ```
 
@@ -333,24 +381,28 @@ JavaScript offre molte funzioni integrate (built-in) che facilitano la manipolaz
 
 ### Funzioni per le stringhe
 
-- **`length`**: restituisce la lunghezza della stringa  
+- **`length`**: restituisce la lunghezza della stringa
+
   ```javascript
   let testo = "Ciao";
   console.log(testo.length); // 4
   ```
 
-- **`toUpperCase()` / `toLowerCase()`**: converte la stringa in maiuscolo/minuscolo  
+- **`toUpperCase()` / `toLowerCase()`**: converte la stringa in maiuscolo/minuscolo
   ```javascript
   console.log(testo.toUpperCase()); // "CIAO"
   console.log(testo.toLowerCase()); // "ciao"
   ```
+
 ---
-- **`includes()`**: verifica se una sottostringa è presente  
+
+- **`includes()`**: verifica se una sottostringa è presente
+
   ```javascript
   console.log(testo.includes("ia")); // true
   ```
 
-- **`replace()`**: sostituisce una parte della stringa  
+- **`replace()`**: sostituisce una parte della stringa
   ```javascript
   let nuovoTesto = testo.replace("C", "B");
   console.log(nuovoTesto); // "Biao"
@@ -360,24 +412,27 @@ JavaScript offre molte funzioni integrate (built-in) che facilitano la manipolaz
 
 ### Funzioni per i numeri
 
-- **`parseInt()` / `parseFloat()`**: converte una stringa in numero intero/decimale  
+- **`parseInt()` / `parseFloat()`**: converte una stringa in numero intero/decimale
+
   ```javascript
   let numero = parseInt("42");
   let decimale = parseFloat("3.14");
   ```
 
-- **`Math.round()`**: arrotonda al numero intero più vicino  
+- **`Math.round()`**: arrotonda al numero intero più vicino
   ```javascript
   console.log(Math.round(3.7)); // 4
   ```
+
 ---
-- **`Math.random()`**: genera un numero casuale tra 0 e 1  
+
+- **`Math.random()`**: genera un numero casuale tra 0 e 1
+
   ```javascript
   console.log(Math.random());
   ```
 
-
-- **`Math.max()` / `Math.min()`**: restituisce il massimo/minimo tra i valori  
+- **`Math.max()` / `Math.min()`**: restituisce il massimo/minimo tra i valori
   ```javascript
   console.log(Math.max(1, 5, 3)); // 5
   ```
@@ -386,51 +441,57 @@ JavaScript offre molte funzioni integrate (built-in) che facilitano la manipolaz
 
 ### Funzioni per gli array
 
-- **`push()` / `pop()`**: aggiunge/rimuove elementi in fondo all’array  
+- **`push()` / `pop()`**: aggiunge/rimuove elementi in fondo all’array
+
   ```javascript
   let arr = [1, 2, 3];
   arr.push(4); // [1,2,3,4]
-  arr.pop();   // [1,2,3]
+  arr.pop(); // [1,2,3]
   ```
 
-- **`shift()` / `unshift()`**: rimuove/aggiunge elementi all’inizio  
+- **`shift()` / `unshift()`**: rimuove/aggiunge elementi all’inizio
+
   ```javascript
   arr.unshift(0); // [0,1,2,3]
-  arr.shift();    // [1,2,3]
+  arr.shift(); // [1,2,3]
   ```
 
-- **`map()`**: crea un nuovo array applicando una funzione a ogni elemento  
+- **`map()`**: crea un nuovo array applicando una funzione a ogni elemento
   ```javascript
-  let quadrati = arr.map(x => x * x); // [1,4,9]
+  let quadrati = arr.map((x) => x * x); // [1,4,9]
   ```
+
 ---
 
-- **`filter()`**: filtra gli elementi secondo una condizione  
+- **`filter()`**: filtra gli elementi secondo una condizione
+
   ```javascript
-  let pari = arr.filter(x => x % 2 === 0); // [2]
+  let pari = arr.filter((x) => x % 2 === 0); // [2]
   ```
 
-- **`forEach()`**: esegue una funzione per ogni elemento  
+- **`forEach()`**: esegue una funzione per ogni elemento
   ```javascript
-  arr.forEach(x => console.log(x));
+  arr.forEach((x) => console.log(x));
   ```
 
 ---
 
 ### Funzioni per la manipolazione degli oggetti
 
-- **`Object.keys()`**: restituisce un array con le chiavi dell’oggetto  
+- **`Object.keys()`**: restituisce un array con le chiavi dell’oggetto
+
   ```javascript
   const persona = { nome: "Anna", eta: 28 };
   console.log(Object.keys(persona)); // ["nome", "eta"]
   ```
 
-- **`Object.values()`**: restituisce un array con i valori  
+- **`Object.values()`**: restituisce un array con i valori
+
   ```javascript
   console.log(Object.values(persona)); // ["Anna", 28]
   ```
 
-- **`Object.entries()`**: restituisce array di coppie chiave-valore  
+- **`Object.entries()`**: restituisce array di coppie chiave-valore
   ```javascript
   console.log(Object.entries(persona)); // [["nome","Anna"],["eta",28]]
   ```
@@ -439,17 +500,19 @@ JavaScript offre molte funzioni integrate (built-in) che facilitano la manipolaz
 
 ### Funzioni utili varie
 
-- **`alert()`**: mostra un messaggio popup  
+- **`alert()`**: mostra un messaggio popup
+
   ```javascript
   alert("Ciao!");
   ```
 
-- **`prompt()`**: chiede un input all’utente  
+- **`prompt()`**: chiede un input all’utente
+
   ```javascript
   let nome = prompt("Come ti chiami?");
   ```
 
-- **`console.log()`**: stampa in console  
+- **`console.log()`**: stampa in console
   ```javascript
   console.log("Messaggio di debug");
   ```
@@ -460,7 +523,7 @@ JavaScript offre molte funzioni integrate (built-in) che facilitano la manipolaz
 
 ```javascript
 let nomi = ["Anna", "Luca", "Marco"];
-let nomiMaiuscoli = nomi.map(n => n.toUpperCase());
+let nomiMaiuscoli = nomi.map((n) => n.toUpperCase());
 console.log(nomiMaiuscoli); // ["ANNA", "LUCA", "MARCO"]
 ```
 
@@ -468,15 +531,16 @@ console.log(nomiMaiuscoli); // ["ANNA", "LUCA", "MARCO"]
 
 ## Sintassi base di JavaScript
 
-- **Dichiarazione di variabili**:  
+- **Dichiarazione di variabili**:
   - `var` è la parola chiave storica per dichiarare variabili. Ha ambito di funzione e può essere ridefinita.
   - Oggi si preferiscono `let` e `const` per una gestione più sicura dell'ambito delle variabili.
 
 ```javascript
-var messaggio = 'Ciao!';
-let nome = 'Mario';
+var messaggio = "Ciao!";
+let nome = "Mario";
 const eta = 25;
 ```
+
 ---
 
 ## Scope di var, let e const
@@ -501,7 +565,7 @@ console.log(z); // ReferenceError
 ```
 
 ```javascript
-let nome = 'Mario';
+let nome = "Mario";
 const eta = 25;
 ```
 
@@ -512,7 +576,6 @@ const eta = 25;
 - **Hoisting** è il comportamento per cui le dichiarazioni di variabili e funzioni vengono "spostate" in cima al loro scope prima dell'esecuzione del codice.
 - Solo le dichiarazioni vengono hoistate, non le assegnazioni di valore.
 
-
 ### Hoisting con `var`
 
 ```javascript
@@ -520,6 +583,8 @@ console.log(a); // undefined
 var a = 5;
 console.log(a); // 5
 ```
+
+> provate a stampare il valore di una variabile non definita e di una non assegnata
 
 - La dichiarazione `var a` viene spostata in cima, ma l'assegnazione avviene dove scritto.
 
@@ -553,16 +618,14 @@ function saluta() {
 
 ```javascript
 saluta(); // TypeError: saluta is not a function
-var saluta = function() {
+var saluta = function () {
   console.log("Ciao!");
 };
 ```
 
-- Solo la dichiarazione della variabile viene hoistata (`var saluta`), ma non l'assegnazione della funzione.
+- Solo la dichiarazione della variabile viene hoistata (`var saluta`), ma non l'assegnazione della funzione. Il comportamento è identico a quello delle variabili.
 
----
-
->  **Nota:** Comprendere l'hoisting aiuta a evitare errori e comportamenti inattesi nel codice JavaScript.
+> **Nota:** Comprendere l'hoisting aiuta a evitare errori e comportamenti inattesi nel codice JavaScript.
 
 ---
 
@@ -658,23 +721,63 @@ let b = 20;
 
 ---
 
-- **Funzioni**:
+## Esercizi di base con JavaScript puro
+
+### 1. Somma di numeri in un array
+
+### 2. Trova il valore massimo in un array
+
+### 3. Conta quante volte appare una lettera in una stringa
+
+### 4. Crea un nuovo array con i quadrati dei numeri
+
+---
 
 ```javascript
-function saluta() {
-  console.log('Ciao!');
+const numeri = [1, 2, 3, 4, 5];
+let somma = 0;
+for (let i = 0; i < numeri.length; i++) {
+  somma += numeri[i];
 }
-saluta();
+console.log("Somma:", somma); // 15
 ```
 
-- **Condizioni**:
+---
 
 ```javascript
-if (eta >= 18) {
-  console.log('Sei maggiorenne');
-} else {
-  console.log('Sei minorenne');
+const valori = [10, 5, 8, 21, 3];
+let max = valori[0];
+for (let i = 1; i < valori.length; i++) {
+  if (valori[i] > max) {
+    max = valori[i];
+  }
 }
+console.log("Massimo:", max); // 21
+```
+
+---
+
+```javascript
+const frase = "javascript è fantastico";
+const lettera = "a";
+let conta = 0;
+for (let i = 0; i < frase.length; i++) {
+  if (frase[i] === lettera) {
+    conta++;
+  }
+}
+console.log(`La lettera '${lettera}' appare ${conta} volte.`);
+```
+
+---
+
+```javascript
+const numeri = [1, 2, 3, 4];
+const quadrati = [];
+for (let i = 0; i < numeri.length; i++) {
+  quadrati.push(numeri[i] * numeri[i]);
+}
+console.log(quadrati); // [1, 4, 9, 16]
 ```
 
 ---
@@ -685,33 +788,37 @@ if (eta >= 18) {
 
 - **`getElementById(id)`**  
   Seleziona il primo elemento con l'id specificato.
+
   ```javascript
-  const titolo = document.getElementById('titolo');
+  const titolo = document.getElementById("titolo");
   ```
 
 - **`getElementsByClassName(className)`**  
   Restituisce una HTMLCollection di tutti gli elementi con la classe specificata.
   ```javascript
-  const paragrafi = document.getElementsByClassName('paragrafo');
+  const paragrafi = document.getElementsByClassName("paragrafo");
   ```
+
 ---
 
 - **`getElementsByTagName(tag)`**  
   Restituisce una HTMLCollection di tutti gli elementi con il tag specificato.
+
   ```javascript
-  const liste = document.getElementsByTagName('ul');
+  const liste = document.getElementsByTagName("ul");
   ```
 
 - **`querySelector(selector)`**  
   Restituisce il primo elemento che corrisponde al selettore CSS.
+
   ```javascript
-  const primoParagrafo = document.querySelector('.paragrafo');
+  const primoParagrafo = document.querySelector(".paragrafo");
   ```
 
 - **`querySelectorAll(selector)`**  
   Restituisce una NodeList di tutti gli elementi che corrispondono al selettore CSS.
   ```javascript
-  const tuttiLi = document.querySelectorAll('li');
+  const tuttiLi = document.querySelectorAll("li");
   ```
 
 ---
@@ -719,8 +826,9 @@ if (eta >= 18) {
 ## Ciclare sugli elementi HTML
 
 - **Con `for` classico (HTMLCollection o NodeList):**
+
   ```javascript
-  const elementi = document.getElementsByClassName('paragrafo');
+  const elementi = document.getElementsByClassName("paragrafo");
   for (let i = 0; i < elementi.length; i++) {
     console.log(elementi[i].textContent);
   }
@@ -728,9 +836,9 @@ if (eta >= 18) {
 
 - **Con `forEach` (NodeList da `querySelectorAll`):**
   ```javascript
-  const elementi = document.querySelectorAll('li');
-  elementi.forEach(function(el) {
-    el.style.color = 'blue';
+  const elementi = document.querySelectorAll("li");
+  elementi.forEach(function (el) {
+    el.style.color = "blue";
   });
   ```
 
@@ -738,8 +846,8 @@ if (eta >= 18) {
 
 - **Convertire HTMLCollection in Array per usare `forEach`:**
   ```javascript
-  const paragrafi = document.getElementsByClassName('paragrafo');
-  Array.from(paragrafi).forEach(p => p.classList.add('evidenziato'));
+  const paragrafi = document.getElementsByClassName("paragrafo");
+  Array.from(paragrafi).forEach((p) => p.classList.add("evidenziato"));
   ```
 
 ---
@@ -747,43 +855,53 @@ if (eta >= 18) {
 ## Esempio pratico: evidenziare tutti i paragrafi
 
 ```javascript
-const paragrafi = document.querySelectorAll('p');
-paragrafi.forEach(paragrafo => {
-  paragrafo.style.backgroundColor = 'yellow';
+const paragrafi = document.querySelectorAll("p");
+paragrafi.forEach((paragrafo) => {
+  paragrafo.style.backgroundColor = "yellow";
 });
 ```
-
-
 
 - **Selezionare elementi**:
 
 ```javascript
 // Seleziona il primo elemento con id "titolo"
-const titolo = document.getElementById('titolo');
+const titolo = document.getElementById("titolo");
 
 // Seleziona il primo elemento con classe "paragrafo"
-const paragrafo = document.querySelector('.paragrafo');
+const paragrafo = document.querySelector(".paragrafo");
 
 // Seleziona tutti gli elementi <li>
-const elementiLista = document.querySelectorAll('li');
+const elementiLista = document.querySelectorAll("li");
 ```
 
 ---
+
 ## Modificare il testo e gli attributi di un elemento
 
 - **Cambiare il testo di un elemento**:
 
 ```javascript
-const titolo = document.getElementById('titolo');
-titolo.textContent = 'Nuovo Titolo!';
+const titolo = document.getElementById("titolo");
+titolo.textContent = "Nuovo Titolo!";
 ```
 
 - **Cambiare attributi**:
 
 ```javascript
-const link = document.querySelector('a');
-link.setAttribute('href', 'https://www.example.com');
+const link = document.querySelector("a");
+link.setAttribute("href", "https://www.example.com");
 ```
+
+---
+
+/\*\*
+
+- Aggiorna il contenuto HTML di un elemento specificato utilizzando la proprietà `innerHtml`.
+-
+- @param {string} val - Il testo o valore da inserire all'interno dell'elemento.
+- Questo valore viene assegnato tramite la proprietà `innerHtml`, che permette di inserire sia testo semplice che markup HTML.
+- Attenzione: l'utilizzo di `innerHtml` può esporre a rischi di sicurezza (XSS) se il contenuto non è opportunamente validato o sanificato.
+  \*/
 
 ---
 
@@ -792,9 +910,9 @@ link.setAttribute('href', 'https://www.example.com');
 - **Modificare lo stile**:
 
 ```javascript
-const box = document.getElementById('box');
-box.style.backgroundColor = 'yellow';
-box.style.fontSize = '20px';
+const box = document.getElementById("box");
+box.style.backgroundColor = "yellow";
+box.style.fontSize = "20px";
 ```
 
 ---
@@ -804,16 +922,16 @@ box.style.fontSize = '20px';
 - **Aggiungere un elemento figlio**:
 
 ```javascript
-const lista = document.querySelector('ul');
-const nuovoElemento = document.createElement('li');
-nuovoElemento.textContent = 'Nuovo elemento';
+const lista = document.querySelector("ul");
+const nuovoElemento = document.createElement("li");
+nuovoElemento.textContent = "Nuovo elemento";
 lista.appendChild(nuovoElemento);
 ```
 
 - **Rimuovere un elemento**:
 
 ```javascript
-const elemento = document.getElementById('daRimuovere');
+const elemento = document.getElementById("daRimuovere");
 elemento.remove();
 ```
 
@@ -824,13 +942,53 @@ elemento.remove();
 - **Gestire eventi**:
 
 ```javascript
-const bottone = document.getElementById('mioBottone');
-bottone.addEventListener('click', function() {
-  alert('Hai cliccato il bottone!');
+const bottone = document.getElementById("mioBottone");
+bottone.addEventListener("click", function () {
+  alert("Hai cliccato il bottone!");
 });
 ```
 
+---
 
+## Esercitazione: Aggiunta automatica di elementi HTML
+
+Crea una pagina HTML con una lista `<ul>` vuota e un bottone "Aggiungi elemento". Quando l’utente clicca sul bottone, aggiungi automaticamente un nuovo `<li>` alla lista con il testo "Elemento X", dove X è il numero progressivo dell’elemento.
+
+**Requisiti:**
+
+- Ogni click sul bottone aggiunge un nuovo elemento alla lista.
+- Il testo di ogni elemento deve essere incrementale ("Elemento 1", "Elemento 2", ...).
+- Dopo aver aggiunto un elemento, stampa in console tutti i testi degli `<li>` presenti nella lista.
+
+**Suggerimento:**
+
+> Usa `document.createElement`, `appendChild` e `querySelectorAll` per gestire la lista.
+> Usa bottone.addEventListener("click", function () { ... }) per gestire il click sul bottone.
+
+---
+
+### Soluzione esempio
+
+```html
+<ul id="lista"></ul>
+<button id="aggiungi">Aggiungi elemento</button>
+<script>
+  const lista = document.getElementById("lista");
+  const bottone = document.getElementById("aggiungi");
+  let contatore = 1;
+
+  bottone.addEventListener("click", function () {
+    const nuovoLi = document.createElement("li");
+    nuovoLi.textContent = "Elemento " + contatore++;
+    lista.appendChild(nuovoLi);
+
+    // Stampa tutti i testi degli <li>
+    const elementi = document.querySelectorAll("#lista li");
+    const testi = Array.from(elementi).map((li) => li.textContent);
+    console.log(testi);
+  });
+</script>
+```
 
 ---
 
@@ -838,7 +996,7 @@ bottone.addEventListener('click', function() {
 
 - Gli **eventi** sono azioni che accadono nella pagina web (click, pressione di tasti, caricamento, ecc.) e possono essere gestiti tramite JavaScript.
 - Gli eventi più comuni sono:
-  - `click` - `dblclick` - `mouseover`  - `mouseout`
+  - `click` - `dblclick` - `mouseover` - `mouseout`
   - `mousedown` - `mouseup` - `mousemove` - `keydown`- `keyup` - `keypress`
   - `change` - `input` - `submit` - `focus` - `blur` - `load` - `resize`
   - `scroll`- `contextmenu`
@@ -849,9 +1007,9 @@ bottone.addEventListener('click', function() {
 ## Esempio: evento click
 
 ```javascript
-const bottone = document.getElementById('mioBottone');
-bottone.addEventListener('click', function() {
-  alert('Hai cliccato il bottone!');
+const bottone = document.getElementById("mioBottone");
+bottone.addEventListener("click", function () {
+  alert("Hai cliccato il bottone!");
 });
 ```
 
@@ -860,12 +1018,12 @@ bottone.addEventListener('click', function() {
 ## Esempio: evento mouseover
 
 ```javascript
-const box = document.getElementById('box');
-box.addEventListener('mouseover', function() {
-  box.style.backgroundColor = 'lightblue';
+const box = document.getElementById("box");
+box.addEventListener("mouseover", function () {
+  box.style.backgroundColor = "lightblue";
 });
-box.addEventListener('mouseout', function() {
-  box.style.backgroundColor = '';
+box.addEventListener("mouseout", function () {
+  box.style.backgroundColor = "";
 });
 ```
 
@@ -874,8 +1032,8 @@ box.addEventListener('mouseout', function() {
 ## Esempio: evento keydown
 
 ```javascript
-document.addEventListener('keydown', function(event) {
-  console.log('Hai premuto il tasto:', event.key);
+document.addEventListener("keydown", function (event) {
+  console.log("Hai premuto il tasto:", event.key);
 });
 ```
 
@@ -884,9 +1042,9 @@ document.addEventListener('keydown', function(event) {
 ## Esempio: evento input
 
 ```javascript
-const input = document.getElementById('testo');
-input.addEventListener('input', function() {
-  console.log('Valore attuale:', input.value);
+const input = document.getElementById("testo");
+input.addEventListener("input", function () {
+  console.log("Valore attuale:", input.value);
 });
 ```
 
@@ -895,10 +1053,10 @@ input.addEventListener('input', function() {
 ## Esempio: evento submit su form
 
 ```javascript
-const form = document.getElementById('mioForm');
-form.addEventListener('submit', function(event) {
+const form = document.getElementById("mioForm");
+form.addEventListener("submit", function (event) {
   event.preventDefault(); // evita il reload della pagina
-  alert('Form inviato!');
+  alert("Form inviato!");
 });
 ```
 
@@ -907,9 +1065,9 @@ form.addEventListener('submit', function(event) {
 ## Esempio: evento change su select
 
 ```javascript
-const select = document.getElementById('menu');
-select.addEventListener('change', function() {
-  console.log('Hai selezionato:', select.value);
+const select = document.getElementById("menu");
+select.addEventListener("change", function () {
+  console.log("Hai selezionato:", select.value);
 });
 ```
 
@@ -918,8 +1076,8 @@ select.addEventListener('change', function() {
 ## Esempio: evento scroll
 
 ```javascript
-window.addEventListener('scroll', function() {
-  console.log('Scroll verticale:', window.scrollY);
+window.addEventListener("scroll", function () {
+  console.log("Scroll verticale:", window.scrollY);
 });
 ```
 
@@ -928,8 +1086,8 @@ window.addEventListener('scroll', function() {
 ## Esempio: evento load
 
 ```javascript
-window.addEventListener('load', function() {
-  console.log('La pagina è stata caricata!');
+window.addEventListener("load", function () {
+  console.log("La pagina è stata caricata!");
 });
 ```
 
@@ -938,12 +1096,12 @@ window.addEventListener('load', function() {
 ## Esempio: evento focus e blur
 
 ```javascript
-const input = document.getElementById('testo');
-input.addEventListener('focus', function() {
-  input.style.borderColor = 'green';
+const input = document.getElementById("testo");
+input.addEventListener("focus", function () {
+  input.style.borderColor = "green";
 });
-input.addEventListener('blur', function() {
-  input.style.borderColor = '';
+input.addEventListener("blur", function () {
+  input.style.borderColor = "";
 });
 ```
 
@@ -952,9 +1110,9 @@ input.addEventListener('blur', function() {
 ## Esempio: evento contextmenu (click destro)
 
 ```javascript
-document.addEventListener('contextmenu', function(event) {
+document.addEventListener("contextmenu", function (event) {
   event.preventDefault();
-  alert('Menu contestuale disabilitato!');
+  alert("Menu contestuale disabilitato!");
 });
 ```
 
@@ -963,13 +1121,11 @@ document.addEventListener('contextmenu', function(event) {
 ## Esempio: evento touchstart (mobile)
 
 ```javascript
-const area = document.getElementById('areaTouch');
-area.addEventListener('touchstart', function() {
-  area.textContent = 'Touch rilevato!';
+const area = document.getElementById("areaTouch");
+area.addEventListener("touchstart", function () {
+  area.textContent = "Touch rilevato!";
 });
 ```
-
-
 
 > **Nota:** Puoi combinare più eventi per creare interazioni complesse e dinamiche nella tua pagina web.
 
@@ -980,28 +1136,30 @@ area.addEventListener('touchstart', function() {
 - **Selezionare tutti gli elementi** (ad esempio tutti i `<li>`):
 
 ```javascript
-const elementi = document.querySelectorAll('li');
+const elementi = document.querySelectorAll("li");
 ```
 
 - **Ciclare su tutti gli elementi e modificarli**:
 
 ```javascript
-elementi.forEach(function(elemento) {
-  elemento.textContent = 'Elemento modificato!';
+elementi.forEach(function (elemento) {
+  elemento.textContent = "Elemento modificato!";
 });
 ```
 
 - Puoi anche cambiare classi, attributi o stili di ciascun elemento all'interno del ciclo.
 - `forEach` funziona su NodeList (il risultato di `querySelectorAll`).
 
+---
+
 **Esempio: aggiungere una classe a tutti i paragrafi**
 
 ```javascript
-const paragrafi = document.querySelectorAll('p');
-paragrafi.forEach(p => p.classList.add('evidenziato'));
+const paragrafi = document.querySelectorAll("p");
+paragrafi.forEach((p) => p.classList.add("evidenziato"));
 ```
----
 
+---
 
 ## Esercitazione 1: Seleziona un elemento per ID e cambia il testo
 
@@ -1012,8 +1170,8 @@ Scrivi un codice JavaScript che seleziona un elemento con `id="titolo"` e ne mod
 ### Soluzione Esercitazione 1
 
 ```javascript
-const titolo = document.getElementById('titolo');
-titolo.textContent = 'Titolo modificato dall\'esercizio';
+const titolo = document.getElementById("titolo");
+titolo.textContent = "Titolo modificato dall'esercizio";
 ```
 
 ---
@@ -1027,9 +1185,9 @@ Data una lista di elementi `<li>`, scrivi un codice che seleziona l'ultimo eleme
 ### Soluzione Esercitazione 2
 
 ```javascript
-const elementi = document.querySelectorAll('li');
+const elementi = document.querySelectorAll("li");
 const ultimo = elementi[elementi.length - 1];
-ultimo.textContent = 'Ultimo elemento aggiornato';
+ultimo.textContent = "Ultimo elemento aggiornato";
 ```
 
 ---
@@ -1043,8 +1201,8 @@ Scrivi un codice che seleziona tutti gli elementi `<p>` e aggiunge loro la class
 ### Soluzione Esercitazione 3
 
 ```javascript
-const paragrafi = document.querySelectorAll('p');
-paragrafi.forEach(p => p.classList.add('evidenziato'));
+const paragrafi = document.querySelectorAll("p");
+paragrafi.forEach((p) => p.classList.add("evidenziato"));
 ```
 
 ---
@@ -1058,10 +1216,9 @@ Seleziona il primo elemento con la classe `"paragrafo"` e cambia il suo colore d
 ### Soluzione Esercitazione 4
 
 ```javascript
-const primoParagrafo = document.querySelector('.paragrafo');
-primoParagrafo.style.color = 'red';
+const primoParagrafo = document.querySelector(".paragrafo");
+primoParagrafo.style.color = "red";
 ```
-
 
 ---
 
@@ -1070,16 +1227,16 @@ primoParagrafo.style.color = 'red';
 - **Aggiungere, rimuovere o alternare classi**:
 
 ```javascript
-const bottone = document.querySelector('#mioBottone');
+const bottone = document.querySelector("#mioBottone");
 
 // Aggiungi una classe
-bottone.classList.add('attivo');
+bottone.classList.add("attivo");
 
 // Rimuovi una classe
-bottone.classList.remove('attivo');
+bottone.classList.remove("attivo");
 
 // Alterna una classe (aggiunge se non c'è, rimuove se c'è)
-bottone.classList.toggle('attivo');
+bottone.classList.toggle("attivo");
 ```
 
 ---
@@ -1089,23 +1246,121 @@ bottone.classList.toggle('attivo');
 - **Cambiare il testo**:
 
 ```javascript
-const titolo = document.getElementById('titolo');
-titolo.textContent = 'Nuovo titolo!';
+const titolo = document.getElementById("titolo");
+titolo.textContent = "Nuovo titolo!";
 ```
 
 - **Cambiare l'HTML interno**:
 
 ```javascript
-const contenitore = document.querySelector('.contenitore');
-contenitore.innerHTML = '<p>Nuovo <strong>contenuto</strong>!</p>';
+const contenitore = document.querySelector(".contenitore");
+contenitore.innerHTML = "<p>Nuovo <strong>contenuto</strong>!</p>";
 ```
 
 ---
 
+## Focus: L'espressione regolare per la password
+
+Nel codice di validazione password viene utilizzata questa espressione regolare:
+
+```javascript
+const regex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+// Test della password
+console.log(regex.test("Password1")); // true
+console.log(regex.test("password")); // false
+```
+
+Vediamo cosa significa:
+
+- `^` e `$` indicano l'inizio e la fine della stringa (la password deve rispettare tutta la regola).
+- `(?=.*[A-Z])` richiede almeno una lettera maiuscola.
+- `(?=.*\d)` richiede almeno una cifra numerica.
+- `.{8,}` richiede almeno 8 caratteri di qualsiasi tipo.
+
+---
+
+**In sintesi:**  
+La password è valida solo se contiene almeno 8 caratteri, almeno una lettera maiuscola e almeno un numero.
+
+**Esempi:**
+
+- `"Password1"` ✅ valida
+- `"password"` ❌ non valida (manca maiuscola e numero)
+- `"Passw1"` ❌ non valida (meno di 8 caratteri)
+- `"PASSWORD1"` ✅ valida
+
+Le espressioni regolari sono strumenti potenti per validare stringhe secondo regole precise.
+
+https://regex101.com/
+
+---
+
+## Esercizio: Validazione campi input
+
+1. **Verifica corrispondenza email**  
+   Scrivi un codice JavaScript che controlla se due campi di input email (`email` e `confermaEmail`) contengono lo stesso valore. Se non corrispondono, mostra un messaggio di errore.
+
+2. **Verifica complessità password**  
+   Scrivi un codice che controlla se la password inserita rispetta questi criteri:
+
+- Almeno 8 caratteri
+- Almeno una lettera maiuscola
+- Almeno un numero
+
+Se la password non è valida, mostra un messaggio di errore.
+
+---
+
+3. **Validazione generale dei campi**  
+   Scrivi una funzione che, al submit di un form, verifica che tutti i campi obbligatori siano compilati e che email e password siano validi secondo le regole sopra. Se ci sono errori, impedisci l'invio del form e mostra i messaggi di errore.
+
+---
+
+### Soluzione: Validazione campi input
+
+```javascript
+const form = document.getElementById("mioForm");
+const email = document.getElementById("email");
+const confermaEmail = document.getElementById("confermaEmail");
+const password = document.getElementById("password");
+const errori = document.getElementById("errori");
+
+form.addEventListener("submit", function (event) {
+  errori.innerHTML = "";
+  let valido = true;
+
+  // Verifica campi obbligatori
+  if (!email.value || !confermaEmail.value || !password.value) {
+    errori.innerHTML += "<p>Tutti i campi sono obbligatori.</p>";
+    valido = false;
+  }
+
+  // Verifica corrispondenza email
+  if (email.value !== confermaEmail.value) {
+    errori.innerHTML += "<p>Le email non corrispondono.</p>";
+    valido = false;
+  }
+
+  // Verifica complessità password
+  const regex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+  if (!regex.test(password.value)) {
+    errori.innerHTML +=
+      "<p>La password deve avere almeno 8 caratteri, una maiuscola e un numero.</p>";
+    valido = false;
+  }
+
+  if (!valido) {
+    event.preventDefault();
+  }
+});
+```
+
+---
 
 1. **Introduzione ad AJAX**
-  - Cos'è AJAX
-  - Vantaggi e svantaggi
+
+- Cos'è AJAX
+- Vantaggi e svantaggi
 
 ---
 
@@ -1128,9 +1383,11 @@ contenitore.innerHTML = '<p>Nuovo <strong>contenuto</strong>!</p>';
 ```javascript
 const persona = {
   nome: "Mario",
-  eta: 30
+  eta: 30,
 };
 ```
+
+---
 
 **Conversione in JSON:**
 
@@ -1145,9 +1402,6 @@ const json = JSON.stringify(persona);
 const oggetto = JSON.parse(json);
 // Risultato: { nome: "Mario", eta: 30 }
 ```
-
----
-
 
 - JSON supporta tipi semplici: stringhe, numeri, booleani, array, oggetti e `null`.
 - È il formato più usato per scambiare dati tra client e server nelle applicazioni web moderne.
@@ -1171,13 +1425,46 @@ const oggetto = JSON.parse(json);
 **Come caricare un file JSON da JavaScript (con Fetch API):**
 
 ```javascript
-fetch('dati.json')
-  .then(response => response.json())
-  .then(dati => {
-    console.log('Nome:', dati.nome);
-    console.log('Hobby:', dati.hobby.join(', '));
+fetch("dati.json")
+  .then((response) => response.json())
+  .then((dati) => {
+    console.log("Nome:", dati.nome);
+    console.log("Hobby:", dati.hobby.join(", "));
   });
 ```
+
+> Effettuare questo test in locale
+
+---
+
+## CORS e Live Server in VS Code
+
+### Cos'è CORS?
+
+- **CORS** (Cross-Origin Resource Sharing) è una politica di sicurezza dei browser che limita le richieste HTTP tra siti diversi (origini diverse).
+- Se una pagina web prova a richiedere dati da un dominio diverso, il browser blocca la richiesta a meno che il server non consenta esplicitamente l'accesso tramite intestazioni CORS.
+
+**Esempio di errore CORS:**
+
+```
+Access to fetch at 'https://api.esterno.com/dati' from origin 'http://localhost:5500' has been blocked by CORS policy
+```
+
+---
+
+### Live Server in VS Code
+
+- **Live Server** è un'estensione di VS Code che avvia un server locale per testare le pagine web.
+- Serve i file tramite `http://localhost:5500` (o altra porta), simulando un ambiente reale.
+- Utile per evitare problemi di CORS quando si lavora in locale: molte API pubbliche consentono richieste da `localhost`.
+
+**Come usare Live Server:**
+
+1. Installa l'estensione "Live Server" da VS Code.
+2. Clicca con il tasto destro su un file HTML e scegli "Open with Live Server".
+3. La pagina si aprirà nel browser su `localhost`.
+
+> **Nota:** Se incontri errori CORS durante lo sviluppo, verifica che l'API supporti richieste da `localhost` o usa strumenti come proxy/CORS Anywhere solo per test locali.
 
 ---
 
@@ -1191,11 +1478,11 @@ Puoi provare a fare richieste AJAX a questi endpoint gratuiti:
 **Esempio:**
 
 ```javascript
-fetch('https://jsonplaceholder.typicode.com/users/1')
-  .then(res => res.json())
-  .then(user => {
-    console.log('Nome utente:', user.name);
-    console.log('Email:', user.email);
+fetch("https://jsonplaceholder.typicode.com/users/1")
+  .then((res) => res.json())
+  .then((user) => {
+    console.log("Nome utente:", user.name);
+    console.log("Email:", user.email);
   });
 ```
 
@@ -1215,10 +1502,10 @@ Puoi incollare questo codice direttamente nella console del browser per vedere i
 ## Esempio base: richiesta GET con Fetch API
 
 ```javascript
-fetch('https://jsonplaceholder.typicode.com/posts/1')
-  .then(response => response.json())
-  .then(dati => {
-    console.log('Titolo:', dati.title);
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then((response) => response.json())
+  .then((dati) => {
+    console.log("Titolo:", dati.title);
   });
 ```
 
@@ -1229,14 +1516,14 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 ## Esempio base: invio dati con POST
 
 ```javascript
-fetch('https://jsonplaceholder.typicode.com/posts', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ title: 'Nuovo post', body: 'Testo', userId: 1 })
+fetch("https://jsonplaceholder.typicode.com/posts", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ title: "Nuovo post", body: "Testo", userId: 1 }),
 })
-  .then(response => response.json())
-  .then(dati => {
-    console.log('Risposta dal server:', dati);
+  .then((response) => response.json())
+  .then((dati) => {
+    console.log("Risposta dal server:", dati);
   });
 ```
 
@@ -1244,56 +1531,55 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
 
 ---
 
-2. **Struttura di una richiesta AJAX**
-  - XMLHttpRequest vs Fetch API
-  - Sintassi base
+**Struttura di una richiesta AJAX**
 
-  ---
-
-  ## Struttura di una richiesta AJAX
-
-  ### XMLHttpRequest
-
-  - È il metodo "storico" per effettuare richieste AJAX.
-  - Richiede più codice e gestione manuale degli stati della richiesta.
-
-  **Esempio base:**
-
-  ```javascript
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1');
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      const dati = JSON.parse(xhr.responseText);
-      console.log('Titolo:', dati.title);
-    }
-  };
-  xhr.send();
-  ```
-
-  - Bisogna gestire manualmente gli eventi come `onload`, `onerror`, ecc.
-
-  ---
-
-  ### Fetch API
-
-  - Introdotta nei browser moderni, è più semplice e basata sulle Promise.
-  - Sintassi più pulita e leggibile.
-
-  **Esempio base:**
-
-  ```javascript
-  fetch('https://jsonplaceholder.typicode.com/posts/1')
-    .then(response => response.json())
-    .then(dati => {
-      console.log('Titolo:', dati.title);
-    });
-  ```
-
-  - Gestione più semplice degli errori e delle risposte asincrone.
-  - Supporta anche le richieste POST, PUT, DELETE, ecc.
+- XMLHttpRequest vs Fetch API
+- Sintassi base
 
 ---
+
+## Struttura di una richiesta AJAX
+
+### XMLHttpRequest
+
+- È il metodo "storico" per effettuare richieste AJAX.
+- Richiede più codice e gestione manuale degli stati della richiesta.
+
+**Esempio base:**
+
+```javascript
+const xhr = new XMLHttpRequest();
+xhr.open("GET", "https://jsonplaceholder.typicode.com/posts/1");
+xhr.onload = function () {
+  if (xhr.status === 200) {
+    const dati = JSON.parse(xhr.responseText);
+    console.log("Titolo:", dati.title);
+  }
+};
+xhr.send();
+```
+
+- Bisogna gestire manualmente gli eventi come `onload`, `onerror`, ecc.
+
+---
+
+### Fetch API
+
+- Introdotta nei browser moderni, è più semplice e basata sulle Promise.
+- Sintassi più pulita e leggibile.
+
+**Esempio base:**
+
+```javascript
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then((response) => response.json())
+  .then((dati) => {
+    console.log("Titolo:", dati.title);
+  });
+```
+
+- Gestione più semplice degli errori e delle risposte asincrone.
+- Supporta anche le richieste POST, PUT, DELETE, ecc.
 
 ---
 
@@ -1323,49 +1609,22 @@ const promessa = new Promise((resolve, reject) => {
 });
 ```
 
+---
+
 **Utilizzo di then/catch:**
 
 ```javascript
 promessa
-  .then(risultato => {
-    console.log('Successo:', risultato);
+  .then((risultato) => {
+    console.log("Successo:", risultato);
   })
-  .catch(errore => {
-    console.error('Errore:', errore);
+  .catch((errore) => {
+    console.error("Errore:", errore);
   });
 ```
 
 - Le Promise sono usate da molte API moderne, come la Fetch API.
 - Permettono di concatenare operazioni asincrone in modo chiaro e gestire facilmente gli errori.
-
---- 
-
-3. **Esempi pratici**
-  - Richiesta GET con XMLHttpRequest
-  - Richiesta GET con Fetch API
-  - Invio dati con POST
-
-4. **Gestione delle risposte**
-  - Parsing JSON
-  - Gestione degli errori
-
-5. **Esercitazione 1: Visualizzare dati da una API**
-  - Recupero e visualizzazione di dati in una tabella
-
-6. **Esercitazione 2: Form con invio dati via AJAX**
-  - Creazione di un form e invio dati senza ricaricare la pagina
-
-7. **AJAX e il DOM**
-  - Aggiornamento dinamico dei contenuti
-
-8. **Best Practice e sicurezza**
-  - CORS
-  - Validazione dei dati
-
-9. **Domande e approfondimenti**
-
-> **Durata stimata:** 4 ore
-
 
 ---
 
@@ -1377,7 +1636,6 @@ Crea una semplice pagina HTML con una lista di elementi `<ul>` e un campo di inp
 2. Evidenzia tutti gli elementi della lista con uno sfondo giallo quando vengono cliccati.
 3. Recupera tutti gli elementi della lista e li stampa in console come array di stringhe.
 
-**Suggerimenti:**
 - Usa `addEventListener` per gestire il click sul bottone e sugli elementi della lista.
 - Usa `querySelectorAll` e `forEach` per ciclare sugli `<li>`.
 - Per aggiungere un nuovo `<li>`, crea l’elemento con `document.createElement` e aggiungilo con `appendChild`.

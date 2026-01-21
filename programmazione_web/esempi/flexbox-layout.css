@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: 100vh;
+}
+.sidebar {
+  background: #007bff;
+  color: #fff;
+  padding: 30px 20px;
+  width: 220px;
+}
+.main-content {
+  background: #f9f9f9;
+  flex: 1;
+  padding: 40px;
+}
+.aside {
+  background: #eee;
+  padding: 30px 20px;
+  width: 180px;
+}
+header, footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
