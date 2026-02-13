@@ -2,5 +2,11 @@
   "nome": "Anna",
   "cognome": "Rossi",
   "eta": 28,
+  "dataDiNascita": "1995-04-12",
+  "indirizzo": {
+    "via": "Via Roma 10",
+    "citta": "Milano",
+    "cap": "20100"
+  },
   "hobby": ["lettura", "sport", "viaggi"]
 }

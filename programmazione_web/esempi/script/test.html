@@ -1,0 +1,1871 @@
+document.querySelectorAll(".ora-inizio-ritardo")[2].value = "13:00"
+
+
+
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Layout con display, position e float</title>
+    <link rel="stylesheet" href="form-style.css" />
+  </head>
+  <body>
+<main>
+		<div class="main">
+			<div id="modale"></div>
+			<div class="container-fluid container-fluid-custom">
+				<div class="row">
+					<div class="col-12 col-lg-12">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								
+								<li class="breadcrumb-item"><a href="/pns1-gestioneavvisi-web/progettiPersonaleDiSupporto/">I tuoi progetti</a></li>
+								
+								<li class="breadcrumb-item active" aria-current="page">M4C1I1.5-2024-1403-P-55258</li>
+							</ol>
+						</nav>
+					</div> 
+					
+				</div>
+
+				<section class="header-progetto" aria-label="Intestazione progetto" style="top: -31px;">
+					<div class="row">
+						<div class="col-12 col-md-8">
+							<h1 class="minuscolo">
+								<span class="principale"> Offerta formativa 24-26 <i class="fas fa-sign-in-alt mr-2" data-container="body" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Codice meccanografico della scuola/ITS beneficiaria: CA00000010" data-original-title="" title=""></i></span>
+								<span class="secondario">Avviso/decreto: M4C1I1.5-2024-1403 - Potenziamento dell’offerta formativa ITS Academy - Anno 2024</span>
+							</h1>
+						</div>
+						<div class="col-12 col-md-4 d-flex flex-nowrap align-items-center justify-content-between justify-content-md-end">
+							
+							
+							<div class="border-right pr-2 mr-2">
+								<div class="stato-pro d-flex justify-content-between align-items-center">
+									<div class="label_stato-pro">Importo finanziato:</div>
+									<div class="contenuto_stato-pro" value="948893.93">948.893,93 €</div>
+									
+								</div>
+								
+								
+								<!--
+								<div class="stato-pro d-flex justify-content-between align-items-center">
+									<div class="label_stato-pro">Importo rendicontato:</div>
+									<div class="contenuto_stato-pro importo"></div>
+								</div>  -->
+								<div class="stato-pro d-flex justify-content-between align-items-center">
+									<div class="label_stato-pro">Target</div>
+									<div class="contenuto_stato-pro">50</div>
+								</div>
+							</div>
+							
+							<div class="" data-trigger="hover" data-toggle="popover" data-placement="left" title="" data-content="Scopri quali sono le tue attività da effettuare sulla piattaforma in base al tuo profilo" data-original-title="Le tue attività">
+								<button class="btn btn-secondary" data-toggle="modal" data-target="#modal_attivitaProfilo"><i class="fas fa-road"></i></button>
+							</div>
+
+						</div>
+						
+						
+						
+
+						<div class="col-12">
+							<nav class="nav-progetto" aria-labeledby="Navigazione progetto">
+								<div id="nav-progetto-label" class="d-block d-lg-none">MENÙ DI PROGETTO</div>
+								<ul class="d-block d-lg-flex">
+									<li class="v1">
+										<a href="/pns1-gestioneavvisi-web/progetti/informazioniProgetto?prgPgt=92745">
+											<i class="fas fa-info-circle d-none d-lg-block"></i>
+											<!-- Titolo per Screen Reader -->
+											<div class="sr-only">Informazioni generali</div>
+											<!-- Titolo Mobile  -->
+											<div class="d-block d-lg-none" aria-hidden="true">Informazioni generali</div>
+										</a>
+									</li>
+									<li class="v3 flex-fill">
+										<a href="/pns1-gestioneavvisi-web/progetti/cronoprogramma?prgPgt=92745">Attuazione
+									<!-- <span class="badge badge-danger">1</span> -->
+										</a>
+										<ul class="d-block d-md-flex justify-content-center">
+											<li class="v31">
+												<a href="/pns1-gestioneavvisi-web/progetti/cronoprogramma?prgPgt=92745">
+													<i class="fas fa-table mr-1"></i> Cronoprogramma
+												</a>
+											</li>
+											<li class="v36">
+												<a href="/pns1-gestioneavvisi-web/progetti/attivita?prgPgt=92745">
+													<i class="fas fa-th-large mr-1"></i> Attività
+												</a>
+											</li>
+											
+											<li class="v37">
+												<a href="/pns1-gestioneavvisi-web/progetti/personaleDiProgetto?prgPgt=92745">
+													<i class="fas fa-users mr-1"></i> Personale di progetto
+												</a>
+											</li>
+											<li class="v38">
+												<a href="/pns1-gestioneavvisi-web/progetti/partecipanti?prgPgt=92745">
+													<i class="fas fa-user-graduate mr-1"></i> Partecipanti
+												</a>
+											</li>
+											<li class="v39">
+												<a href="/pns1-gestioneavvisi-web/progetti/registro?prgPgt=92745">
+													<i class="fas fa-calendar-alt mr-1"></i> Registro
+												</a>
+											</li>
+											<li class="v35">
+												<a href="/pns1-gestioneavvisi-web/progetti/documenti?prgPgt=92745">
+													<i class="fas fa-file-upload mr-1"></i> Documenti
+												</a>
+											</li>
+											<li class="v32">
+												<a href="/pns1-gestioneavvisi-web/progetti/monitoraggio?prgPgt=92745">
+													<i class="fas fa-chart-bar mr-1"></i> Monitoraggi
+												</a>
+											</li>
+											<!-- <li class="v34" th:if="${hasMonitoraggioFinale} and ${!#authentication.principal.isCurrentProfileFormatore()}">
+												<a th:href="@{'/progetti/monitoraggioFinale?prgPgt=' + ${prgPgt}}">
+													<i class="fas fa-chart-bar mr-1"></i> Relazione finale
+												</a>
+											</li> -->
+
+											
+										</ul>
+									</li>
+									<li class="v2 flex-fill">
+										<a href="/pns1-gestioneavvisi-web/progetti/procedure?prgPgt=92745">Procedure</a>
+										<ul class="d-block d-md-flex justify-content-center">
+											<li class="v21">
+												<a href="/pns1-gestioneavvisi-web/progetti/procedure?prgPgt=92745">
+													<i class="fas fa-th-large mr-1"></i> Procedure
+												</a>
+											</li>
+											
+										</ul>
+									</li>
+									<li class="v4 flex-fill">
+										
+										<a href="/pns1-gestioneavvisi-web/progetti/rendicontazioniCostiStandard?prgPgt=92745">Rendicontazione</a>
+										<ul class="d-block d-md-flex justify-content-center">
+											<!--
+											<li class="v41">
+												<a th:href="@{'/progetti/cruscotto?prgPgt=' + ${prgPgt}}">
+													Cruscotto
+													<i class="fas fa-euro-sign"></i>
+				                                    <div class="sr-only">Resoconto della Rendicontazione</div>
+												</a>
+											</li>
+											-->
+											<!-- REND COSTI REALI -->
+											
+											
+											<!-- REND COSTI STANDARD -->
+											<li class="v50">
+												<a href="/pns1-gestioneavvisi-web/progetti/rendicontazioniCostiStandard?prgPgt=92745">
+													Gestione rendicontazione
+												</a>
+											</li>
+											<li class="v51">
+												<a href="/pns1-gestioneavvisi-web/progetti/associaEdizioniRend?prgPgt=92745">
+													Riepilogo edizioni
+												</a>
+											</li>
+											<!-- CERTIFICAZIONI RENDICONTAZIONI A COSTI REALI-->
+											
+
+											<!-- CERTIFICAZIONI RENDICONTAZIONI A COSTI STANDARD-->
+											
+											<!-- CERTIFICAZIONI RENDICONTAZIONI A COSTI STANDARD-->
+											
+
+											<li class="v55">
+												<a href="/pns1-gestioneavvisi-web/progetti/dichiarazioni?prgPgt=92745">
+													Dichiarazioni
+												</a>
+											</li>
+
+											
+										</ul>
+									</li>
+									
+
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</section>
+				<div class="black"></div>
+				<div class="header-progetto-btn d-flex d-md-none align-items-center justify-content-center">
+					<i class="fas fa-list fa-lg"></i>
+				</div>	
+				
+				<div>
+					
+					
+					
+					
+					
+					
+					
+	<section class="contenuto-progetto contenuto-registro" aria-label="Contenuto progetto">
+		<div class="row">
+			<div class="col-12 col-lg-7">
+				<h2 class="mb-3">
+					Registro <a href="/pns1-gestioneavvisi-web/assets/pdf/costi-semplificati/cs_01-05_registro.pdf" target="_blank"><i class="fas fa-info-circle info-area-h2"></i></a>
+				</h2>
+			</div>
+		</div>
+		<!--div id="alert-ritardo" class="alert alert-primary alert-icon alert-dismissible fade show" style="display:none" role="alert">
+			Attenzione: il ritardo superiore a 30 minuti &egrave; considerato assenza.
+			<button type="button" class="close" data-dismiss="alert" aria-label="Chiudi">
+				<span aria-hidden="true">×</span>
+			</button>
+		</div-->
+		<form id="filtri-form" class="accordion accordion-pnrr accordion-pnrr-white accordion-pnrr-no-inner-shadow accordion-pnrr-shadow">
+			<input type="hidden" id="prgPgt" name="prgPgt" value="92745">
+			<input type="hidden" id="isModificabile" value="true" disabled="">
+			<input type="hidden" id="limiteGiorniPrima" value="360" disabled="">
+			<input type="hidden" id="isScuolaITS" value="true" disabled="">
+			<div class="card">
+				<div class="card-header" id="filtri-header">
+					<h3 class="mb-0">
+						<button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#filtri-attivita" aria-expanded="true" aria-controls="filtri-attivita">
+							Filtra per
+						</button>
+					</h3>
+				</div>
+				<div id="filtri-attivita" class="collapse show" aria-labelledby="filtri-header" data-parent="#filtri-form">
+					<div class="card-body pt-2">
+						<div class="row form-group">
+							<div class="col-12 col-lg-9">
+								<div class="row gutter-5">
+									<div class="col-12 col-lg-4">
+										<div class="row">
+											<label for="prgAzi" class="col-12 col-form-label col-form-label-sm">Intervento</label>
+											<div class="col-12">
+												<select class="form-control custom-select" id="prgAzi" name="prgAzi">
+													<option value="">TUTTI</option>
+													<option value="1542">Incremento dell’offerta formativa delle Fondazioni “ITS Academy”</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="row">
+											<label for="prgAzi" class="col-12 col-form-label col-form-label-sm">Attività</label>
+											<div class="col-12">
+												<select class="form-control custom-select" id="prgMod" name="prgMod">
+													<option value="" class="text-muted">TUTTE</option>
+													
+												<option value="1165">Attività A.1 - Percorsi formativi di V livello EQF da 1.800 ore</option><option value="1185">Attività A.2 - Percorsi formativi di V livello EQF da 2.000 ore</option><option value="1166">Attività A.3 - Percorsi formativi di VI livello EQF</option><option value="1167">Attività B.1 – Orientamento formativo - Percorsi individuali</option><option value="1168">Attività B.2 – Orientamento formativo - Percorsi di gruppo</option><option value="1169">Attività C – Borse di studio e sostegno per lo svolgimento degli stage e dei tirocini formativi</option><option value="1170">Attività D – Formazione di docenti ed esperti</option><option value="1206">Attività E – Tutoraggio e servizi di supporto alle studentesse e agli studenti</option></select>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="row">
+											<label for="prgEdi" class="col-12 col-form-label col-form-label-sm">Edizione</label>
+											<div class="col-12">
+												<select class="form-control custom-select" id="prgEdi" name="prgEdi">
+													<option value="" class="text-muted">TUTTE</option>
+													
+												<option value="1636404" data-payload="{&quot;prgEdi&quot;:1636404,&quot;codEdi&quot;:&quot;1542-ATT-1165-E-1&quot;,&quot;desEdi&quot;:&quot;Il percorso forma esperti nel campo dello sviluppo di applicazioni cloud-native e della protezione dei sistemi\ninformatici da minacce informatiche. Gli studenti acquisiranno competenze nella progettazione, nello sviluppo e nella gestione di\napplicazioni sicure in ambienti cloud, con un forte focus sulla sicurezza informatica&quot;,&quot;desTitEdi&quot;:&quot;1542-ATT-1165-E-1-CERT-1-Corso Cloud Native Development &amp; Cybersecurity Specialist&quot;,&quot;numEdi&quot;:1,&quot;stato&quot;:&quot;IN_CORSO&quot;,&quot;desStato&quot;:&quot;In Corso&quot;,&quot;tipoStato&quot;:&quot;stato-in-corso&quot;,&quot;datIniEff&quot;:&quot;24/11/2025&quot;,&quot;datFinEff&quot;:&quot;30/06/2026&quot;,&quot;numOrePre&quot;:900,&quot;numStuPre&quot;:25,&quot;numPasPre&quot;:null,&quot;numPesPrv&quot;:null,&quot;azioneDTO&quot;:{&quot;prgAzione&quot;:1542,&quot;prgAvviso&quot;:1403,&quot;titoloAzione&quot;:&quot;Incremento dell’offerta formativa delle Fondazioni “ITS Academy”&quot;,&quot;descrizioneAzione&quot;:&quot;Realizzazione di percorsi formativi per il conseguimento del relativo diploma. Concessione di borse di studio e sostegno per lo svolgimento degli stage e dei tirocini formativi anche all’estero, collegati ai settori funzionali all’adeguamento delle competenze 4.0 e a settori di sviluppo strategici all’interno delle aree tecnologiche e destinati a studentesse e studenti dei percorsi del sistema di formazione professionale terziaria. Formazione di docenti, tutor, operatori ed esperti al fine di aumentarne le competenze. Orientamento formativo in entrata e in uscita. Tutoraggio e servizi di supporto alle studentesse e agli studenti.&quot;,&quot;codiceAzione&quot;:&quot;M4C1I1.5-2024-1403-1542&quot;,&quot;flagAzioneObb&quot;:true,&quot;procedura&quot;:4,&quot;descrizioneTipoProcedura&quot;:&quot;Leggi di finanziamento&quot;,&quot;flagValutazione&quot;:true,&quot;importoMassimoAmmissibile&quot;:0,&quot;flagProgettoPartenariato&quot;:true,&quot;numMinimoPartner&quot;:0,&quot;flagAcquisizionePartnerCandidatura&quot;:true,&quot;desTesIstPar&quot;:&quot;In questa sezione è possibile inserire i dati relativi ai partner di progetto (università, centri di ricerca, altri enti e organismi di formazione specializzati, associazioni datoriali, imprese, etc.) che collaboreranno al progetto. Quando il coinvolgimento del partner avviene a titolo oneroso, la loro individuazione può avvenire preliminarmente all’atto di stesura del progetto oppure in sede di attuazione del progetto stesso, nel rispetto dei principi previsti dal decreto-legislativo 31 marzo 2023, n. 36.&quot;,&quot;listaFontiFinanziarie&quot;:null,&quot;listaBeneficiariAmmessi&quot;:null,&quot;listaAssociazioneAzioneModuloDTO&quot;:null,&quot;fileXlsBenAzi&quot;:null,&quot;codiceStatoUpXls&quot;:null,&quot;desStatoUpXls&quot;:null,&quot;tipoStatoUpXls&quot;:null,&quot;isModificabile&quot;:null,&quot;prgSchQue&quot;:843,&quot;listaAnagraficaPartnerDTO&quot;:null,&quot;isAssoAzionePartnerPresente&quot;:null,&quot;partnerAzione&quot;:null,&quot;flgVis&quot;:true,&quot;numeroPartner&quot;:null,&quot;prgCan&quot;:null,&quot;listaPrgModCompilati&quot;:null,&quot;importoTotaleRichiesto&quot;:null,&quot;listAssCandModuloDTO&quot;:null,&quot;listSezioneDTO&quot;:null,&quot;labelImportoMassimoFinanziabile&quot;:null,&quot;importoResiduoDisponibile&quot;:null,&quot;desNotCarBen&quot;:null,&quot;prcMinImpRic&quot;:null,&quot;prcMaxImpRic&quot;:null,&quot;flgCntImpRic&quot;:&quot;1&quot;,&quot;hasModuloImportoResiduo&quot;:null,&quot;prcMaxAttivitaImpResiduo&quot;:null,&quot;codStaAttivitaImpResiduo&quot;:null,&quot;prgAttivitaImportoResiduo&quot;:null,&quot;desTitModImpRsd&quot;:null,&quot;codSttAttivitaImpRes&quot;:null,&quot;mapEdizioniChiuse&quot;:null,&quot;importoAssegnatoIntervento&quot;:null,&quot;listaVarProgMod&quot;:null,&quot;hasEdizioni&quot;:false,&quot;percMaxImpRsdRispettata&quot;:null,&quot;attivitaImpRsdCompilabile&quot;:null},&quot;associazioneAzioneModuloDTO&quot;:{&quot;moduloDTO&quot;:{&quot;prgAnagraficaModulo&quot;:1165,&quot;titoloModulo&quot;:&quot;Attività A.1 - Percorsi formativi di V livello EQF da 1.800 ore&quot;,&quot;descrizioneModulo&quot;:&quot;Percorsi formativi finalizzati al conseguimento del relativo diploma di specializzazione, in particolare collegati ai settori funzionali all’adeguamento delle competenze 4.0 e a settori di sviluppo strategici all’interno delle aree tecnologiche, di durata pari a 4 semestri (1.800 ore). Oltre al costo orario è prevista la remunerazione di una UCS di € 4.809,50 per ciascun anno completato  positivamente da ciascun partecipante (ammissione all’anno successivo o all’esame finale).&quot;,&quot;codiceModulo&quot;:&quot;ATT-1165&quot;,&quot;tipologiaModulo&quot;:30,&quot;desTipologiaModulo&quot;:&quot;Modulo a costi standard&quot;,&quot;altroTipologiaModulo&quot;:null,&quot;indicazioneDidattica&quot;:32,&quot;desIndicazioneDidattica&quot;:&quot;Costo standard&quot;,&quot;costiReali&quot;:null,&quot;altroTitoloIndicazioneDidattica&quot;:null,&quot;altroDescrizioneIndicazioneDidattica&quot;:null,&quot;flgAttRsd&quot;:null,&quot;flgTipPar&quot;:&quot;S&quot;,&quot;numEdiRend&quot;:null,&quot;listVoceDiCostoDTO&quot;:null,&quot;impTotAtt&quot;:null,&quot;numTotUnita&quot;:null,&quot;groupAttivitaDTO&quot;:null,&quot;flgTipParAsString&quot;:&quot;S&quot;},&quot;prgAzione&quot;:1542,&quot;listaFontiFinanziarie&quot;:null,&quot;importoMassimoAmmissibile&quot;:null,&quot;flagNumOreModificabili&quot;:null,&quot;tipologiaCosti&quot;:&quot;S&quot;,&quot;beneficiari&quot;:13,&quot;prgSchQue&quot;:823,&quot;totaleNumeroOre&quot;:null,&quot;prcMin&quot;:null,&quot;prcMax&quot;:null,&quot;prcFsaFzmAzi&quot;:null,&quot;codiceStatoUpXls&quot;:null,&quot;desStatoUpXls&quot;:null,&quot;tipoStatoUpXls&quot;:null,&quot;fileXlsBen&quot;:null,&quot;desMsgInf&quot;:&quot;Il numero previsto di studenti partecipanti a ciascun percorso corrisponde orientativamente alla metà del numero di rimborsi annuali inseriti.&quot;,&quot;flgAcqTit&quot;:false,&quot;flgAcqDes&quot;:false,&quot;flgPar&quot;:false,&quot;numMaxPar&quot;:null,&quot;numMinPar&quot;:null,&quot;flgComSed&quot;:false,&quot;numEdiMod&quot;:null,&quot;impTotMod&quot;:null,&quot;impTotCosti&quot;:null,&quot;impTotCostiNumEdi&quot;:null,&quot;numPar&quot;:null,&quot;numMaxEdi&quot;:null,&quot;numOrdVis&quot;:10,&quot;flgModObb&quot;:false,&quot;flgCntPrcMax&quot;:false,&quot;numGioCnsRtrReg&quot;:null,&quot;flgCntPrcAtl&quot;:false,&quot;flgAttTea&quot;:false,&quot;flgAttAnn&quot;:true,&quot;numAnn&quot;:2,&quot;prcMinPre&quot;:80,&quot;flgPreTir&quot;:true,&quot;flgAttBrs&quot;:false,&quot;listaCostiRealiAssociatiDTO&quot;:null,&quot;flgIntScuFut&quot;:false,&quot;flgMtvRitRegPre&quot;:false,&quot;flgGnzAtsPtz&quot;:null,&quot;flgPrzLez&quot;:true,&quot;flgUniRgsIcrGnl&quot;:false,&quot;numMinIcrGnl&quot;:null,&quot;numMaxIcrGnl&quot;:null,&quot;numFisIcrGnl&quot;:null,&quot;prgTipCer&quot;:null,&quot;flgBrsStdCpi&quot;:false},&quot;prgPgt&quot;:92745,&quot;prgCan&quot;:55258,&quot;numAnn&quot;:1,&quot;annScoRif&quot;:null,&quot;flgCopAltFnd&quot;:false,&quot;codPcoForScuFut&quot;:null,&quot;desLnkPagPco&quot;:null,&quot;desRelPco&quot;:null,&quot;desTipSvo&quot;:null,&quot;desPgm&quot;:null,&quot;datIniIsc&quot;:null,&quot;datFinIsc&quot;:null,&quot;prgLivIgr&quot;:null,&quot;prgAreCmpDig&quot;:null,&quot;codAreCmpDig&quot;:null,&quot;desTipAtt&quot;:null,&quot;prgCosRea&quot;:null,&quot;flgStuFem&quot;:null,&quot;flgStuDis&quot;:null,&quot;flgStuIseInfLmt&quot;:null,&quot;impEdi&quot;:3694.82,&quot;prgEdiClg&quot;:null,&quot;prgDocAvv&quot;:null,&quot;prgDocRicBst&quot;:null,&quot;prgDocDicAszCdiCms&quot;:null,&quot;prgDocGrd&quot;:null,&quot;prgDocVrlSel&quot;:null,&quot;prgDocQtzPagBrs&quot;:null,&quot;prgDocDicAszCdiStu&quot;:null,&quot;prgDocDicStuAszAltEro&quot;:null,&quot;prgDocUlt&quot;:null,&quot;prgDocPrz&quot;:null,&quot;prgDocPar&quot;:null,&quot;prgDocDasDfn&quot;:null,&quot;prgDocIse&quot;:null,&quot;desNomDocAvv&quot;:null,&quot;desNomDocRicBst&quot;:null,&quot;desNomDocDicAszCdiCms&quot;:null,&quot;desNomDocGrd&quot;:null,&quot;desNomDocVrlSel&quot;:null,&quot;desNomDocQtzPagBrs&quot;:null,&quot;desNomDocDicAszCdiStu&quot;:null,&quot;desNomDocDicStuAszAltEro&quot;:null,&quot;desNomDocUlt&quot;:null,&quot;desNomDocPar&quot;:null,&quot;desNomDocDasDfn&quot;:null,&quot;desNomDocIse&quot;:null,&quot;numMesCtb&quot;:null,&quot;flgAggCtbTirEst&quot;:null,&quot;flgInsParAgv&quot;:null,&quot;desTipFasRen&quot;:null,&quot;prgPagInr&quot;:null,&quot;prgRen&quot;:null,&quot;codTipFasRen&quot;:null,&quot;impQtzPag&quot;:null,&quot;codSttEdi&quot;:null,&quot;flgIntScuFut&quot;:null,&quot;codSttComplMassivo&quot;:null,&quot;prgDocComplMassivo&quot;:null,&quot;codSttCntMassivo&quot;:null,&quot;prgDocCntMassivo&quot;:null,&quot;impIse&quot;:null,&quot;desTipPrsIszPar&quot;:null,&quot;flgDicStdE16E24&quot;:null}">1542-ATT-1165-E-1-CERT-1-Corso Cloud Native Development &amp; Cybersecurity Specialist</option><option value="1636405" data-payload="{&quot;prgEdi&quot;:1636405,&quot;codEdi&quot;:&quot;1542-ATT-1165-E-1&quot;,&quot;desEdi&quot;:&quot;Il percorso forma esperti nel campo dello sviluppo di applicazioni cloud-native e della protezione dei sistemi\ninformatici da minacce informatiche. Gli studenti acquisiranno competenze nella progettazione, nello sviluppo e nella gestione di\napplicazioni sicure in ambienti cloud, con un forte focus sulla sicurezza informatica&quot;,&quot;desTitEdi&quot;:&quot;1542-ATT-1165-E-1-CERT-2-Inserire titolo&quot;,&quot;numEdi&quot;:2,&quot;stato&quot;:&quot;NON_AVVIATA&quot;,&quot;desStato&quot;:&quot;Non Avviato&quot;,&quot;tipoStato&quot;:&quot;stato-non-avviato&quot;,&quot;datIniEff&quot;:&quot;30/06/2026&quot;,&quot;datFinEff&quot;:null,&quot;numOrePre&quot;:900,&quot;numStuPre&quot;:25,&quot;numPasPre&quot;:null,&quot;numPesPrv&quot;:null,&quot;azioneDTO&quot;:{&quot;prgAzione&quot;:1542,&quot;prgAvviso&quot;:1403,&quot;titoloAzione&quot;:&quot;Incremento dell’offerta formativa delle Fondazioni “ITS Academy”&quot;,&quot;descrizioneAzione&quot;:&quot;Realizzazione di percorsi formativi per il conseguimento del relativo diploma. Concessione di borse di studio e sostegno per lo svolgimento degli stage e dei tirocini formativi anche all’estero, collegati ai settori funzionali all’adeguamento delle competenze 4.0 e a settori di sviluppo strategici all’interno delle aree tecnologiche e destinati a studentesse e studenti dei percorsi del sistema di formazione professionale terziaria. Formazione di docenti, tutor, operatori ed esperti al fine di aumentarne le competenze. Orientamento formativo in entrata e in uscita. Tutoraggio e servizi di supporto alle studentesse e agli studenti.&quot;,&quot;codiceAzione&quot;:&quot;M4C1I1.5-2024-1403-1542&quot;,&quot;flagAzioneObb&quot;:true,&quot;procedura&quot;:4,&quot;descrizioneTipoProcedura&quot;:&quot;Leggi di finanziamento&quot;,&quot;flagValutazione&quot;:true,&quot;importoMassimoAmmissibile&quot;:0,&quot;flagProgettoPartenariato&quot;:true,&quot;numMinimoPartner&quot;:0,&quot;flagAcquisizionePartnerCandidatura&quot;:true,&quot;desTesIstPar&quot;:&quot;In questa sezione è possibile inserire i dati relativi ai partner di progetto (università, centri di ricerca, altri enti e organismi di formazione specializzati, associazioni datoriali, imprese, etc.) che collaboreranno al progetto. Quando il coinvolgimento del partner avviene a titolo oneroso, la loro individuazione può avvenire preliminarmente all’atto di stesura del progetto oppure in sede di attuazione del progetto stesso, nel rispetto dei principi previsti dal decreto-legislativo 31 marzo 2023, n. 36.&quot;,&quot;listaFontiFinanziarie&quot;:null,&quot;listaBeneficiariAmmessi&quot;:null,&quot;listaAssociazioneAzioneModuloDTO&quot;:null,&quot;fileXlsBenAzi&quot;:null,&quot;codiceStatoUpXls&quot;:null,&quot;desStatoUpXls&quot;:null,&quot;tipoStatoUpXls&quot;:null,&quot;isModificabile&quot;:null,&quot;prgSchQue&quot;:843,&quot;listaAnagraficaPartnerDTO&quot;:null,&quot;isAssoAzionePartnerPresente&quot;:null,&quot;partnerAzione&quot;:null,&quot;flgVis&quot;:true,&quot;numeroPartner&quot;:null,&quot;prgCan&quot;:null,&quot;listaPrgModCompilati&quot;:null,&quot;importoTotaleRichiesto&quot;:null,&quot;listAssCandModuloDTO&quot;:null,&quot;listSezioneDTO&quot;:null,&quot;labelImportoMassimoFinanziabile&quot;:null,&quot;importoResiduoDisponibile&quot;:null,&quot;desNotCarBen&quot;:null,&quot;prcMinImpRic&quot;:null,&quot;prcMaxImpRic&quot;:null,&quot;flgCntImpRic&quot;:&quot;1&quot;,&quot;hasModuloImportoResiduo&quot;:null,&quot;prcMaxAttivitaImpResiduo&quot;:null,&quot;codStaAttivitaImpResiduo&quot;:null,&quot;prgAttivitaImportoResiduo&quot;:null,&quot;desTitModImpRsd&quot;:null,&quot;codSttAttivitaImpRes&quot;:null,&quot;mapEdizioniChiuse&quot;:null,&quot;importoAssegnatoIntervento&quot;:null,&quot;listaVarProgMod&quot;:null,&quot;hasEdizioni&quot;:false,&quot;percMaxImpRsdRispettata&quot;:null,&quot;attivitaImpRsdCompilabile&quot;:null},&quot;associazioneAzioneModuloDTO&quot;:{&quot;moduloDTO&quot;:{&quot;prgAnagraficaModulo&quot;:1165,&quot;titoloModulo&quot;:&quot;Attività A.1 - Percorsi formativi di V livello EQF da 1.800 ore&quot;,&quot;descrizioneModulo&quot;:&quot;Percorsi formativi finalizzati al conseguimento del relativo diploma di specializzazione, in particolare collegati ai settori funzionali all’adeguamento delle competenze 4.0 e a settori di sviluppo strategici all’interno delle aree tecnologiche, di durata pari a 4 semestri (1.800 ore). Oltre al costo orario è prevista la remunerazione di una UCS di € 4.809,50 per ciascun anno completato  positivamente da ciascun partecipante (ammissione all’anno successivo o all’esame finale).&quot;,&quot;codiceModulo&quot;:&quot;ATT-1165&quot;,&quot;tipologiaModulo&quot;:30,&quot;desTipologiaModulo&quot;:&quot;Modulo a costi standard&quot;,&quot;altroTipologiaModulo&quot;:null,&quot;indicazioneDidattica&quot;:32,&quot;desIndicazioneDidattica&quot;:&quot;Costo standard&quot;,&quot;costiReali&quot;:null,&quot;altroTitoloIndicazioneDidattica&quot;:null,&quot;altroDescrizioneIndicazioneDidattica&quot;:null,&quot;flgAttRsd&quot;:null,&quot;flgTipPar&quot;:&quot;S&quot;,&quot;numEdiRend&quot;:null,&quot;listVoceDiCostoDTO&quot;:null,&quot;impTotAtt&quot;:null,&quot;numTotUnita&quot;:null,&quot;groupAttivitaDTO&quot;:null,&quot;flgTipParAsString&quot;:&quot;S&quot;},&quot;prgAzione&quot;:1542,&quot;listaFontiFinanziarie&quot;:null,&quot;importoMassimoAmmissibile&quot;:null,&quot;flagNumOreModificabili&quot;:null,&quot;tipologiaCosti&quot;:&quot;S&quot;,&quot;beneficiari&quot;:13,&quot;prgSchQue&quot;:823,&quot;totaleNumeroOre&quot;:null,&quot;prcMin&quot;:null,&quot;prcMax&quot;:null,&quot;prcFsaFzmAzi&quot;:null,&quot;codiceStatoUpXls&quot;:null,&quot;desStatoUpXls&quot;:null,&quot;tipoStatoUpXls&quot;:null,&quot;fileXlsBen&quot;:null,&quot;desMsgInf&quot;:&quot;Il numero previsto di studenti partecipanti a ciascun percorso corrisponde orientativamente alla metà del numero di rimborsi annuali inseriti.&quot;,&quot;flgAcqTit&quot;:false,&quot;flgAcqDes&quot;:false,&quot;flgPar&quot;:false,&quot;numMaxPar&quot;:null,&quot;numMinPar&quot;:null,&quot;flgComSed&quot;:false,&quot;numEdiMod&quot;:null,&quot;impTotMod&quot;:null,&quot;impTotCosti&quot;:null,&quot;impTotCostiNumEdi&quot;:null,&quot;numPar&quot;:null,&quot;numMaxEdi&quot;:null,&quot;numOrdVis&quot;:10,&quot;flgModObb&quot;:false,&quot;flgCntPrcMax&quot;:false,&quot;numGioCnsRtrReg&quot;:null,&quot;flgCntPrcAtl&quot;:false,&quot;flgAttTea&quot;:false,&quot;flgAttAnn&quot;:true,&quot;numAnn&quot;:2,&quot;prcMinPre&quot;:80,&quot;flgPreTir&quot;:true,&quot;flgAttBrs&quot;:false,&quot;listaCostiRealiAssociatiDTO&quot;:null,&quot;flgIntScuFut&quot;:false,&quot;flgMtvRitRegPre&quot;:false,&quot;flgGnzAtsPtz&quot;:null,&quot;flgPrzLez&quot;:true,&quot;flgUniRgsIcrGnl&quot;:false,&quot;numMinIcrGnl&quot;:null,&quot;numMaxIcrGnl&quot;:null,&quot;numFisIcrGnl&quot;:null,&quot;prgTipCer&quot;:null,&quot;flgBrsStdCpi&quot;:false},&quot;prgPgt&quot;:92745,&quot;prgCan&quot;:55258,&quot;numAnn&quot;:2,&quot;annScoRif&quot;:null,&quot;flgCopAltFnd&quot;:null,&quot;codPcoForScuFut&quot;:null,&quot;desLnkPagPco&quot;:null,&quot;desRelPco&quot;:null,&quot;desTipSvo&quot;:null,&quot;desPgm&quot;:null,&quot;datIniIsc&quot;:null,&quot;datFinIsc&quot;:null,&quot;prgLivIgr&quot;:null,&quot;prgAreCmpDig&quot;:null,&quot;codAreCmpDig&quot;:null,&quot;desTipAtt&quot;:null,&quot;prgCosRea&quot;:null,&quot;flgStuFem&quot;:null,&quot;flgStuDis&quot;:null,&quot;flgStuIseInfLmt&quot;:null,&quot;impEdi&quot;:0,&quot;prgEdiClg&quot;:null,&quot;prgDocAvv&quot;:null,&quot;prgDocRicBst&quot;:null,&quot;prgDocDicAszCdiCms&quot;:null,&quot;prgDocGrd&quot;:null,&quot;prgDocVrlSel&quot;:null,&quot;prgDocQtzPagBrs&quot;:null,&quot;prgDocDicAszCdiStu&quot;:null,&quot;prgDocDicStuAszAltEro&quot;:null,&quot;prgDocUlt&quot;:null,&quot;prgDocPrz&quot;:null,&quot;prgDocPar&quot;:null,&quot;prgDocDasDfn&quot;:null,&quot;prgDocIse&quot;:null,&quot;desNomDocAvv&quot;:null,&quot;desNomDocRicBst&quot;:null,&quot;desNomDocDicAszCdiCms&quot;:null,&quot;desNomDocGrd&quot;:null,&quot;desNomDocVrlSel&quot;:null,&quot;desNomDocQtzPagBrs&quot;:null,&quot;desNomDocDicAszCdiStu&quot;:null,&quot;desNomDocDicStuAszAltEro&quot;:null,&quot;desNomDocUlt&quot;:null,&quot;desNomDocPar&quot;:null,&quot;desNomDocDasDfn&quot;:null,&quot;desNomDocIse&quot;:null,&quot;numMesCtb&quot;:null,&quot;flgAggCtbTirEst&quot;:null,&quot;flgInsParAgv&quot;:null,&quot;desTipFasRen&quot;:null,&quot;prgPagInr&quot;:null,&quot;prgRen&quot;:null,&quot;codTipFasRen&quot;:null,&quot;impQtzPag&quot;:null,&quot;codSttEdi&quot;:null,&quot;flgIntScuFut&quot;:null,&quot;codSttComplMassivo&quot;:null,&quot;prgDocComplMassivo&quot;:null,&quot;codSttCntMassivo&quot;:null,&quot;prgDocCntMassivo&quot;:null,&quot;impIse&quot;:null,&quot;desTipPrsIszPar&quot;:null,&quot;flgDicStdE16E24&quot;:null}">1542-ATT-1165-E-1-CERT-2-Inserire titolo</option><option value="1636428" data-payload="{&quot;prgEdi&quot;:1636428,&quot;codEdi&quot;:&quot;1542-ATT-1165-E-3&quot;,&quot;desEdi&quot;:&quot;Il percorso di formazione in “Data Analysis and AI Specialist” forma professionisti in grado di analizzare e interpretare grandi volumi di dati per supportare le decisioni aziendali, utilizzando tecniche avanzate di machine learning e deep learning.&quot;,&quot;desTitEdi&quot;:&quot;1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist&quot;,&quot;numEdi&quot;:3,&quot;stato&quot;:&quot;IN_CORSO&quot;,&quot;desStato&quot;:&quot;In Corso&quot;,&quot;tipoStato&quot;:&quot;stato-in-corso&quot;,&quot;datIniEff&quot;:&quot;16/12/2025&quot;,&quot;datFinEff&quot;:&quot;30/06/2026&quot;,&quot;numOrePre&quot;:900,&quot;numStuPre&quot;:25,&quot;numPasPre&quot;:null,&quot;numPesPrv&quot;:null,&quot;azioneDTO&quot;:{&quot;prgAzione&quot;:1542,&quot;prgAvviso&quot;:1403,&quot;titoloAzione&quot;:&quot;Incremento dell’offerta formativa delle Fondazioni “ITS Academy”&quot;,&quot;descrizioneAzione&quot;:&quot;Realizzazione di percorsi formativi per il conseguimento del relativo diploma. Concessione di borse di studio e sostegno per lo svolgimento degli stage e dei tirocini formativi anche all’estero, collegati ai settori funzionali all’adeguamento delle competenze 4.0 e a settori di sviluppo strategici all’interno delle aree tecnologiche e destinati a studentesse e studenti dei percorsi del sistema di formazione professionale terziaria. Formazione di docenti, tutor, operatori ed esperti al fine di aumentarne le competenze. Orientamento formativo in entrata e in uscita. Tutoraggio e servizi di supporto alle studentesse e agli studenti.&quot;,&quot;codiceAzione&quot;:&quot;M4C1I1.5-2024-1403-1542&quot;,&quot;flagAzioneObb&quot;:true,&quot;procedura&quot;:4,&quot;descrizioneTipoProcedura&quot;:&quot;Leggi di finanziamento&quot;,&quot;flagValutazione&quot;:true,&quot;importoMassimoAmmissibile&quot;:0,&quot;flagProgettoPartenariato&quot;:true,&quot;numMinimoPartner&quot;:0,&quot;flagAcquisizionePartnerCandidatura&quot;:true,&quot;desTesIstPar&quot;:&quot;In questa sezione è possibile inserire i dati relativi ai partner di progetto (università, centri di ricerca, altri enti e organismi di formazione specializzati, associazioni datoriali, imprese, etc.) che collaboreranno al progetto. Quando il coinvolgimento del partner avviene a titolo oneroso, la loro individuazione può avvenire preliminarmente all’atto di stesura del progetto oppure in sede di attuazione del progetto stesso, nel rispetto dei principi previsti dal decreto-legislativo 31 marzo 2023, n. 36.&quot;,&quot;listaFontiFinanziarie&quot;:null,&quot;listaBeneficiariAmmessi&quot;:null,&quot;listaAssociazioneAzioneModuloDTO&quot;:null,&quot;fileXlsBenAzi&quot;:null,&quot;codiceStatoUpXls&quot;:null,&quot;desStatoUpXls&quot;:null,&quot;tipoStatoUpXls&quot;:null,&quot;isModificabile&quot;:null,&quot;prgSchQue&quot;:843,&quot;listaAnagraficaPartnerDTO&quot;:null,&quot;isAssoAzionePartnerPresente&quot;:null,&quot;partnerAzione&quot;:null,&quot;flgVis&quot;:true,&quot;numeroPartner&quot;:null,&quot;prgCan&quot;:null,&quot;listaPrgModCompilati&quot;:null,&quot;importoTotaleRichiesto&quot;:null,&quot;listAssCandModuloDTO&quot;:null,&quot;listSezioneDTO&quot;:null,&quot;labelImportoMassimoFinanziabile&quot;:null,&quot;importoResiduoDisponibile&quot;:null,&quot;desNotCarBen&quot;:null,&quot;prcMinImpRic&quot;:null,&quot;prcMaxImpRic&quot;:null,&quot;flgCntImpRic&quot;:&quot;1&quot;,&quot;hasModuloImportoResiduo&quot;:null,&quot;prcMaxAttivitaImpResiduo&quot;:null,&quot;codStaAttivitaImpResiduo&quot;:null,&quot;prgAttivitaImportoResiduo&quot;:null,&quot;desTitModImpRsd&quot;:null,&quot;codSttAttivitaImpRes&quot;:null,&quot;mapEdizioniChiuse&quot;:null,&quot;importoAssegnatoIntervento&quot;:null,&quot;listaVarProgMod&quot;:null,&quot;hasEdizioni&quot;:false,&quot;percMaxImpRsdRispettata&quot;:null,&quot;attivitaImpRsdCompilabile&quot;:null},&quot;associazioneAzioneModuloDTO&quot;:{&quot;moduloDTO&quot;:{&quot;prgAnagraficaModulo&quot;:1165,&quot;titoloModulo&quot;:&quot;Attività A.1 - Percorsi formativi di V livello EQF da 1.800 ore&quot;,&quot;descrizioneModulo&quot;:&quot;Percorsi formativi finalizzati al conseguimento del relativo diploma di specializzazione, in particolare collegati ai settori funzionali all’adeguamento delle competenze 4.0 e a settori di sviluppo strategici all’interno delle aree tecnologiche, di durata pari a 4 semestri (1.800 ore). Oltre al costo orario è prevista la remunerazione di una UCS di € 4.809,50 per ciascun anno completato  positivamente da ciascun partecipante (ammissione all’anno successivo o all’esame finale).&quot;,&quot;codiceModulo&quot;:&quot;ATT-1165&quot;,&quot;tipologiaModulo&quot;:30,&quot;desTipologiaModulo&quot;:&quot;Modulo a costi standard&quot;,&quot;altroTipologiaModulo&quot;:null,&quot;indicazioneDidattica&quot;:32,&quot;desIndicazioneDidattica&quot;:&quot;Costo standard&quot;,&quot;costiReali&quot;:null,&quot;altroTitoloIndicazioneDidattica&quot;:null,&quot;altroDescrizioneIndicazioneDidattica&quot;:null,&quot;flgAttRsd&quot;:null,&quot;flgTipPar&quot;:&quot;S&quot;,&quot;numEdiRend&quot;:null,&quot;listVoceDiCostoDTO&quot;:null,&quot;impTotAtt&quot;:null,&quot;numTotUnita&quot;:null,&quot;groupAttivitaDTO&quot;:null,&quot;flgTipParAsString&quot;:&quot;S&quot;},&quot;prgAzione&quot;:1542,&quot;listaFontiFinanziarie&quot;:null,&quot;importoMassimoAmmissibile&quot;:null,&quot;flagNumOreModificabili&quot;:null,&quot;tipologiaCosti&quot;:&quot;S&quot;,&quot;beneficiari&quot;:13,&quot;prgSchQue&quot;:823,&quot;totaleNumeroOre&quot;:null,&quot;prcMin&quot;:null,&quot;prcMax&quot;:null,&quot;prcFsaFzmAzi&quot;:null,&quot;codiceStatoUpXls&quot;:null,&quot;desStatoUpXls&quot;:null,&quot;tipoStatoUpXls&quot;:null,&quot;fileXlsBen&quot;:null,&quot;desMsgInf&quot;:&quot;Il numero previsto di studenti partecipanti a ciascun percorso corrisponde orientativamente alla metà del numero di rimborsi annuali inseriti.&quot;,&quot;flgAcqTit&quot;:false,&quot;flgAcqDes&quot;:false,&quot;flgPar&quot;:false,&quot;numMaxPar&quot;:null,&quot;numMinPar&quot;:null,&quot;flgComSed&quot;:false,&quot;numEdiMod&quot;:null,&quot;impTotMod&quot;:null,&quot;impTotCosti&quot;:null,&quot;impTotCostiNumEdi&quot;:null,&quot;numPar&quot;:null,&quot;numMaxEdi&quot;:null,&quot;numOrdVis&quot;:10,&quot;flgModObb&quot;:false,&quot;flgCntPrcMax&quot;:false,&quot;numGioCnsRtrReg&quot;:null,&quot;flgCntPrcAtl&quot;:false,&quot;flgAttTea&quot;:false,&quot;flgAttAnn&quot;:true,&quot;numAnn&quot;:2,&quot;prcMinPre&quot;:80,&quot;flgPreTir&quot;:true,&quot;flgAttBrs&quot;:false,&quot;listaCostiRealiAssociatiDTO&quot;:null,&quot;flgIntScuFut&quot;:false,&quot;flgMtvRitRegPre&quot;:false,&quot;flgGnzAtsPtz&quot;:null,&quot;flgPrzLez&quot;:true,&quot;flgUniRgsIcrGnl&quot;:false,&quot;numMinIcrGnl&quot;:null,&quot;numMaxIcrGnl&quot;:null,&quot;numFisIcrGnl&quot;:null,&quot;prgTipCer&quot;:null,&quot;flgBrsStdCpi&quot;:false},&quot;prgPgt&quot;:92745,&quot;prgCan&quot;:55258,&quot;numAnn&quot;:1,&quot;annScoRif&quot;:null,&quot;flgCopAltFnd&quot;:false,&quot;codPcoForScuFut&quot;:null,&quot;desLnkPagPco&quot;:null,&quot;desRelPco&quot;:null,&quot;desTipSvo&quot;:null,&quot;desPgm&quot;:null,&quot;datIniIsc&quot;:null,&quot;datFinIsc&quot;:null,&quot;prgLivIgr&quot;:null,&quot;prgAreCmpDig&quot;:null,&quot;codAreCmpDig&quot;:null,&quot;desTipAtt&quot;:null,&quot;prgCosRea&quot;:null,&quot;flgStuFem&quot;:null,&quot;flgStuDis&quot;:null,&quot;flgStuIseInfLmt&quot;:null,&quot;impEdi&quot;:2496.5,&quot;prgEdiClg&quot;:null,&quot;prgDocAvv&quot;:null,&quot;prgDocRicBst&quot;:null,&quot;prgDocDicAszCdiCms&quot;:null,&quot;prgDocGrd&quot;:null,&quot;prgDocVrlSel&quot;:null,&quot;prgDocQtzPagBrs&quot;:null,&quot;prgDocDicAszCdiStu&quot;:null,&quot;prgDocDicStuAszAltEro&quot;:null,&quot;prgDocUlt&quot;:null,&quot;prgDocPrz&quot;:null,&quot;prgDocPar&quot;:null,&quot;prgDocDasDfn&quot;:null,&quot;prgDocIse&quot;:null,&quot;desNomDocAvv&quot;:null,&quot;desNomDocRicBst&quot;:null,&quot;desNomDocDicAszCdiCms&quot;:null,&quot;desNomDocGrd&quot;:null,&quot;desNomDocVrlSel&quot;:null,&quot;desNomDocQtzPagBrs&quot;:null,&quot;desNomDocDicAszCdiStu&quot;:null,&quot;desNomDocDicStuAszAltEro&quot;:null,&quot;desNomDocUlt&quot;:null,&quot;desNomDocPar&quot;:null,&quot;desNomDocDasDfn&quot;:null,&quot;desNomDocIse&quot;:null,&quot;numMesCtb&quot;:null,&quot;flgAggCtbTirEst&quot;:null,&quot;flgInsParAgv&quot;:null,&quot;desTipFasRen&quot;:null,&quot;prgPagInr&quot;:null,&quot;prgRen&quot;:null,&quot;codTipFasRen&quot;:null,&quot;impQtzPag&quot;:null,&quot;codSttEdi&quot;:null,&quot;flgIntScuFut&quot;:null,&quot;codSttComplMassivo&quot;:null,&quot;prgDocComplMassivo&quot;:null,&quot;codSttCntMassivo&quot;:null,&quot;prgDocCntMassivo&quot;:null,&quot;impIse&quot;:null,&quot;desTipPrsIszPar&quot;:null,&quot;flgDicStdE16E24&quot;:null}">1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist</option><option value="1636429" data-payload="{&quot;prgEdi&quot;:1636429,&quot;codEdi&quot;:&quot;1542-ATT-1165-E-3&quot;,&quot;desEdi&quot;:&quot;Il percorso di formazione in “Data Analysis and AI Specialist” forma professionisti in grado di analizzare e interpretare grandi volumi di dati per supportare le decisioni aziendali, utilizzando tecniche avanzate di machine learning e deep learning.&quot;,&quot;desTitEdi&quot;:&quot;1542-ATT-1165-E-3-CERT-2-Inserire titolo&quot;,&quot;numEdi&quot;:4,&quot;stato&quot;:&quot;NON_AVVIATA&quot;,&quot;desStato&quot;:&quot;Non Avviato&quot;,&quot;tipoStato&quot;:&quot;stato-non-avviato&quot;,&quot;datIniEff&quot;:&quot;30/06/2026&quot;,&quot;datFinEff&quot;:null,&quot;numOrePre&quot;:900,&quot;numStuPre&quot;:25,&quot;numPasPre&quot;:null,&quot;numPesPrv&quot;:null,&quot;azioneDTO&quot;:{&quot;prgAzione&quot;:1542,&quot;prgAvviso&quot;:1403,&quot;titoloAzione&quot;:&quot;Incremento dell’offerta formativa delle Fondazioni “ITS Academy”&quot;,&quot;descrizioneAzione&quot;:&quot;Realizzazione di percorsi formativi per il conseguimento del relativo diploma. Concessione di borse di studio e sostegno per lo svolgimento degli stage e dei tirocini formativi anche all’estero, collegati ai settori funzionali all’adeguamento delle competenze 4.0 e a settori di sviluppo strategici all’interno delle aree tecnologiche e destinati a studentesse e studenti dei percorsi del sistema di formazione professionale terziaria. Formazione di docenti, tutor, operatori ed esperti al fine di aumentarne le competenze. Orientamento formativo in entrata e in uscita. Tutoraggio e servizi di supporto alle studentesse e agli studenti.&quot;,&quot;codiceAzione&quot;:&quot;M4C1I1.5-2024-1403-1542&quot;,&quot;flagAzioneObb&quot;:true,&quot;procedura&quot;:4,&quot;descrizioneTipoProcedura&quot;:&quot;Leggi di finanziamento&quot;,&quot;flagValutazione&quot;:true,&quot;importoMassimoAmmissibile&quot;:0,&quot;flagProgettoPartenariato&quot;:true,&quot;numMinimoPartner&quot;:0,&quot;flagAcquisizionePartnerCandidatura&quot;:true,&quot;desTesIstPar&quot;:&quot;In questa sezione è possibile inserire i dati relativi ai partner di progetto (università, centri di ricerca, altri enti e organismi di formazione specializzati, associazioni datoriali, imprese, etc.) che collaboreranno al progetto. Quando il coinvolgimento del partner avviene a titolo oneroso, la loro individuazione può avvenire preliminarmente all’atto di stesura del progetto oppure in sede di attuazione del progetto stesso, nel rispetto dei principi previsti dal decreto-legislativo 31 marzo 2023, n. 36.&quot;,&quot;listaFontiFinanziarie&quot;:null,&quot;listaBeneficiariAmmessi&quot;:null,&quot;listaAssociazioneAzioneModuloDTO&quot;:null,&quot;fileXlsBenAzi&quot;:null,&quot;codiceStatoUpXls&quot;:null,&quot;desStatoUpXls&quot;:null,&quot;tipoStatoUpXls&quot;:null,&quot;isModificabile&quot;:null,&quot;prgSchQue&quot;:843,&quot;listaAnagraficaPartnerDTO&quot;:null,&quot;isAssoAzionePartnerPresente&quot;:null,&quot;partnerAzione&quot;:null,&quot;flgVis&quot;:true,&quot;numeroPartner&quot;:null,&quot;prgCan&quot;:null,&quot;listaPrgModCompilati&quot;:null,&quot;importoTotaleRichiesto&quot;:null,&quot;listAssCandModuloDTO&quot;:null,&quot;listSezioneDTO&quot;:null,&quot;labelImportoMassimoFinanziabile&quot;:null,&quot;importoResiduoDisponibile&quot;:null,&quot;desNotCarBen&quot;:null,&quot;prcMinImpRic&quot;:null,&quot;prcMaxImpRic&quot;:null,&quot;flgCntImpRic&quot;:&quot;1&quot;,&quot;hasModuloImportoResiduo&quot;:null,&quot;prcMaxAttivitaImpResiduo&quot;:null,&quot;codStaAttivitaImpResiduo&quot;:null,&quot;prgAttivitaImportoResiduo&quot;:null,&quot;desTitModImpRsd&quot;:null,&quot;codSttAttivitaImpRes&quot;:null,&quot;mapEdizioniChiuse&quot;:null,&quot;importoAssegnatoIntervento&quot;:null,&quot;listaVarProgMod&quot;:null,&quot;hasEdizioni&quot;:false,&quot;percMaxImpRsdRispettata&quot;:null,&quot;attivitaImpRsdCompilabile&quot;:null},&quot;associazioneAzioneModuloDTO&quot;:{&quot;moduloDTO&quot;:{&quot;prgAnagraficaModulo&quot;:1165,&quot;titoloModulo&quot;:&quot;Attività A.1 - Percorsi formativi di V livello EQF da 1.800 ore&quot;,&quot;descrizioneModulo&quot;:&quot;Percorsi formativi finalizzati al conseguimento del relativo diploma di specializzazione, in particolare collegati ai settori funzionali all’adeguamento delle competenze 4.0 e a settori di sviluppo strategici all’interno delle aree tecnologiche, di durata pari a 4 semestri (1.800 ore). Oltre al costo orario è prevista la remunerazione di una UCS di € 4.809,50 per ciascun anno completato  positivamente da ciascun partecipante (ammissione all’anno successivo o all’esame finale).&quot;,&quot;codiceModulo&quot;:&quot;ATT-1165&quot;,&quot;tipologiaModulo&quot;:30,&quot;desTipologiaModulo&quot;:&quot;Modulo a costi standard&quot;,&quot;altroTipologiaModulo&quot;:null,&quot;indicazioneDidattica&quot;:32,&quot;desIndicazioneDidattica&quot;:&quot;Costo standard&quot;,&quot;costiReali&quot;:null,&quot;altroTitoloIndicazioneDidattica&quot;:null,&quot;altroDescrizioneIndicazioneDidattica&quot;:null,&quot;flgAttRsd&quot;:null,&quot;flgTipPar&quot;:&quot;S&quot;,&quot;numEdiRend&quot;:null,&quot;listVoceDiCostoDTO&quot;:null,&quot;impTotAtt&quot;:null,&quot;numTotUnita&quot;:null,&quot;groupAttivitaDTO&quot;:null,&quot;flgTipParAsString&quot;:&quot;S&quot;},&quot;prgAzione&quot;:1542,&quot;listaFontiFinanziarie&quot;:null,&quot;importoMassimoAmmissibile&quot;:null,&quot;flagNumOreModificabili&quot;:null,&quot;tipologiaCosti&quot;:&quot;S&quot;,&quot;beneficiari&quot;:13,&quot;prgSchQue&quot;:823,&quot;totaleNumeroOre&quot;:null,&quot;prcMin&quot;:null,&quot;prcMax&quot;:null,&quot;prcFsaFzmAzi&quot;:null,&quot;codiceStatoUpXls&quot;:null,&quot;desStatoUpXls&quot;:null,&quot;tipoStatoUpXls&quot;:null,&quot;fileXlsBen&quot;:null,&quot;desMsgInf&quot;:&quot;Il numero previsto di studenti partecipanti a ciascun percorso corrisponde orientativamente alla metà del numero di rimborsi annuali inseriti.&quot;,&quot;flgAcqTit&quot;:false,&quot;flgAcqDes&quot;:false,&quot;flgPar&quot;:false,&quot;numMaxPar&quot;:null,&quot;numMinPar&quot;:null,&quot;flgComSed&quot;:false,&quot;numEdiMod&quot;:null,&quot;impTotMod&quot;:null,&quot;impTotCosti&quot;:null,&quot;impTotCostiNumEdi&quot;:null,&quot;numPar&quot;:null,&quot;numMaxEdi&quot;:null,&quot;numOrdVis&quot;:10,&quot;flgModObb&quot;:false,&quot;flgCntPrcMax&quot;:false,&quot;numGioCnsRtrReg&quot;:null,&quot;flgCntPrcAtl&quot;:false,&quot;flgAttTea&quot;:false,&quot;flgAttAnn&quot;:true,&quot;numAnn&quot;:2,&quot;prcMinPre&quot;:80,&quot;flgPreTir&quot;:true,&quot;flgAttBrs&quot;:false,&quot;listaCostiRealiAssociatiDTO&quot;:null,&quot;flgIntScuFut&quot;:false,&quot;flgMtvRitRegPre&quot;:false,&quot;flgGnzAtsPtz&quot;:null,&quot;flgPrzLez&quot;:true,&quot;flgUniRgsIcrGnl&quot;:false,&quot;numMinIcrGnl&quot;:null,&quot;numMaxIcrGnl&quot;:null,&quot;numFisIcrGnl&quot;:null,&quot;prgTipCer&quot;:null,&quot;flgBrsStdCpi&quot;:false},&quot;prgPgt&quot;:92745,&quot;prgCan&quot;:55258,&quot;numAnn&quot;:2,&quot;annScoRif&quot;:null,&quot;flgCopAltFnd&quot;:null,&quot;codPcoForScuFut&quot;:null,&quot;desLnkPagPco&quot;:null,&quot;desRelPco&quot;:null,&quot;desTipSvo&quot;:null,&quot;desPgm&quot;:null,&quot;datIniIsc&quot;:null,&quot;datFinIsc&quot;:null,&quot;prgLivIgr&quot;:null,&quot;prgAreCmpDig&quot;:null,&quot;codAreCmpDig&quot;:null,&quot;desTipAtt&quot;:null,&quot;prgCosRea&quot;:null,&quot;flgStuFem&quot;:null,&quot;flgStuDis&quot;:null,&quot;flgStuIseInfLmt&quot;:null,&quot;impEdi&quot;:0,&quot;prgEdiClg&quot;:null,&quot;prgDocAvv&quot;:null,&quot;prgDocRicBst&quot;:null,&quot;prgDocDicAszCdiCms&quot;:null,&quot;prgDocGrd&quot;:null,&quot;prgDocVrlSel&quot;:null,&quot;prgDocQtzPagBrs&quot;:null,&quot;prgDocDicAszCdiStu&quot;:null,&quot;prgDocDicStuAszAltEro&quot;:null,&quot;prgDocUlt&quot;:null,&quot;prgDocPrz&quot;:null,&quot;prgDocPar&quot;:null,&quot;prgDocDasDfn&quot;:null,&quot;prgDocIse&quot;:null,&quot;desNomDocAvv&quot;:null,&quot;desNomDocRicBst&quot;:null,&quot;desNomDocDicAszCdiCms&quot;:null,&quot;desNomDocGrd&quot;:null,&quot;desNomDocVrlSel&quot;:null,&quot;desNomDocQtzPagBrs&quot;:null,&quot;desNomDocDicAszCdiStu&quot;:null,&quot;desNomDocDicStuAszAltEro&quot;:null,&quot;desNomDocUlt&quot;:null,&quot;desNomDocPar&quot;:null,&quot;desNomDocDasDfn&quot;:null,&quot;desNomDocIse&quot;:null,&quot;numMesCtb&quot;:null,&quot;flgAggCtbTirEst&quot;:null,&quot;flgInsParAgv&quot;:null,&quot;desTipFasRen&quot;:null,&quot;prgPagInr&quot;:null,&quot;prgRen&quot;:null,&quot;codTipFasRen&quot;:null,&quot;impQtzPag&quot;:null,&quot;codSttEdi&quot;:null,&quot;flgIntScuFut&quot;:null,&quot;codSttComplMassivo&quot;:null,&quot;prgDocComplMassivo&quot;:null,&quot;codSttCntMassivo&quot;:null,&quot;prgDocCntMassivo&quot;:null,&quot;impIse&quot;:null,&quot;desTipPrsIszPar&quot;:null,&quot;flgDicStdE16E24&quot;:null}">1542-ATT-1165-E-3-CERT-2-Inserire titolo</option></select>
+											</div>
+										</div>
+									</div>
+								</div><!-- row -->
+							</div><!-- col -->
+							<div class="col-12 col-lg-3 d-flex align-items-end pb-1 pt-3 pt-lg-0">
+								<button type="button" class="btn btn-block btn-success" id="eseguiRicercaRegistroButton">
+									<i class="fas fa-filter pr-2 mr-1"></i> APPLICA
+								</button>
+							</div>
+
+						</div><!-- row form group -->
+					</div><!-- card body -->
+				</div><!-- collapse -->
+			</div><!-- card -->
+		</form>
+
+		<!-- 
+		<div class="filter-sticky-bar mb-3">
+			<div class="row">
+				<div class="col-12 col-lg-2 d-flex align-items-center mb-2 mb-lg-0">
+					Edizioni filtrate per:
+				</div>
+				<div class="col-12 col-lg-10 d-flex align-items-center justify-content-start justify-content-lg-end">
+					<div class="badge badge-light ml-2">
+						Intervento | Azioni di prevenzione al contrasto della dispersione scolastica
+					</div>
+					<div class="badge badge-light ml-2">
+						Attività | Percorsi di orientamento per le famiglie
+					</div>
+					<div class="badge badge-light ml-2">
+						Edizione | Percorsi di orientamento per le famiglie
+					</div>
+				</div>
+			</div>
+		</div>
+		-->
+
+		<div class="card card-shadow mb-3 hiddenIfElencoIsNotEmpty" style="display: none;">
+			<div id="fragmentErrorRichiediExcelPresenze">
+				
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-12 col-lg-8 offset-0 offset-lg-2">
+						<div class="alert alert-primary alert-icon alert-dismissible fade show mb-0" role="alert">
+							<h4 class="alert-heading">Attenzione!</h4>
+							per visualizzare più rapidamente le lezioni è necessario selezionare l'intervento
+							e/o l'attività e/o l'edizione e cliccare su “<strong>APPLICA</strong>”. <br>
+							Per una panoramica generale, lasciare <strong>Intervento: TUTTI</strong>, <strong>Attività:
+								TUTTE</strong> e <strong>Edizione: TUTTE</strong> e procedere cliccando il pulsante per
+							visualizzare tutti i risultati.
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row pt-3">
+					<div class="col-12 col-lg-8 offset-0 offset-lg-2">
+						<div class="row">
+							<div class="col-12 col-lg-6">
+								<button type="button" class="btn btn-primary btn-block" onclick="openModaleAttivitaDidattica($('#prgPgt').val(), $('#prgEdi').val())">
+									<i class="far fa-plus-square mr-1"></i> AGGIUNGI LEZIONE/INCONTRO
+								</button>
+							</div>
+
+							<div class="col-12 col-lg-6">
+								<button type="button" class="btn btn-primary btn-block" onclick="openModaleAttivitaDidatticaExcel($('#prgPgt').val(), $('#prgEdi').val())">
+									<i class="far fa-plus-square mr-1"></i> AGGIUNGI LEZIONE/INCONTRO CON FILE
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="alert alert-primary alert-icon alert-dismissible fade show mt-3 hiddenIfElencoEmpty" role="alert" style="">
+			In questa sezione è possibile pianificare, aggiungendo una lezione/incontro di ciascuna
+			edizione/corso,
+			selezionando una cella all'interno del calendario o attraverso il pulsante <strong>AGGIUNGI
+				LEZIONE/INCONTRO</strong>,
+			e registrare la propria presenza (docente/tutor/componente team) e quella dei partecipanti.
+			<button type="button" class="close" data-dismiss="alert" aria-label="Chiudi">
+				<span aria-hidden="true">×</span>
+			</button>
+		</div>
+		<div class="row mt-3 hiddenIfElencoEmpty" style="">
+			<div class="col-12 col-lg-6 order-last order-lg-first d-flex align-items-end">
+				<div class="btn-group btn-group-sm btn-group-toggle ctab" data-toggle="buttons">
+					<label id="calendario-attivita-tab" class="btn btn-secondary" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Calendario attività" data-original-title="" title="">
+						<input type="radio" name="options" id="option1" autocomplete="off" checked=""><i class="fas fa-calendar mr-2"></i> CALENDARIO
+					</label>
+					<label id="elenco-attivita-tab" class="btn btn-secondary active" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Elenco attività" data-original-title="" title="">
+						<input type="radio" name="options" id="option2" autocomplete="off"><i class="fas fa-list-ul mr-2"></i> ELENCO
+					</label>
+					<label id="richieste-report-presenze-attivita-tab" class="btn btn-secondary" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Report Presenze" data-original-title="" title="">
+						<input type="radio" name="options" id="option3" autocomplete="off"><i class="fas fa-file-excel mr-2"></i> REPORT PRESENZE
+					</label>
+				</div>
+				<!-- btn-group ctab -->
+				<div class="btn-group btn-group-sm row-group-tool" role="group" aria-label="Strumenti vari">
+					<button id="btn-toggle-rowgroup" type="button" class="btn btn-secondary" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Attiva/Disattiva Raggruppamenti" aria-label="Attiva/Disattiva Raggruppamenti" style="" data-original-title="" title="">
+						<i class="fas fa-th-list"></i>
+					</button>
+				</div>
+				<!-- btn-group-->
+			</div>
+		</div>
+		<div class="row hiddenIfElencoEmpty" style="">
+			<div class="col-12">
+				<div class="ctab-content">
+					<div id="calendario-attivita" style="display: none;">
+						<div class="agenda-container pt-3">
+							<div id="calendar" class="fc fc-unthemed fc-ltr"><div class="fc-toolbar fc-header-toolbar"><div class="fc-left"><button type="button" class="fc-today-button fc-button fc-state-default fc-corner-left fc-corner-right fc-state-disabled" disabled="">Oggi</button><div class="fc-button-group"><button type="button" class="fc-prev-button fc-button fc-state-default fc-corner-left" aria-label="prev"><span class="fc-icon fc-icon-left-single-arrow"></span></button><button type="button" class="fc-next-button fc-button fc-state-default fc-corner-right" aria-label="next"><span class="fc-icon fc-icon-right-single-arrow"></span></button></div></div><div class="fc-right"><div class="fc-button-group"><button type="button" class="fc-agendaDay-button fc-button fc-state-default fc-corner-left">Giorno</button><button type="button" class="fc-agendaWeek-button fc-button fc-state-default fc-state-active">Settimana</button><button type="button" class="fc-month-button fc-button fc-state-default fc-corner-right">Mese</button></div></div><div class="fc-center"><h2>19 – 25 gen 2026</h2></div><div class="fc-clear"></div></div><div class="fc-view-container" style=""><div class="fc-view fc-agendaWeek-view fc-agenda-view"><table class=""><thead class="fc-head"><tr><td class="fc-head-container fc-widget-header"><div class="fc-row fc-widget-header"><table class=""><thead><tr><th class="fc-axis fc-widget-header" style="width: 1px;"></th><th class="fc-day-header fc-widget-header fc-mon fc-today" data-date="2026-01-19"><span>Lunedì 19</span></th><th class="fc-day-header fc-widget-header fc-tue fc-future" data-date="2026-01-20"><span>Martedì 20</span></th><th class="fc-day-header fc-widget-header fc-wed fc-future" data-date="2026-01-21"><span>Mercoledì 21</span></th><th class="fc-day-header fc-widget-header fc-thu fc-future" data-date="2026-01-22"><span>Giovedì 22</span></th><th class="fc-day-header fc-widget-header fc-fri fc-future" data-date="2026-01-23"><span>Venerdì 23</span></th><th class="fc-day-header fc-widget-header fc-sat fc-future" data-date="2026-01-24"><span>Sabato 24</span></th><th class="fc-day-header fc-widget-header fc-sun fc-future" data-date="2026-01-25"><span>Domenica 25</span></th></tr></thead></table></div></td></tr></thead><tbody class="fc-body"><tr><td class="fc-widget-content"><div class="fc-scroller fc-time-grid-container" style="overflow: hidden auto; height: auto;"><div class="fc-time-grid fc-unselectable"><div class="fc-bg"><table class=""><tbody><tr><td class="fc-axis fc-widget-content" style="width: 1px;"></td><td class="fc-day fc-widget-content fc-mon fc-today " data-date="2026-01-19"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2026-01-20"></td><td class="fc-day fc-widget-content fc-wed fc-future" data-date="2026-01-21"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2026-01-22"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2026-01-23"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2026-01-24"></td><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2026-01-25"></td></tr></tbody></table></div><div class="fc-slats"><table class=""><tbody><tr data-time="00:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>00:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="00:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="01:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>01:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="01:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="02:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>02:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="02:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="03:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>03:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="03:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="04:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>04:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="04:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="05:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>05:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="05:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="06:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>06:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="06:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="07:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>07:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="07:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="08:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>08:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="08:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="09:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>09:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="09:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="10:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>10:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="10:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="11:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>11:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="11:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="12:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>12:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="12:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="13:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>13:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="13:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="14:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>14:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="14:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="15:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>15:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="15:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="16:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>16:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="16:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="17:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>17:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="17:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="18:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>18:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="18:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="19:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>19:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="19:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="20:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>20:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="20:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="21:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>21:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="21:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="22:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>22:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="22:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr><tr data-time="23:00:00" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"><span>23:00</span></td><td class="fc-widget-content"></td></tr><tr data-time="23:30:00" class="fc-minor" style=""><td class="fc-axis fc-time fc-widget-content" style="width: 1px;"></td><td class="fc-widget-content"></td></tr></tbody></table></div><hr class="fc-divider fc-widget-header" style="display:none"><div class="fc-content-skeleton"><table><tbody><tr><td class="fc-axis" style="width: 1px;"></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"><a class="fc-time-grid-event fc-v-event fc-event fc-start fc-end stato-non-avviato fc-short" style="inset: 0px 0%; z-index: 1;"><div class="fc-content"><div class="fc-time" data-start="13:00" data-full="13:00 - 14:00"><span>13:00 - 14:00</span></div><div class="fc-title">34165112 - 1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist</div></div><div class="fc-bg"></div></a><a class="fc-time-grid-event fc-v-event fc-event fc-start fc-end stato-non-avviato fc-short" style="inset: 0px 0%; z-index: 1;"><div class="fc-content"><div class="fc-time" data-start="14:00" data-full="14:00 - 15:00"><span>14:00 - 15:00</span></div><div class="fc-title">34165113 - 1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist</div></div><div class="fc-bg"></div></a><a class="fc-time-grid-event fc-v-event fc-event fc-start fc-end stato-non-avviato fc-short" style="inset: 0px 0%; z-index: 1;"><div class="fc-content"><div class="fc-time" data-start="15:00" data-full="15:00 - 16:00"><span>15:00 - 16:00</span></div><div class="fc-title">34165114 - 1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist</div></div><div class="fc-bg"></div></a><a class="fc-time-grid-event fc-v-event fc-event fc-start fc-end stato-non-avviato fc-short" style="inset: 0px 0%; z-index: 1;"><div class="fc-content"><div class="fc-time" data-start="16:00" data-full="16:00 - 17:00"><span>16:00 - 17:00</span></div><div class="fc-title">34165115 - 1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist</div></div><div class="fc-bg"></div></a><a class="fc-time-grid-event fc-v-event fc-event fc-start fc-end stato-non-avviato fc-short" style="inset: 0px 0%; z-index: 1;"><div class="fc-content"><div class="fc-time" data-start="17:00" data-full="17:00 - 18:00"><span>17:00 - 18:00</span></div><div class="fc-title">34165116 - 1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist</div></div><div class="fc-bg"></div></a><a class="fc-time-grid-event fc-v-event fc-event fc-start fc-end stato-non-avviato fc-short" style="inset: 0px 0%; z-index: 1;"><div class="fc-content"><div class="fc-time" data-start="18:00" data-full="18:00 - 19:00"><span>18:00 - 19:00</span></div><div class="fc-title">34165117 - 1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist</div></div><div class="fc-bg"></div></a></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"></div><div class="fc-business-container"></div></div></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"></div><div class="fc-business-container"></div></div></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"></div><div class="fc-business-container"></div></div></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"></div><div class="fc-business-container"></div></div></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"></div><div class="fc-business-container"></div></div></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"></div><div class="fc-business-container"></div></div></td><td><div class="fc-content-col"><div class="fc-event-container fc-helper-container"></div><div class="fc-event-container"></div><div class="fc-highlight-container"></div><div class="fc-bgevent-container"></div><div class="fc-business-container"></div></div></td></tr></tbody></table></div></div></div></td></tr></tbody></table></div></div></div>
+						</div>
+					</div>
+					<div id="elenco-attivita" style="">
+						<div id="table-elenco-attivita_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="table-elenco-attivita_length"><label>Visualizza <select name="table-elenco-attivita_length" aria-controls="table-elenco-attivita" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> righe per pagina</label></div></div><div class="col-sm-12 col-md-6"><div id="table-elenco-attivita_filter" class="dataTables_filter"><label>Filtra<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="table-elenco-attivita"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="table-elenco-attivita" class="table table-hover no-stripes table-collapsible w-100 dataTable no-footer dtr-inline collapsed" aria-describedby="table-elenco-attivita_info" style="width: 1111px;">
+							<thead>
+								<tr><th class="col_01 sorting" tabindex="0" aria-controls="table-elenco-attivita" rowspan="1" colspan="1" style="width: 62px;" aria-label="ID: attiva l'ordinamento ascendente della colonna">ID</th><th class="col_01 sorting" tabindex="0" aria-controls="table-elenco-attivita" rowspan="1" colspan="1" style="width: 196px;" aria-label="Lezione/Incontro/Mensa: attiva l'ordinamento ascendente della colonna">Lezione/Incontro/Mensa</th><th class="sorting sorting_asc" tabindex="0" aria-controls="table-elenco-attivita" rowspan="1" colspan="1" style="width: 61.6667px; display: none;" aria-label="Data: attiva l'ordinamento ascendente della colonna">Data</th><th class="sorting" tabindex="0" aria-controls="table-elenco-attivita" rowspan="1" colspan="1" style="width: 38px; display: none;" aria-label="Ora Inizio: attiva l'ordinamento ascendente della colonna">Ora Inizio</th><th class="sorting" tabindex="0" aria-controls="table-elenco-attivita" rowspan="1" colspan="1" style="width: 34px; display: none;" aria-label="Ora Fine: attiva l'ordinamento ascendente della colonna">Ora Fine</th><th class="text-center sorting" tabindex="0" aria-controls="table-elenco-attivita" rowspan="1" colspan="1" style="width: 153px; display: none;" aria-label="Stato : attiva l'ordinamento ascendente della colonna">Stato <a class="stato-legend" onclick="$('#modal-legenda-att-did').modal('show');event.stopPropagation();"><i class="far fa-question-circle fa-lg"></i></a></th><th class="text-center text-right sorting" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Partecipanti previsti" tabindex="0" aria-controls="table-elenco-attivita" rowspan="1" colspan="1" style="width: 13px; display: none;" aria-label="
+										 Partecipanti previsti
+									: attiva l'ordinamento ascendente della colonna" data-original-title="" title="">
+										<i class="fas fa-user-graduate" aria-hidden="true"></i> <span class="sr-only">Partecipanti previsti</span>
+									</th><th class="text-center text-right sorting" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Partecipanti presenti" tabindex="0" aria-controls="table-elenco-attivita" rowspan="1" colspan="1" style="width: 22px; display: none;" aria-label="
+										
+										Partecipanti presenti
+									: attiva l'ordinamento ascendente della colonna" data-original-title="" title="">
+										<nobr><i class="fas fa-user-graduate" aria-hidden="true"></i><i class="fas fa-check-double fa-xs" aria-hidden="true" style="margin-left:-2px"></i></nobr>
+										<span class="sr-only">Partecipanti presenti</span>
+									</th><th class="text-center text-right sorting" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Personale previsto" tabindex="0" aria-controls="table-elenco-attivita" rowspan="1" colspan="1" style="width: 22px; display: none;" aria-label="
+										
+										Personale previsto
+									: attiva l'ordinamento ascendente della colonna" data-original-title="" title="">
+										<nobr><i class="fas fa-user-tie" aria-hidden="true"></i><i class="fas fa-check-double fa-xs" aria-hidden="true" style="margin-left:-2px"></i></nobr>
+										<span class="sr-only">Personale previsto</span>
+									</th><th class="text-center text-right sorting" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Personale presente" tabindex="0" aria-controls="table-elenco-attivita" rowspan="1" colspan="1" style="width: 22px; display: none;" aria-label="
+										
+										Personale presente
+									: attiva l'ordinamento ascendente della colonna" data-original-title="" title="">
+										<nobr><i class="fas fa-user-tie" aria-hidden="true"></i><i class="fas fa-check-double fa-xs" aria-hidden="true" style="margin-left:-2px"></i></nobr>
+										<span class="sr-only">Personale presente</span>
+									</th><th class="noexport text-center sorting_disabled" rowspan="1" colspan="1" style="width: 42px;" aria-label=""></th></tr>
+							</thead>
+							<tbody><tr data-name="1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist" class="dtrg-group dtrg-start dtrg-level-0"><td colspan="11"><div class="badge badge-secondary">6</div>1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist<div class="badge badge-small badge-right">Attività A.1 - Percorsi formativi di V livello EQF da 1.800 ore</div></td></tr><tr><td class="col_01 dtr-control">34165112</td><td class=" col_01" style="">1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist</td><td class="sorting_3" style="display: none;">19/01/2026</td><td style="display: none;">13:00</td><td style="display: none;">14:00</td><td style="display: none;"><span class="stato stato-non-avviato">Pianificata</span></td><td class=" text-right" style="display: none;">25</td><td class=" text-right" style="display: none;">0</td><td class=" text-right" style="display: none;">4</td><td class=" text-right" style="display: none;">0</td><td class=" text-center" style=""><div class="btn-group">
+								<button type="button" class="btn" data-toggle="dropdown" aria-expanded="false">
+									<i class="fas fa-ellipsis-v"></i>
+								</button>
+								<div class="dropdown-menu dropdown-menu-right" style="">
+									<button class="dropdown-item" type="button" onclick="openModaleAttivitaDidattica(92745,1636428,34165112)">
+										<i class="fas fa-edit"></i> Modifica
+									</button>
+									<button class="dropdown-item d-none" type="button" onclick="deconsolidaAttivitaDidattica(this,92745,34165112)">
+										<i class="fas fa-undo"></i> Rimetti in lavorazione
+									</button>
+									<button class="dropdown-item " type="button" onclick="eliminaAttivitaDidattica(this,92745,34165112)">
+										<i class="fas fa-trash-alt"></i> Cancella
+									</button>
+								</div></div></td></tr><tr><td class="col_01 dtr-control">34165113</td><td class=" col_01" style="">1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist</td><td class="sorting_3" style="display: none;">19/01/2026</td><td style="display: none;">14:00</td><td style="display: none;">15:00</td><td style="display: none;"><span class="stato stato-non-avviato">Pianificata</span></td><td class=" text-right" style="display: none;">25</td><td class=" text-right" style="display: none;">0</td><td class=" text-right" style="display: none;">4</td><td class=" text-right" style="display: none;">0</td><td class=" text-center" style=""><div class="btn-group">
+								<button type="button" class="btn" data-toggle="dropdown" aria-expanded="false">
+									<i class="fas fa-ellipsis-v"></i>
+								</button>
+								<div class="dropdown-menu dropdown-menu-right">
+									<button class="dropdown-item" type="button" onclick="openModaleAttivitaDidattica(92745,1636428,34165113)">
+										<i class="fas fa-edit"></i> Modifica
+									</button>
+									<button class="dropdown-item d-none" type="button" onclick="deconsolidaAttivitaDidattica(this,92745,34165113)">
+										<i class="fas fa-undo"></i> Rimetti in lavorazione
+									</button>
+									<button class="dropdown-item " type="button" onclick="eliminaAttivitaDidattica(this,92745,34165113)">
+										<i class="fas fa-trash-alt"></i> Cancella
+									</button>
+								</div></div></td></tr><tr><td class="col_01 dtr-control">34165114</td><td class=" col_01" style="">1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist</td><td class="sorting_3" style="display: none;">19/01/2026</td><td style="display: none;">15:00</td><td style="display: none;">16:00</td><td style="display: none;"><span class="stato stato-non-avviato">Pianificata</span></td><td class=" text-right" style="display: none;">25</td><td class=" text-right" style="display: none;">0</td><td class=" text-right" style="display: none;">4</td><td class=" text-right" style="display: none;">0</td><td class=" text-center" style=""><div class="btn-group">
+								<button type="button" class="btn" data-toggle="dropdown" aria-expanded="false">
+									<i class="fas fa-ellipsis-v"></i>
+								</button>
+								<div class="dropdown-menu dropdown-menu-right">
+									<button class="dropdown-item" type="button" onclick="openModaleAttivitaDidattica(92745,1636428,34165114)">
+										<i class="fas fa-edit"></i> Modifica
+									</button>
+									<button class="dropdown-item d-none" type="button" onclick="deconsolidaAttivitaDidattica(this,92745,34165114)">
+										<i class="fas fa-undo"></i> Rimetti in lavorazione
+									</button>
+									<button class="dropdown-item " type="button" onclick="eliminaAttivitaDidattica(this,92745,34165114)">
+										<i class="fas fa-trash-alt"></i> Cancella
+									</button>
+								</div></div></td></tr><tr><td class="col_01 dtr-control">34165115</td><td class=" col_01" style="">1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist</td><td class="sorting_3" style="display: none;">19/01/2026</td><td style="display: none;">16:00</td><td style="display: none;">17:00</td><td style="display: none;"><span class="stato stato-non-avviato">Pianificata</span></td><td class=" text-right" style="display: none;">25</td><td class=" text-right" style="display: none;">0</td><td class=" text-right" style="display: none;">4</td><td class=" text-right" style="display: none;">0</td><td class=" text-center" style=""><div class="btn-group">
+								<button type="button" class="btn" data-toggle="dropdown" aria-expanded="false">
+									<i class="fas fa-ellipsis-v"></i>
+								</button>
+								<div class="dropdown-menu dropdown-menu-right">
+									<button class="dropdown-item" type="button" onclick="openModaleAttivitaDidattica(92745,1636428,34165115)">
+										<i class="fas fa-edit"></i> Modifica
+									</button>
+									<button class="dropdown-item d-none" type="button" onclick="deconsolidaAttivitaDidattica(this,92745,34165115)">
+										<i class="fas fa-undo"></i> Rimetti in lavorazione
+									</button>
+									<button class="dropdown-item " type="button" onclick="eliminaAttivitaDidattica(this,92745,34165115)">
+										<i class="fas fa-trash-alt"></i> Cancella
+									</button>
+								</div></div></td></tr><tr><td class="col_01 dtr-control">34165116</td><td class=" col_01" style="">1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist</td><td class="sorting_3" style="display: none;">19/01/2026</td><td style="display: none;">17:00</td><td style="display: none;">18:00</td><td style="display: none;"><span class="stato stato-non-avviato">Pianificata</span></td><td class=" text-right" style="display: none;">25</td><td class=" text-right" style="display: none;">0</td><td class=" text-right" style="display: none;">4</td><td class=" text-right" style="display: none;">0</td><td class=" text-center" style=""><div class="btn-group">
+								<button type="button" class="btn" data-toggle="dropdown" aria-expanded="false">
+									<i class="fas fa-ellipsis-v"></i>
+								</button>
+								<div class="dropdown-menu dropdown-menu-right">
+									<button class="dropdown-item" type="button" onclick="openModaleAttivitaDidattica(92745,1636428,34165116)">
+										<i class="fas fa-edit"></i> Modifica
+									</button>
+									<button class="dropdown-item d-none" type="button" onclick="deconsolidaAttivitaDidattica(this,92745,34165116)">
+										<i class="fas fa-undo"></i> Rimetti in lavorazione
+									</button>
+									<button class="dropdown-item " type="button" onclick="eliminaAttivitaDidattica(this,92745,34165116)">
+										<i class="fas fa-trash-alt"></i> Cancella
+									</button>
+								</div></div></td></tr><tr><td class="col_01 dtr-control">34165117</td><td class=" col_01" style="">1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist</td><td class="sorting_3" style="display: none;">19/01/2026</td><td style="display: none;">18:00</td><td style="display: none;">19:00</td><td style="display: none;"><span class="stato stato-non-avviato">Pianificata</span></td><td class=" text-right" style="display: none;">25</td><td class=" text-right" style="display: none;">0</td><td class=" text-right" style="display: none;">4</td><td class=" text-right" style="display: none;">0</td><td class=" text-center" style=""><div class="btn-group">
+								<button type="button" class="btn" data-toggle="dropdown" aria-expanded="false">
+									<i class="fas fa-ellipsis-v"></i>
+								</button>
+								<div class="dropdown-menu dropdown-menu-right">
+									<button class="dropdown-item" type="button" onclick="openModaleAttivitaDidattica(92745,1636428,34165117)">
+										<i class="fas fa-edit"></i> Modifica
+									</button>
+									<button class="dropdown-item d-none" type="button" onclick="deconsolidaAttivitaDidattica(this,92745,34165117)">
+										<i class="fas fa-undo"></i> Rimetti in lavorazione
+									</button>
+									<button class="dropdown-item " type="button" onclick="eliminaAttivitaDidattica(this,92745,34165117)">
+										<i class="fas fa-trash-alt"></i> Cancella
+									</button>
+								</div></div></td></tr></tbody>
+						</table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="table-elenco-attivita_info" role="status" aria-live="polite">Visualizzate righe da 51 a 56 di 56 righe</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="table-elenco-attivita_paginate"><ul class="pagination"><li class="paginate_button page-item previous" id="table-elenco-attivita_previous"><a href="#" aria-controls="table-elenco-attivita" data-dt-idx="0" tabindex="0" class="page-link">Precedente</a></li><li class="paginate_button page-item "><a href="#" aria-controls="table-elenco-attivita" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="table-elenco-attivita" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item next disabled" id="table-elenco-attivita_next"><a href="#" aria-controls="table-elenco-attivita" data-dt-idx="3" tabindex="0" class="page-link">Successivo</a></li></ul></div></div></div></div>
+					</div>
+					<div id="richieste-report-presenze-attivita" style="display: none">
+						<div id="fragmentListaRichiesteExcelPresenze">
+							<div>Non sono presenti
+								richieste</div>
+							
+						</div>
+					</div>
+					<div class="row toolbar toolbar-shadow gutter-5">
+						<div class="toolbar-btn-mobile">
+							<i class="fas fa-tools"></i>
+						</div>
+						<div class="col-12 col-lg-4">
+							<button type="button" class="btn btn-primary btn-block" onclick="openModaleAttivitaDidattica($('#prgPgt').val(), $('#prgEdi').val())">
+								<i class="far fa-plus-square mr-1"></i> AGGIUNGI LEZIONE/INCONTRO
+							</button>
+						</div>
+						<div class="col-12 col-lg-4">
+							<button type="button" class="btn btn-primary btn-block" onclick="openModaleAttivitaDidatticaExcel($('#prgPgt').val(), $('#prgEdi').val())">
+								<i class="far fa-plus-square mr-1"></i> AGGIUNGI LEZIONE/INCONTRO CON FILE
+							</button>
+						</div>
+						<div class="col-12 col-lg-4">
+							<button type="button" class="btn btn-secondary btn-block" onclick="$('#table-elenco-attivita').DataTable().button().trigger()">
+								<i class="far fa-file-excel mr-1"></i> ESPORTA I DATI
+							</button>
+						</div>
+						<div class="col-12 col-lg-4">
+							<button type="button" class="btn btn-secondary btn-block" onclick="richiediExcelPresenze($('#prgAzi').val(), $('#prgMod').val(), $('#prgEdi').val())">
+								<i class="far fa-file-excel mr-1"></i> RICHIEDI DOWNLOAD PRESENZE
+							</button>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- MODALE REGISTRO ATTIVITÀ DIDATTICHE -->
+		
+	
+	
+	
+	
+	<div class="modal fade show" id="modal-reg-att-did" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="modal-reg-att-did-label" aria-modal="true" role="dialog" style="padding-right: 15px; display: block;">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xxl">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modal-reg-att-did-label">
+						ID 34165112 - Registro presenze
+						
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Chiudi">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<input hidden="" id="isAttivitaImpRsd" value="false">
+					<input hidden="" id="flgAttAnn" value="true">
+					
+					
+					
+					
+					
+					<div class="alert alert-warning alert-icon alert-dismissible fade show" role="alert">
+						<strong>ATTENZIONE!</strong>
+						<br>
+						<span>Per completare la registrazione, è necessario che il personale associato inserisca la propria presenza.</span>
+						<button type="button" class="close pt-0" data-dismiss="alert" aria-label="Chiudi">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					
+					<div class="alert alert-warning alert-icon alert-dismissible fade show" role="alert">
+						<strong>ATTENZIONE!</strong>
+						<br>
+						<span>E' necessario inserire le seguenti figure professionali per il personale di progetto associato:<br>Docente o esperto <b>(Obbligatorio)</b> Numero minimo: 1<br>Tutor <b>(Facoltativo)</b><br></span>
+						<button type="button" class="close pt-0" data-dismiss="alert" aria-label="Chiudi">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+
+					
+					
+					<div class="alert alert-danger errori-procedura" role="alert" hidden="" id="alertErrorMessagge">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+						<div id="errorMessaggeText"></div>
+					</div>
+												
+					<form method="post" action="/pns1-gestioneavvisi-web/progetti/registro/salva">
+						<input type="hidden" id="prgAttDid" name="prgAttDid" value="34165112">
+						<input type="hidden" id="prgEdi" name="prgEdi" value="1636428">
+						<input type="hidden" id="modal-reg-att-did-dat-ini" name="datIni" value="2026-01-19T13:00:00">
+						<input type="hidden" id="modal-reg-att-did-dat-fin" name="datFin" value="2026-01-19T14:00:00">
+						<section>
+							<div class="form-group row">
+								<div class="col-12 col-lg-3">
+									<label for="flgPasMen">Tipologia <span title="Campo obbligatorio" class="obbligatorio">*</span></label>
+									<select class="form-control custom-select" id="modal-reg-att-did-input-flg-mensa" tabindex="-1" onchange="onchangeOraInizioOraFine(event)" readonly="readonly" name="tipologia">
+										<option value="flgLezInc" selected="selected">
+											Lezione/Incontro
+										</option>
+										
+										<option class="tirocini" value="flgTir">Tirocinio svolto in Italia</option>
+										<option class="tirocini" value="flgTirEst">Tirocinio svolto all'Estero </option>	
+										<option class="tirocini" value="flgAtvApr">Apprendistato</option>									
+										<option class="tirocini" value="flgAtvRec">Attività di recupero</option>									
+										<option class="tirocini" value="flgAtvPgt">Project work</option>									
+									</select>
+								</div>
+								<div class="col-12 col-lg-9">
+									<label for="modal-reg-att-did-input-titolo">Argomento <span title="Campo obbligatorio" class="obbligatorio">*</span></label>
+									<input type="text" class="form-control" id="modal-reg-att-did-input-titolo" maxlength="100" required="" name="desTitAttDid" value="1542-ATT-1165-E-3-CERT-1-Corso Data Analysis and AI Specialist">
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-12 col-lg-4">
+									<label for="modal-reg-att-did-input-data-inizio">Data <span title="Campo obbligatorio" class="obbligatorio">*</span></label>
+									<div id="modal-reg-att-did-dt-data-inizio" class="input-group date" data-target-input="nearest">
+	                                    <input type="text" id="modal-reg-att-did-input-data-inizio" class="form-control rounded-0 datetimepicker-input" required="" mindate="2025-12-16" maxdate="2026-06-30" value="19/01/2026">
+										<div class="input-group-append block" data-target="#modal-reg-att-did-input-data-inizio" data-toggle="datetimepicker">
+											<div class="input-group-text">
+												<i class="fa fa-calendar"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-12 col-lg-2">
+									<label for="modal-reg-att-did-input-ora-inizio">Ora Inizio <span title="Campo obbligatorio" class="obbligatorio">*</span></label>
+									<input type="time" class="form-control" id="modal-reg-att-did-input-ora-inizio" step="60" required="" value="13:00">
+											<!-- DATA FITTIZZIA PER GESTIRE LE LEZIONI INCONTRO CON UINITA GIORNALIERA #temporals.format(#temporals.create(2025, 1, 1, 14, 30),'HH:mm'  -->
+								</div>
+								<div class="col-12 col-lg-2">
+									<label for="modal-reg-att-did-input-ora-fine">Ora Fine <span title="Campo obbligatorio" class="obbligatorio">*</span></label>
+									<input type="time" class="form-control" id="modal-reg-att-did-input-ora-fine" step="60" required="" value="14:00">
+								</div>
+							</div>
+							
+						</section>
+						
+							<h2>Partecipanti</h2>
+							<section>
+								<div id="modal-reg-att-did-partecipanti-table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table class="table table-hover table-kanit no-stripes w-100 dataTable no-footer dtr-inline" id="modal-reg-att-did-partecipanti-table" style="width: 0px;">
+									<thead>
+										<tr><th class="text-center sorting_disabled" rowspan="1" colspan="1" style="width: 0px;" aria-label="
+												
+												
+													
+												
+											">
+												
+												
+													<input type="checkbox" id="modal-reg-att-did-check-all-par" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Seleziona/Deseleziona tutti" data-original-title="" title="">
+												
+											</th><th class="sorting" tabindex="0" aria-controls="modal-reg-att-did-partecipanti-table" rowspan="1" colspan="1" style="width: 0px;" aria-label="Cod. Identificativo: activate to sort column ascending">Cod. Identificativo</th><th class="sorting" tabindex="0" aria-controls="modal-reg-att-did-partecipanti-table" rowspan="1" colspan="1" style="width: 0px;" aria-label="Cognome: activate to sort column ascending">Cognome</th><th class="sorting" tabindex="0" aria-controls="modal-reg-att-did-partecipanti-table" rowspan="1" colspan="1" style="width: 0px;" aria-label="Nome: activate to sort column ascending">Nome</th><th class="sorting" tabindex="0" aria-controls="modal-reg-att-did-partecipanti-table" rowspan="1" colspan="1" style="width: 0px;" aria-label="Ora inizio: activate to sort column ascending">Ora inizio</th><th class="sorting" tabindex="0" aria-controls="modal-reg-att-did-partecipanti-table" rowspan="1" colspan="1" style="width: 0px;" aria-label="Ora fine: activate to sort column ascending">Ora fine</th><th class="sorting" tabindex="0" aria-controls="modal-reg-att-did-partecipanti-table" rowspan="1" colspan="1" style="width: 0px;" aria-label=": activate to sort column ascending"></th></tr>
+									</thead>
+									<tbody>
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+									<tr class="odd">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="BGLVCN94M26A783L" id="partecipanti1" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>0415E7AB00</td>
+											<td>BAGLIONI</td>
+											<td>VINCENZO</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="BCCJCP90S16A783N" id="partecipanti2" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>E1FBCF7600</td>
+											<td>BOCCHINI</td>
+											<td>JACOPO</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="odd">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="CPNMHL00R54A783F" id="partecipanti3" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>829809AE00</td>
+											<td>CAPUANO</td>
+											<td>MICHELA</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="CTRRNI99B24A783U" id="partecipanti4" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>24AA682B00</td>
+											<td>CITARELLA</td>
+											<td>RINO</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="odd">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="CLLSFN86T05A783S" id="partecipanti5" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>CFC6130D00</td>
+											<td>COLLARILE</td>
+											<td>STEFANO</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="DLGGNN96M15A783H" id="partecipanti6" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>AF91E94100</td>
+											<td>DEL GROSSO</td>
+											<td>GIOVANNI</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="odd">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="DLSLSN06M29G596B" id="partecipanti7" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>A6E7B2EC00</td>
+											<td>DEL SESTO</td>
+											<td>ALESSANDRO</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="DCHNLP03B15A783E" id="partecipanti8" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>2BB0E50400</td>
+											<td>DI CHIARA</td>
+											<td>ANGELO PIO</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="odd">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="DTOGNN06C18G596V" id="partecipanti9" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>E1D110A300</td>
+											<td>DOTO</td>
+											<td>GIOVANNI</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="GNTNTN97P04L086B" id="partecipanti10" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>30BDF31B00</td>
+											<td>GENTILE</td>
+											<td>ANTONIO</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="odd">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="KRMKNR03E20F839S" id="partecipanti11" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>F6D5C0F200</td>
+											<td>KURUMBALAPITI ARACHCHIGE</td>
+											<td>KEVIN RUKSHAL</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="LCCLSN02D27A783E" id="partecipanti12" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>58FFCFFF00</td>
+											<td>LICCIARDI</td>
+											<td>ALESSANDRO</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="odd">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="LMBMTT06M05A783B" id="partecipanti13" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>CB44F51F00</td>
+											<td>LOMBARDI</td>
+											<td>MATTEO</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="MRTGNO05S06A783X" id="partecipanti14" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>915BFBBA00</td>
+											<td>MARTUCCI</td>
+											<td>GIOVANNI CARMINE</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="odd">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="MLINNF97E20C525A" id="partecipanti15" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>D344DC7500</td>
+											<td>MIELE</td>
+											<td>ANTONIO FRANCESCO</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="MRRRSY01R56A783C" id="partecipanti16" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>5D5EF08600</td>
+											<td>MIRRA</td>
+											<td>ROSY</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="odd">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="PGNGPP06B17B715G" id="partecipanti17" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>12E570EC00</td>
+											<td>PAGANO</td>
+											<td>GIUSEPPE</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="PRDMHL03E30A783M" id="partecipanti18" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>17A6429B00</td>
+											<td>PARADISO</td>
+											<td>MICHELE</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="odd">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="PSTGRL06M21I462L" id="partecipanti19" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>A68188BD00</td>
+											<td>PASTORE</td>
+											<td>GABRIELE</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="PLVCST01T15A783P" id="partecipanti20" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>9081A8DC00</td>
+											<td>POLVERE</td>
+											<td>CRISTIAN</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="odd">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="PGLJSC85E67A783U" id="partecipanti21" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>FC87783200</td>
+											<td>PUGLIESE</td>
+											<td>JESSICA</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="RVTNGL02C22Z138O" id="partecipanti22" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>BAC9D47A00</td>
+											<td>RIVETTI</td>
+											<td>ANGELO</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="odd">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="RSSDVD96L06C525A" id="partecipanti23" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>3E33864D00</td>
+											<td>RUSSO</td>
+											<td>DAVIDE</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="VTLBNR89A31F839V" id="partecipanti24" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>3E2A6B5700</td>
+											<td>VITIELLO</td>
+											<td>BERNARDO</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="odd">
+											<td class="text-center dtr-control" tabindex="0">
+												<input type="checkbox" value="ZTTNTN91P25B963P" id="partecipanti25" name="partecipanti"><input type="hidden" name="_partecipanti" value="on">
+												
+											</td>
+											<td>950C8F6F00</td>
+											<td>ZOTTI</td>
+											<td>ANTONIO</td>
+											<td>
+												<input type="time" class="form-control ora-inizio-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td>
+												<input type="time" class="form-control ora-fine-ritardo" step="60" min="13:00" max="14:00" value="">
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr></tbody>
+								</table></div></div><div class="row"><div class="col-sm-12 col-md-5"></div><div class="col-sm-12 col-md-7"></div></div></div>
+							</section>
+						
+						
+							<h2>Personale di progetto</h2>
+							<section>
+								<div id="modal-reg-att-did-personale-table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><table class="table table-hover table-kanit no-stripes w-100 dataTable no-footer dtr-inline" id="modal-reg-att-did-personale-table" style="width: 0px;">
+									<thead>
+										<tr><th class="text-center sorting_disabled" rowspan="1" colspan="1" style="width: 0px;" aria-label="
+												Presenza
+											">
+												Presenza
+											</th><th class="text-center sorting" tabindex="0" aria-controls="modal-reg-att-did-personale-table" rowspan="1" colspan="1" style="width: 0px;" aria-label="Firma: activate to sort column ascending">Firma</th><th class="sorting" tabindex="0" aria-controls="modal-reg-att-did-personale-table" rowspan="1" colspan="1" style="width: 0px;" aria-label="Data registrazione presenza: activate to sort column ascending">Data registrazione presenza</th><th class="sorting" tabindex="0" aria-controls="modal-reg-att-did-personale-table" rowspan="1" colspan="1" style="width: 0px;" aria-label="Codice fiscale: activate to sort column ascending">Codice fiscale</th><th class="sorting" tabindex="0" aria-controls="modal-reg-att-did-personale-table" rowspan="1" colspan="1" style="width: 0px;" aria-label="Cognome: activate to sort column ascending">Cognome</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 0px;" aria-label="Nome">Nome</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 0px;" aria-label="Tipologia attore">Tipologia attore</th><th class="sorting" tabindex="0" aria-controls="modal-reg-att-did-personale-table" rowspan="1" colspan="1" style="width: 0px;" aria-label="Tipologia professionale: activate to sort column ascending">Tipologia professionale</th><th class="sorting" tabindex="0" aria-controls="modal-reg-att-did-personale-table" rowspan="1" colspan="1" style="width: 0px;" aria-label="Utente firmatario: activate to sort column ascending">Utente firmatario</th><th class="text-center sorting" tabindex="0" aria-controls="modal-reg-att-did-personale-table" rowspan="1" colspan="1" style="width: 0px;" aria-label=": activate to sort column ascending"></th><th class="text-center sorting" tabindex="0" aria-controls="modal-reg-att-did-personale-table" rowspan="1" colspan="1" style="width: 0px;" aria-label=": activate to sort column ascending"></th></tr>
+									</thead>
+									<tbody>
+										
+										
+										
+										
+									<tr class="odd">
+											<td class="text-center dtr-control" id="tdFormatoriPresenza" tabindex="0">
+												<input type="checkbox" value="981666" name="prgPesSupPresenza" onchange="changeCheckboxPresenza(this)">
+												
+											</td>
+											<td class="text-center">
+												<input type="checkbox" value="981666" name="prgPesSup" onchange="changeCheckboxFirma(event, this)">
+												
+											</td>
+											<td></td>
+											<td name="codFis">CRTTNA81E47Z614T</td>
+											<td>CRETAZZO</td>
+											<td>TANIA</td>
+											<td>Formatore/Team</td>
+											<td class="text-center">
+												<select class="form-control custom-select" id="selectTipologiaProf" name="prgTipFigPrf">
+													<option disabled="" selected="" value="">Seleziona</option>
+													<option value="1">Docente o esperto</option>
+													<option value="2">Tutor</option>
+												</select>
+												
+											</td>
+											<td class="text-center">-</td>
+											<td class="text-center">
+												
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" id="tdFormatoriPresenza" tabindex="0">
+												<input type="checkbox" value="981614" name="prgPesSupPresenza" onchange="changeCheckboxPresenza(this)">
+												
+											</td>
+											<td class="text-center">
+												<input type="checkbox" value="981614" name="prgPesSup" onchange="changeCheckboxFirma(event, this)">
+												
+											</td>
+											<td></td>
+											<td name="codFis">LPRMDA71L03H894P</td>
+											<td>LEPORE</td>
+											<td>AMEDEO</td>
+											<td>Formatore/Team</td>
+											<td class="text-center">
+												<select class="form-control custom-select" id="selectTipologiaProf" name="prgTipFigPrf">
+													<option disabled="" selected="" value="">Seleziona</option>
+													<option value="1">Docente o esperto</option>
+													<option value="2">Tutor</option>
+												</select>
+												
+											</td>
+											<td class="text-center">-</td>
+											<td class="text-center">
+												
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="odd">
+											<td class="text-center dtr-control" id="tdFormatoriPresenza" tabindex="0">
+												<input type="checkbox" value="980366" name="prgPesSupPresenza" onchange="changeCheckboxPresenza(this)">
+												
+											</td>
+											<td class="text-center">
+												<input type="checkbox" value="980366" name="prgPesSup" onchange="changeCheckboxFirma(event, this)">
+												
+											</td>
+											<td></td>
+											<td name="codFis">MZZCRL66T10C476B</td>
+											<td>MAZZONE</td>
+											<td>CARLO</td>
+											<td>Formatore/Team</td>
+											<td class="text-center">
+												<select class="form-control custom-select" id="selectTipologiaProf" name="prgTipFigPrf">
+													<option disabled="" selected="" value="">Seleziona</option>
+													<option value="1">Docente o esperto</option>
+													<option value="2">Tutor</option>
+												</select>
+												
+											</td>
+											<td class="text-center">-</td>
+											<td class="text-center">
+												
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr><tr class="even">
+											<td class="text-center dtr-control" id="tdFormatoriPresenza" tabindex="0">
+												<input type="checkbox" value="980973" name="prgPesSupPresenza" onchange="changeCheckboxPresenza(this)">
+												
+											</td>
+											<td class="text-center">
+												<input type="checkbox" value="980973" name="prgPesSup" onchange="changeCheckboxFirma(event, this)">
+												
+											</td>
+											<td></td>
+											<td name="codFis">TRLMRA67A23A783P</td>
+											<td>TURILLI</td>
+											<td>MARIO</td>
+											<td>Organizzatore e Formatore/Team</td>
+											<td class="text-center">
+												<select class="form-control custom-select" id="selectTipologiaProf" name="prgTipFigPrf">
+													<option disabled="" selected="" value="">Seleziona</option>
+													<option value="1">Docente o esperto</option>
+													<option value="2">Tutor</option>
+												</select>
+												
+											</td>
+											<td class="text-center">-</td>
+											<td class="text-center">
+												
+											</td>
+											<td class="text-center" data-html="true" data-trigger="hover" data-toggle="popover" data-placement="left" data-original-title="" title="">
+												
+											</td>
+										</tr></tbody>
+								</table></div></div><div class="row"><div class="col-sm-12 col-md-5"></div><div class="col-sm-12 col-md-7"></div></div></div>
+							</section>
+						
+						
+						<div class="row form-group mt-2 mx-1">
+							<div class="form-check" style="display:none">
+								<input type="checkbox" class="form-check-input" id="modal-reg-att-did-check-dichiarazioni">
+								<label class="form-check-label" for="modal-reg-att-did-check-dichiarazioni">
+								Il sottoscritto Mario Turilli,
+								conformemente alle disposizioni in materia di autocertificazione e consapevole delle conseguenze amministrative e penali per chi rilasci dichiarazioni non veritiere, ai sensi del D.P.R. n. 445/2000,
+								dichiara che le informazioni inserite e registrate nella presente sezione del sistema informativo corrispondono effettivamente alle presenze rilevate e alle attività svolte.</label>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<div class="row justify-content-start w-100 gutter-5">
+						<div class="col-12 col-lg-3">
+							<button type="button" class="btn btn-block btn-secondary btn-secondary-red" data-dismiss="modal">
+								<i class="fas fa-times mr-1"></i> ANNULLA
+							</button>
+						</div>
+						
+							<div class="col-12 col-lg-3">
+								<button type="button" class="btn btn-block btn-danger" onclick="eliminaAttivitaDidattica(this,'92745','34165112')" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Elimina il registro delle prezenze" data-dismiss="modal" data-original-title="" title="">
+									<i class="fas fa-trash mr-1"></i> CANCELLA
+								</button>
+							</div>
+							<div class="col-12 col-lg-3 ml-auto">
+								<button type="button" id="modal-reg-att-did-btn-salva" class="btn btn-block btn-primary" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Salva" data-original-title="" title="">
+									<i class="fas fa-save mr-1"></i> SALVA
+								</button>
+							</div>
+							
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<style>
+			.popover {
+				max-width: 80vw !important; /* 80% della finestra su mobile */
+			}
+
+			@media (min-width: 768px) {
+				.popover {
+					max-width: 50vw !important; /* 50% della finestra su tablet e desktop */
+				}
+			}
+
+			@media (min-width: 1200px) {
+				.popover {
+					max-width: 50vw !important; /* 30% della finestra su schermi grandi */
+				}
+			}
+		</style>
+		<script>
+		$(document).ready(function(){
+
+		$('[data-toggle="popover"]').popover({
+			trigger: 'hover',
+			container: 'body' // Sposta il popover nel body, evitando problemi di overflow
+		});
+
+			onchangeOraInizioOraFine();
+			
+			//definisco due columnDefs differenti in base al tipo di attivita
+			var column;
+			if($("#isAttivitaImpRsd").val() == 'true'){
+				column = [
+                    { targets: 0, orderable: false, searchable: false, responsivePriority: 1, width: "5%" },
+                    { targets: 1, responsivePriority: 1, width: "20%" },
+                    { targets: 2, responsivePriority: 2, width: "25%" },
+                    { targets: 3, responsivePriority: 3, width: "25%" },
+                    { targets: 4, responsivePriority: 4, width: "25%" },
+                    { targets: 5, responsivePriority: 5, width: "5%" }
+				]
+			}else{
+				column = [
+			        { targets: 0, orderable: false, searchable: false, responsivePriority: 1, width: "5%" },
+			        { targets: 1, responsivePriority: 1, width: "10%" },
+			        { targets: 2, responsivePriority: 2, width: "25%" },
+			        { targets: 3, responsivePriority: 3, width: "25%" },
+			        { targets: 4, responsivePriority: 4, width: "25%" },
+			        { targets: 5, orderable: false, searchable: false, responsivePriority: 1, width: "10%" },
+			        { targets: 6, orderable: false, searchable: false, responsivePriority: 1, width: "5%" }
+			    ]
+			}
+			
+			$('#modal-reg-att-did-personale-table').DataTable({
+			    aaSorting: [],
+			    language: {
+			        lengthMenu: "Visualizza _MENU_ righe per pagina",
+			        zeroRecords: "Nessun dato da visualizzare",
+			        info: "Visualizzate righe da _START_ a _END_ di _TOTAL_ righe",
+			        infoEmpty: "Nessun risultato",
+			        infoFiltered: "(filtro su _MAX_ righe totali)",
+			        search: "Filtra",
+			        paginate: {
+			            first: "Primo",
+			            last: "Ultimo",
+			            next: "Successivo",
+			            previous: "Precedente",
+			        },
+			    },
+			    info: false,
+			    paging: false,
+			    searching: false,
+			    responsive: true,
+			    columnDefs: column
+			});
+		});
+		
+			$('#modal-reg-att-did').on('show.bs.modal', function() {
+				var prgPgt = 92745;
+				var prgAttDid = 34165112;
+				var dataInizioEdizione = "16\/12\/2025";
+				var dataFineEdizione = "30\/06\/2026";
+				var hasCompleta = $('#modal-reg-att-did-btn-completa').length > 0;
+				
+				formattaDateTimePicker();
+				
+				$('#modal-reg-att-did *[data-toggle="popover"]').popover();
+				$('#modal-reg-att-did input[type="checkbox"][readonly]').attr('tabindex', '-1');
+				
+				$('#modal-reg-att-did-partecipanti-table').DataTable({
+				    aaSorting: [],
+				    language: {
+				        lengthMenu: "Visualizza _MENU_ righe per pagina",
+				        zeroRecords: "Nessun dato da visualizzare",
+				        info: "Visualizzate righe da _START_ a _END_ di _TOTAL_ righe",
+				        infoEmpty: "Nessun risultato",
+				        infoFiltered: "(filtro su _MAX_ righe totali)",
+				        search: "Filtra",
+				        paginate: {
+				            first: "Primo",
+				            last: "Ultimo",
+				            next: "Successivo",
+				            previous: "Precedente",
+				        }
+				    },
+				    info: false,
+				    paging: false,
+				    searching: false,
+				    responsive: true,
+				    columnDefs: [
+				        { targets: 0, orderable: false, searchable: false, responsivePriority: 1, width: "5%" },
+				        { targets: 1, responsivePriority: 1, width: "20%"},
+				        { targets: 2, responsivePriority: 2, width: "40%"},
+				        { targets: 3, responsivePriority: 3, width: "35%"}
+				    ]
+				});
+				
+				
+				
+				$('#modal-reg-att-did-check-all-par').on('change', function() {
+					$('#modal-reg-att-did-partecipanti-table tbody input[type="checkbox"]').prop('checked', $(this).prop('checked'));
+				});
+				// fix visibilità dropdown
+				$('#modal-reg-att-did-dt-data-inizio, #modal-reg-att-did-dt-data-fine').on('dp.show', function(e) {
+					$widget = $(e.target);
+					$widget.find('.bootstrap-datetimepicker-widget')
+						.detach()
+						.appendTo($widget.parents('.modal').first())
+						.css('position', 'absolute')
+						.offset({top: $widget.offset().top + $widget.outerHeight(), left: $widget.offset().left});
+					$widget.datetimepicker('viewDate', $widget.datetimepicker('viewDate').startOf('day')); // FIX inizializzazione data interna
+				});
+				$('#modal-reg-att-did-dt-data-inizio').on('dp.change', function(e) {
+					console.log(e);
+					if (e.date) {
+						let date = e.date.format('YYYY-MM-DD[T]');
+						$('#modal-reg-att-did-dat-ini').val(date + $('#modal-reg-att-did-input-ora-inizio').val());
+						if (!$('#modal-reg-att-did-dt-data-fine').val()) {
+							$('#modal-reg-att-did-dat-fin').val(date + $('#modal-reg-att-did-input-ora-fine').val());
+						}
+						if (hasCompleta) {
+							let isBackward = e.date < today();
+							$('#modal-reg-att-did-input-motivazione').prop('disabled', !isBackward).parent().toggle(isBackward);
+						} else {
+							$('#modal-reg-att-did-personale-table tbody input[type="checkbox"][name="prgPesSup"]:not(.d-none)').trigger('change');
+						}
+					}
+					$('#modal-reg-att-did-dt-data-fine').datetimepicker('minDate', e.date || dataInizioEdizione);
+				});
+				$('#modal-reg-att-did-dt-data-fine').on('dp.change', function(e) {
+					let date = e.date ? e.date.format('YYYY-MM-DD[T]') : $('#modal-reg-att-did-dat-ini').val().substring(0,11);
+					$('#modal-reg-att-did-dat-fin').val(date + $('#modal-reg-att-did-input-ora-fine').val());
+					$('#modal-reg-att-did-dt-data-inizio').datetimepicker('maxDate', e.date || dataFineEdizione);
+				});
+				
+				if($('#modal-reg-att-did-input-ora-fine').length){
+					checkValiditaOrariLezioni();
+				}
+				$('#modal-reg-att-did-input-ora-inizio, #modal-reg-att-did-input-ora-fine').on('change', function() {
+					checkValiditaOrariLezioni();
+					setOrariRitardi();
+				});
+				$('#modal-reg-att-did-input-ora-inizio').on('change', function() {
+/* 					if ($(this).is(':valid')) { */
+					let val = $(this).val();
+					$('#modal-reg-att-did-dat-ini').val($('#modal-reg-att-did-dat-ini').val().substring(0,11) + val);
+					//var orarioMax = "23:00";
+					//$('#modal-reg-att-did-input-ora-fine').attr('min', val);
+					//$('#modal-reg-att-did-input-ora-fine').attr('max', prgAttDid ? ((timeToMinutes(val) + 60) > 23 ? orarioMax : minutesToTime(timeToMinutes(val) + 60)) : orarioMax);
+/* 					} */
+				});
+				$('#modal-reg-att-did-input-ora-fine').on('change', function() {
+/* 					if ($(this).is(':valid')) { */
+					let val = $(this).val();
+					$('#modal-reg-att-did-dat-fin').val($('#modal-reg-att-did-dat-fin').val().substring(0,11) + val);
+					//var orarioMin = "01:00";
+					//$('#modal-reg-att-did-input-ora-inizio').attr('min', prgAttDid ? minutesToTime(timeToMinutes(val) - 60) : orarioMin);
+					//$('#modal-reg-att-did-input-ora-inizio').attr('max', val);
+/* 					} */
+				});
+				
+				$('#modal-reg-att-did-input-flg-mensa').on('change', function() {
+					if ($(this).val() == 'flgPasMen') {
+						$('#modal-reg-att-did-input-titolo').data('oldVal', $('#modal-reg-att-did-input-titolo').val());
+						$('#modal-reg-att-did-input-titolo').val('Mensa');
+					} else if ($('#modal-reg-att-did-input-titolo').data('oldVal') != null) {
+						$('#modal-reg-att-did-input-titolo').val($('#modal-reg-att-did-input-titolo').data('oldVal'));
+					}
+					$('#modal-reg-att-did-input-ora-inizio, #modal-reg-att-did-input-ora-fine').trigger('change');
+				});
+				
+				$('#modal-reg-att-did-personale-table tbody input[type="checkbox"][name="prgPesSup"]:not(.d-none)').on('change', function() {
+					let isChecked = !!$(this).prop('checked');
+					let isBackward = $('#modal-reg-att-did-dt-data-inizio').datetimepicker('date') < today();
+					$('#modal-reg-att-did-input-motivazione').prop('disabled', !isChecked || !isBackward).parent().toggle(isChecked && isBackward);
+					$('#modal-reg-att-did-check-dichiarazioni').prop('required', isChecked).parent().toggle(isChecked);
+				});
+				if ($('#modal-reg-att-did-personale-table tbody input[type="checkbox"][name="prgPesSup"]:not(.d-none)').is(':checked')) {
+					$('#modal-reg-att-did-check-dichiarazioni').prop('checked', true);
+					$('#modal-reg-att-did-personale-table tbody input[type="checkbox"][name="prgPesSup"]:not(.d-none)').trigger('change');
+				}
+				
+				$('#modal-reg-att-did-btn-salva,#modal-reg-att-did-btn-completa').on('click', function() {
+					let isCompleta = $(this).is('#modal-reg-att-did-btn-completa');
+
+					let $checks =  $('#modal-reg-att-did-partecipanti-table tbody input[type="checkbox"]');
+
+					let $selects = $('#modal-reg-att-did-personale-table tbody select');
+					
+					if ($checks.length > 0) {
+						$checks.prop('required', false).each(function(){this.setCustomValidity('')});
+					}
+					
+					if ($selects.length > 0) {
+						$selects.prop('required', false).each(function(){this.setCustomValidity('')});
+					}
+					
+					var form = $('#modal-reg-att-did form')[0];
+					if (form.reportValidity()) {
+						if (isCompleta) {
+							if ($checks.length > 0 && $checks.filter(':checked').length == 0) {
+								$checks.first().prop('required', true).each(function(){this.setCustomValidity('Selezionare almeno un partecipante')});
+								form.reportValidity();
+								return;
+							}
+						}
+						//mappa per attivita non importo residio(progressivo personale, progressivo tipologia professionale)
+						let personaleAndPrgTipFigPrgMap = {};
+						// lista per attivita importo residio (progressivo personale)
+						
+						let personale = [];
+						let personaleConFirma = [];
+						let errore = false;
+						
+						if($("#tdFormatoriPresenza").length) {
+
+							$('#modal-reg-att-did-personale-table tbody input[type="checkbox"][name="prgPesSupPresenza"]:checked').each(function() {
+								if($("#isAttivitaImpRsd").val() === "false"){
+									if($(this).parents('tr').find('td select option').length){
+										if($(this).parents('tr').find('td select option:selected').val() == ""){
+											$(this).parents('tr').find('td select').first().prop('required', true).each(function(){this.setCustomValidity('Selezionare la tipologia professionale')});
+											form.reportValidity();
+											errore = true;
+										}else{
+											personaleAndPrgTipFigPrgMap[$(this).val()] = $(this).parents('tr').find('td select option:selected').val();
+										}
+									}else if($(this).parents('tr').find('td')){
+										var testo = $(this).text();
+										var prfTipPrf = testo =='Docente'? 1 : (prfTipPrf == 'Tutor'? 2 : 3);//soluzione temporanea: assegno comunque il tipPrf anche se si tratta di una riga già salvata. In questo modo evito che mi scateni l'eccezione backend e proceda con il salvataggio/cancellazione
+										personaleAndPrgTipFigPrgMap[$(this).val()] = prfTipPrf;
+									}
+								}else{
+									personale.push($(this).val());
+								}
+								
+								if($(this).parents('tr').find('input[type="checkbox"][name="prgPesSup"]:checked').length) {
+									personaleConFirma.push($(this).val());
+								}								
+								
+							});
+							
+						} else {
+
+							$('#modal-reg-att-did-personale-table tbody input[type="checkbox"][name="prgPesSup"]:checked').each(function() {
+								if($("#isAttivitaImpRsd").val() === "false"){
+									if($(this).parents('tr').find('td select option').length){
+										if($(this).parents('tr').find('td select option:selected').val() == ""){
+											$(this).parents('tr').find('td select').first().prop('required', true).each(function(){this.setCustomValidity('Selezionare la tipologia professionale')});
+											form.reportValidity();
+											errore = true;
+										}else{
+											personaleAndPrgTipFigPrgMap[$(this).val()] = $(this).parents('tr').find('td select option:selected').val();
+										}
+									}else if($(this).parents('tr').find('td')){
+										var testo = $(this).text();
+										var prfTipPrf = testo =='Docente'? 1 : (prfTipPrf == 'Tutor'? 2 : 3);//soluzione temporanea: assegno comunque il tipPrf anche se si tratta di una riga già salvata. In questo modo evito che mi scateni l'eccezione backend e proceda con il salvataggio/cancellazione
+										personaleAndPrgTipFigPrgMap[$(this).val()] = prfTipPrf;
+									}
+								}else{
+									personale.push($(this).val());
+								}
+								
+								personaleConFirma.push($(this).val());
+								
+							});							
+							
+						}
+						
+						if(errore){
+							return;
+						}
+						
+						let partecipanti = [];
+						let mappaStudenteRitardi = {};
+						$('#modal-reg-att-did-partecipanti-table tbody input[type="checkbox"]:checked').each(function() {
+							partecipanti.push($(this).val());
+							
+							if($("#isScuolaITS").val() == 'true' && $("#modal-reg-att-did-input-flg-mensa").val() == 'flgLezInc') {
+
+								mappaStudenteRitardi[$(this).val()] = 
+											{
+												oraEtr: $(this).parents('tr').find('input.ora-inizio-ritardo').val(), 
+												oraUsc: $(this).parents('tr').find('input.ora-fine-ritardo').val(),
+												datIni: $('#modal-reg-att-did-dat-ini').val()
+											};
+								
+							}
+						})
+						
+						let submit = function() {
+							let formData = new FormData(form);
+							formData.append('prgPgt', prgPgt);
+							formData.append('isCompleta', isCompleta);
+							formData.append('personaleAndPrgTipFigPrgMap', JSON.stringify(personaleAndPrgTipFigPrgMap));
+							formData.append('personale', personale);
+							formData.append('personaleConFirma', personaleConFirma);
+							formData.append('mappaStudenteRitardiJson', JSON.stringify(mappaStudenteRitardi));
+							
+							$.post({
+								url: form.action,
+								data: formData,
+								processData: false,
+								contentType: false,
+								dataType: "json",
+								success: function(response) {
+									if (response.responseCode == 'OK') {
+										
+										if(response.data != undefined && response.data != '') {
+											showWarnMessage(response.data, 15000);
+										}
+										
+										$('#modal-reg-att-did').trigger('save.attivitaDidattica').modal('hide');
+									} else if (response.responseCode == 'KO_PRC'){
+										$("#alertErrorMessagge").attr('hidden', false);
+										$("#errorMessaggeText").text(response.errorMessage);
+										$(".modal-body").scrollTop(0);
+									} else {
+										if(response.data != undefined){
+											toggleErroriErroriSovrapposizioneAttDid(response.data);
+										}
+										showErrorMessage(response.errorMessage.join("\n"));
+									}
+								},
+								error: function(response) {
+									showErrorMessage('Errore di connessione');
+								}
+							});
+						}
+						if (isCompleta) {
+							mostraConferma("Non sarà più possibile apportare modifiche. Confermi?", submit);
+						} else {
+							submit();
+						}
+					}
+				});
+			});
+
+			function toggleErroriErroriSovrapposizioneAttDid(data){
+				if(data != undefined && Object.keys(data).length > 0){ //sto salvando
+					const personale = data.Personale || [];
+					const partecipanti = data.Partecipanti || [];
+					evidenziaErroriPersonale(personale);
+					evidenziaErroriPartecipanti(partecipanti);
+					$('[data-toggle="popover"]').popover({
+						trigger: "hover",
+					});
+				}
+			}
+
+			function evidenziaErroriPersonale(personale) {
+				    $('#modal-reg-att-did-personale-table tbody tr').each(function () {
+					let row = $(this);
+					let prgPesSup = row.find('[name="prgPesSupPresenza"]').val(); // Ottieni il valore del campo nascosto
+					if (!prgPesSup) return;
+
+					personale.forEach(function (persona) {
+						if (persona.prgPesSup == prgPesSup && persona.errorCodFisGiaPresenteInAltreAttivitaList.length > 0) {
+							let td = row.find("td:last"); // Ultima colonna
+
+							// Pulisce la <td> prima di aggiungere l'icona
+							td.empty();
+
+							// Converte errori in una lista HTML
+							let erroriHtml = "<div><div>" + persona.errorCodFisGiaPresenteInAltreAttivitaList.join("</div><hr><div>") + "</div></div>";
+
+							// Aggiunge classe alla riga
+							row.addClass("alert alert-danger");
+
+							// Aggiunge il popover alla <td>
+							td.attr("data-toggle", "popover")
+							  .attr("data-html", "true")
+							  .attr("data-trigger", "hover")
+							  .attr("data-placement", "left")
+							  .attr("data-content", erroriHtml)
+							  .append('<i class="fa fa-lg fa-exclamation-circle mouseIcon"></i>');
+						}
+					});
+				});
+			}
+
+			function evidenziaErroriPartecipanti(partecipanti) {
+				$('#modal-reg-att-did-partecipanti-table tbody tr').each(function () {
+					let row = $(this);
+					let checkbox = row.find('[type="checkbox"]'); // Trova il checkbox
+					let idPartecipante = checkbox.val(); // Ottieni l'ID
+
+					if (!idPartecipante) return;
+
+					partecipanti.forEach(function (partecipante) {
+						if (partecipante.codiceFiscale == idPartecipante && partecipante.errorCodFisGiaPresenteInAltreAttivitaList.length > 0) {
+							let td = row.find("td:last"); // Ultima colonna
+
+							// Pulisce la <td> prima di aggiungere l'icona
+							td.empty();
+
+							// Converte errori in una lista HTML
+							let erroriHtml = "<div><div>" + partecipante.errorCodFisGiaPresenteInAltreAttivitaList.join("</div><hr><div>") + "</div></div>";
+
+							// Aggiunge classe alla riga
+							row.addClass("alert alert-danger");
+
+							// Aggiunge il popover alla <td>
+							td.attr("data-toggle", "popover")
+							  .attr("data-html", "true")
+							  .attr("data-trigger", "hover")
+							  .attr("data-placement", "left")
+							  .attr("data-content", erroriHtml)
+							  .append('<i class="fa fa-lg fa-exclamation-circle mouseIcon"></i>');
+						}
+					});
+				});
+			}
+
+			function checkValiditaOrariLezioni(){
+				let message = 'La durata deve essere multiplo di un\'ora';
+				
+				let oraFineMinutes = timeToMinutes($('#modal-reg-att-did-input-ora-fine').val());
+				let oraInizioMinutes = timeToMinutes($('#modal-reg-att-did-input-ora-inizio').val());
+				
+				if($("#modal-reg-att-did-input-flg-mensa :selected").hasClass('tirocini') && oraFineMinutes < oraInizioMinutes) {
+					// Attraversa la mezzanotte
+				    oraFineMinutes += 24 * 60;
+				}
+				
+				let val = oraFineMinutes - oraInizioMinutes;
+				if($("#isScuolaITS").val() == 'true' && $("#flgAttAnn").val() == 'true'){
+					message = 'La durata deve essere di 30 minuti o multiplo di un\'ora';
+					if ($('#modal-reg-att-did-input-flg-mensa').val() != 'flgPasMen' && val != 30) {
+						$('#modal-reg-att-did-input-ora-fine')[0].setCustomValidity(+val == 0 || (+val % 60) != 0 ? message : '');
+					}else{
+						$('#modal-reg-att-did-input-ora-fine')[0].setCustomValidity('');
+					}
+				} else{
+					if ($('#modal-reg-att-did-input-flg-mensa').val() != 'flgPasMen') {
+						$('#modal-reg-att-did-input-ora-fine')[0].setCustomValidity(+val == 0 || (+val % 60) != 0 ? message : '');
+					} else {
+						$('#modal-reg-att-did-input-ora-fine')[0].setCustomValidity(+val < 15 ? 'La durata deve essere almeno 15 minuti' : '');
+					}
+				}
+			}
+			
+			function setOrariRitardi() {
+				/* if($("#isScuolaITS").val() == 'true'){
+					$('.ora-inizio-ritardo, .ora-fine-ritardo').each(function () {
+
+						$(this).attr('min', $('#modal-reg-att-did-input-ora-inizio').val());
+						$(this).attr('max', $('#modal-reg-att-did-input-ora-fine').val());
+						
+					});
+				} */
+			}
+			
+			function changeCheckboxFirma(event, checkboxElement) {
+
+				if(event && event.isTrusted) {
+					if($(checkboxElement).parents('tr').find('input[type="checkbox"][name="prgPesSupPresenza"]').length) {					
+						if($(checkboxElement).is(':checked')) {
+							$(checkboxElement).parents('tr').find('input[type="checkbox"][name="prgPesSupPresenza"]').prop('checked', true);
+						} else {
+							$(checkboxElement).parents('tr').find('input[type="checkbox"][name="prgPesSupPresenza"]').prop('checked', false);
+						}
+					}
+				}
+			}
+			
+			function changeCheckboxPresenza(checkboxElement) {
+				if(!$(checkboxElement).is(':checked')) {
+					$(checkboxElement).parents('tr').find('input[type="checkbox"][name="prgPesSup"]').prop('checked', false);
+				}
+			}
+			
+			function onchangeOraInizioOraFine(event){
+				//var prgAttDid = /*34165112*/'';
+				/* if(!prgAttDid && event){
+					$("#modal-reg-att-did-input-ora-inizio").val('');
+					$("#modal-reg-att-did-input-ora-fine").val('');
+				} 
+				
+				$("#modal-reg-att-did-input-ora-inizio").attr('min', "01:00");
+				$("#modal-reg-att-did-input-ora-inizio").attr('max', "23:00");
+				$("#modal-reg-att-did-input-ora-fine").attr('min', "01:00");
+				$("#modal-reg-att-did-input-ora-fine").attr('max', "23:00"); */
+				
+			}
+		</script>
+	</div>
+
+
+
+
+
+		<!-- Modale registro attività didattiche con file excel -->
+		<div class="d-none hiddenIfElencoEmpty" id="modal-reg-att-did-excel" style="display: block;"></div>
+		<!-- Modale tirocini con partecipante file excel -->
+		<div class="d-none hiddenIfElencoEmpty" id="modal-tir-par-excel" style="display: block;"></div>
+
+		<!-- MODALE LEGENDA STATI -->
+		
+    <div class="modal fade" id="modal-legenda-att-did" data-keyboard="false" tabindex="-1" aria-labelledby="modal-legenda-att-did-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h5 class="modal-title" id="modal-legenda-att-did-label">Legenda degli stati</h5>
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                    <span aria-hidden="true">×</span>
+	                </button>   
+	            </div>
+	            <div class="modal-body">
+	                <table class="table table-legenda table-hover no-stripes w-100">
+	                    <thead>
+	                        <tr>
+	                            <th class="col_uno">Stato</th>
+	                            <th class="col_due">Descrizione</th>
+	                        </tr>
+	                    </thead>
+	                    <tbody>
+	                        <tr class="p-2">
+	                            <td class="col_uno p-2 align-top">
+	                                <span class="stato stato-non-avviato">PIANIFICATA</span>
+	                            </td>
+	                            <td class="col_due"><b>Lezione/Incontro pianificata</b> - L'attività è stata pianificata ma non sono state ancora registrate le presenze.</td>
+	                        </tr>
+	                        <tr class="p-2">
+	                            <td class="col_uno p-2 align-top">
+	                                <span class="stato stato-da-consolidare">REGISTRATA</span>
+	                            </td>
+	                            <td class="col_due"><b>Lezione/Incontro registrata</b> - Sono state registrate, in tutto o in parte, le presenze ed è ancora possibile apportare modifiche.</td>
+	                        </tr>
+	                        <tr class="p-2">
+	                            <td class="col_uno p-2 align-top">
+	                                <span class="stato stato-consolidato">COMPLETATA</span>
+	                            </td>
+	                            <td class="col_due"><b>Lezione/Incontro completata</b> - Sono state registrate tutte le presenze, sia dei partecipanti che dei formatori, e l'attività è completata e non più modificabile
+	                            (a meno che non venga rimessa in lavorazione dal DS/Legale Rappresentante).</td>
+	                        </tr>
+	                    </tbody>
+	                </table>
+	            </div>
+	            <div class="modal-footer">
+	                <div class="row justify-content-between w-100">
+	                    <div class="col-12 col-lg-4">
+	                    </div>
+	                    <div class="col-12 col-lg-4">
+	                        <button type="button" class="btn btn-block btn-secondary btn-secondary-red" data-dismiss="modal">
+	                        	<i class="fas fa-times mr-1"></i>CHIUDI
+	                       	</button>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+    </div>
+
+	</section>
+
+					
+					<!-- <div th:if="${hasMonitoraggioFinale && idSubPag == T(it.dxc.miur.gestioneAvvisiPnrr.util.TipoIdPaginaProgettoUtil).ATTUAZIONE_MONITORAGGIO_FINALE}" th:include="scuola/progetti/attuazione/monitoraggioFinale" th:remove="tag"></div> -->
+					
+				</div>
+				
+				
+				
+
+			</div>
+		</div>
+	</main>
+
+      </body>
+</html>

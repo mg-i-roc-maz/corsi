@@ -5,11 +5,13 @@ backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
 style: |
   section {
-    font-size: 2.1em;
+    font-size: 1.8em;
   }
 ---
 
 # Lezione: Introduzione a TypeScript
+
+> <strong>TypeScript is JavaScript after it went to therapy.</strong>
 
 ---
 
@@ -66,6 +68,8 @@ console.log(messaggio);
 
    Verrà generato un file `esempio.js`.
 
+---
+
 3. **Esegui il file JavaScript con Node.js**
 
    ```bash
@@ -102,6 +106,8 @@ Verrà generato un file `somma.js` nella stessa cartella.
 ```bash
 cat somma.js
 ```
+
+---
 
 4. **Esegui il file JavaScript:**
 
@@ -234,8 +240,6 @@ function somma(a: number, b: number): number {
   return a + b;
 }
 ```
-
----
 
 ## Parametri opzionali e di default
 

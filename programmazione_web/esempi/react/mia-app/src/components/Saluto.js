@@ -1,6 +1,6 @@
 // src/Saluto.js
 function Saluto() {
-    return <h2>Ciao, sono un nuovo componente!</h2>;
+    return <h2>Ciao</h2>;
 }
 
 export default Saluto;
