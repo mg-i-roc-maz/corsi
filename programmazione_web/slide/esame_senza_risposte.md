@@ -20,7 +20,7 @@
    A) FTP  
    B) SMTP  
    C) HTTP  
-   D) SSH  
+   D) SSH
 
 5. Quale tag HTML viene usato per inserire un’immagine?
    A) <img>  
