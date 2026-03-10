@@ -1,0 +1,30 @@
+Fornire le competenze minime ma operative per:	
+capire come funzionano applicazioni web data-driven	
+esporre dati e risultati di analisi/AI via web	
+interagire con API, dashboard e servizi cloud	
+	
+	
+Architettura client–server	
+HTTP/HTTPS (GET, POST, status code)	
+REST vs web app	
+JSON come formato dati	
+HTML 	
+	Tabelle, form, input
+CSS base per leggibilità	
+JavaScript come strumento di accesso ai dati	
+	Variabili, funzioni (essenziale)
+	Fetch API
+	Chiamate REST
+	Parsing JSON
+	Visualizzazione semplice (chart.js / plotly.js)
+Concetto di backend	
+	API per dati e modelli
+	Microservizi
+	Python + FastAPI + Flask
+API che restituiscono:	
+	risultati di analisi
+	output di modelli ML
+Web come interfaccia a:	
+	pipeline dati
+	sistemi BI
+	servizi cloud

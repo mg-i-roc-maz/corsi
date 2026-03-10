@@ -50,6 +50,7 @@ Introduzione alle diverse architetture dei database (SQL e NoSQL).
 ## Modulo 4: Architetture Distribuite e Hadoop (6 ore)
 
 - Modelli architetturali distribuiti
+- Introduzione a Hadoop e al calcolo parallelo
 - Ecosistema Hadoop: componenti e utilizzi
 - Laboratorio: Simulazione di un flusso dati su Hadoop
 
@@ -57,14 +58,12 @@ Introduzione alle diverse architetture dei database (SQL e NoSQL).
 
 - Differenze tra database relazionali e non relazionali
 - Principali soluzioni di mercato (MySQL, PostgreSQL, MongoDB, Cassandra)
-- Laboratorio: Progettazione e interrogazione di database SQL e NoSQL
+- Introduzione ai database distribuiti e loro architettura
 
 ## Modulo 6: Sicurezza, Affidabilità e Valutazione del Servizio (2 ore)
 
 - Normative di settore e best practice
 - Strumenti per la misurazione e il miglioramento del servizio
-
----
 
 ## Attività e Valutazione
 
