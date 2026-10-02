@@ -1,0 +1,14 @@
+# Esercizio 6: sviluppo con riavvio automatico, tutto dentro Docker.
+#   docker compose -f compose.yaml -f compose.dev.yaml up --build
+# Modifica un file in services/catalog/src: il servizio si riavvia da solo.
+services:
+  catalog:
+    build:
+      context: ./services/catalog
+      target: build # si ferma alla prima fase: lì ci sono tsx e le dipendenze di sviluppo
+    command: ["npx", "tsx", "watch", "src/server.ts"]
+    environment:
+      NODE_ENV: development
+    volumes:
+      # Bind mount: il container vede in diretta la cartella src del tuo PC.
+      - ./services/catalog/src:/app/src

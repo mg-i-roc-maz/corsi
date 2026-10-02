@@ -15,6 +15,10 @@ Stack: Node.js + TypeScript (Fastify), Docker Compose, PostgreSQL, Redis, Rabbit
 | `lezione-1/start/` | Codice di partenza del laboratorio |
 | `lezione-1/solution/` | Soluzione del laboratorio |
 | `lezione-1/extra/` | Test e soluzioni degli esercizi extra |
+| `lezione-2/slides.pdf` | Slide della lezione 2: Docker e Docker Compose |
+| `lezione-2/start/` | Codice di partenza: catalog con PostgreSQL, servizio orders, Dockerfile e Compose da completare |
+| `lezione-2/solution/` | Soluzione del laboratorio |
+| `lezione-2/extra/` | Esercizi extra e soluzioni |
 
 ## Per gli studenti
 
@@ -23,6 +27,8 @@ git clone https://github.com/mg-i-roc-maz/corsi
 cd corsi/microservizi/lezione-1/start
 code .
 ```
+
+Per le lezioni successive basta `git pull` dalla cartella `corsi` e poi aprire `lezione-N/start`.
 
 Poi segui `SETUP.md` e `README.md` dentro la cartella della lezione.
 

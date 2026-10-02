@@ -1,0 +1,32 @@
+# Il negozio completo: avvialo con  docker compose up --build
+name: shop
+
+services:
+  # Database del catalogo. Solo catalog lo usa: ogni servizio ha i suoi dati.
+  catalog-db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: shop
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-shop}
+      POSTGRES_DB: catalog
+    # Parte 3 · TODO 1: due volumi
+    #   - il volume con nome "catalog-data" montato su /var/lib/postgresql/data
+    #   - il file ./services/catalog/db/init.sql montato (in sola lettura, :ro)
+    #     su /docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432" # facoltativo: serve solo per collegarsi dal tuo PC (test, client SQL)
+    # Parte 3 · TODO 2: healthcheck con il comando  pg_isready -U shop -d catalog
+    #   (test: ["CMD-SHELL", "..."], interval: 2s, timeout: 3s, retries: 15)
+
+  # Parte 3 · TODO 3: il servizio "catalog"
+  #   - build dalla cartella ./services/catalog
+  #   - variabili d'ambiente PORT=3001 e
+  #     DATABASE_URL=postgres://shop:${POSTGRES_PASSWORD:-shop}@<host>:5432/catalog
+  #     (quale host? NON localhost: dentro un container localhost è il container stesso)
+  #   - porta 3001 pubblicata sul tuo PC
+  #   - depends_on: catalog-db con condition: service_healthy
+
+  # Parte 4 · TODO: il servizio "orders" (build ./services/orders, PORT=3002, porta 3002)
+
+volumes:
+  catalog-data:

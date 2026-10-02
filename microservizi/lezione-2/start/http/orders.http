@@ -1,0 +1,33 @@
+# Richieste per il servizio orders (porta 3002).
+
+@orders = http://localhost:3002
+
+### Health check
+GET {{orders}}/health
+
+### Elenco ordini
+GET {{orders}}/orders
+
+### Crea un ordine (atteso: 201, status "pending")
+POST {{orders}}/orders
+Content-Type: application/json
+
+{
+  "customerEmail": "anna@example.com",
+  "items": [
+    { "productId": "p-1", "quantity": 1 },
+    { "productId": "p-2", "quantity": 2 }
+  ]
+}
+
+### Un ordine
+GET {{orders}}/orders/o-1
+
+### Ordine senza righe (atteso: 400)
+POST {{orders}}/orders
+Content-Type: application/json
+
+{
+  "customerEmail": "anna@example.com",
+  "items": []
+}

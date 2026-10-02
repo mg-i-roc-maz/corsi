@@ -1,0 +1,62 @@
+# Soluzione degli esercizi extra 2, 3 e 4. Sostituisce compose.yaml nella cartella start.
+name: shop
+
+services:
+  catalog-db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: shop
+      # Esercizio 4: senza valore di riserva. Se manca .env, Compose si ferma con un errore chiaro.
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?crea il file .env partendo da .env.example}
+      POSTGRES_DB: catalog
+    volumes:
+      - catalog-data:/var/lib/postgresql/data
+      - ./services/catalog/db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shop -d catalog"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+
+  catalog:
+    build: ./services/catalog
+    environment:
+      PORT: 3001
+      DATABASE_URL: postgres://shop:${POSTGRES_PASSWORD}@catalog-db:5432/catalog
+    ports:
+      - "3001:3001"
+    depends_on:
+      catalog-db:
+        condition: service_healthy
+    # Esercizio 2: l'immagine node:22-slim non ha curl, ma ha node (con fetch).
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3001/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+
+  orders:
+    build: ./services/orders
+    environment:
+      PORT: 3002
+    ports:
+      - "3002:3002"
+    # Esercizio 2: orders parte quando catalog è sano (servirà dalla lezione 3).
+    depends_on:
+      catalog:
+        condition: service_healthy
+
+  # Esercizio 3: interfaccia web per guardare il database su http://localhost:8080
+  # Login: Sistema PostgreSQL, Server catalog-db, Utente shop, password del file .env, Database catalog
+  adminer:
+    image: adminer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - catalog-db
+
+volumes:
+  catalog-data:

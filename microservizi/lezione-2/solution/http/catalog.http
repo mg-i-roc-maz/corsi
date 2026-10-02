@@ -1,0 +1,53 @@
+# Richieste per il servizio catalog (porta 3001).
+# In VS Code con l'estensione REST Client: clicca "Send Request" sopra ogni richiesta.
+
+@catalog = http://localhost:3001
+
+### Health check
+GET {{catalog}}/health
+
+### Elenco prodotti
+GET {{catalog}}/products
+
+### Ricerca per nome
+GET {{catalog}}/products?q=mouse
+
+### Un prodotto
+GET {{catalog}}/products/p-1
+
+### Prodotto inesistente (atteso: 404)
+GET {{catalog}}/products/p-999
+
+### Crea un prodotto (atteso: 201 + header Location)
+POST {{catalog}}/products
+Content-Type: application/json
+
+{
+  "name": "Cuffie",
+  "description": "Over-ear, cancellazione del rumore",
+  "priceCents": 5990,
+  "stock": 8
+}
+
+### Dati non validi (atteso: 400)
+POST {{catalog}}/products
+Content-Type: application/json
+
+{
+  "name": "",
+  "priceCents": -5
+}
+
+### Aggiorna un prodotto
+PUT {{catalog}}/products/p-2
+Content-Type: application/json
+
+{
+  "name": "Mouse wireless",
+  "description": "Nuovo modello",
+  "priceCents": 3490,
+  "stock": 25
+}
+
+### Cancella un prodotto (atteso: 204)
+DELETE {{catalog}}/products/p-3
