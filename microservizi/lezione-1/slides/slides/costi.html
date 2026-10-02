@@ -1,0 +1,17 @@
+<section id="costi" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">I costi che non si vedono subito</h2>
+<div style="display:flex;gap:32px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#12202E;padding:48px;border-radius:16px">
+<h3 style="font-size:36px;font-weight:700;color:#F0915A">La rete non è una funzione</h3>
+<p style="font-size:28px;line-height:1.4;color:#C9D2DC">Le «fallacie del calcolo distribuito» (L. Peter Deutsch e colleghi, Sun Microsystems) elencano le ipotesi sbagliate più comuni. Tra queste:</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;line-height:1.6;color:#F5F2EC">✗ la rete è affidabile<br>✗ la latenza è zero<br>✗ la banda è infinita<br>✗ la topologia non cambia</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:24px;background:#FCFBF8;padding:48px;border:1px solid #DDD6C8;border-radius:16px">
+<h3 style="font-size:36px;font-weight:700">E poi c'è il resto</h3>
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-size:28px;font-weight:700">Consistenza dei dati</p><p style="font-size:28px;line-height:1.4;color:#4A5260">Niente transazione unica tra servizi.</p></div>
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-size:28px;font-weight:700">Osservabilità</p><p style="font-size:28px;line-height:1.4;color:#4A5260">Seguire una richiesta tra più processi.</p></div>
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-size:28px;font-weight:700">Infrastruttura e competenze</p><p style="font-size:28px;line-height:1.4;color:#4A5260">Container, gateway, CI/CD, monitoraggio.</p></div>
+</div>
+</div>
+<aside>La lista originale delle fallacie ne ha otto: le altre riguardano sicurezza della rete, amministratore unico, costo di trasporto nullo e rete omogenea. Ognuno di questi costi avrà una lezione: resilienza (4), cache (5-6), eventi e consistenza eventuale (7-8).</aside>
+</section>

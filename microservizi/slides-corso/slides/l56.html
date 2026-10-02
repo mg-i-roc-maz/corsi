@@ -1,0 +1,22 @@
+<section id="l56" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Lezioni 5–6: caching</h2>
+<div style="display:flex;gap:32px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FCFBF8;padding:48px;border:1px solid #DDD6C8;border-radius:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B04A1A">Lezione 5 · 3 ore</p>
+<h3 style="font-size:44px;font-weight:700;line-height:1.2">Caching: fondamenti</h3>
+<p style="font-size:24px;font-weight:700;color:#2F5D8A">TEORIA · 1h15</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">Hit e miss, TTL, cache-aside, write-through, write-behind. Invalidazione, dati stale, cache stampede.</p>
+<p style="font-size:24px;font-weight:700;color:#2F5D8A">LAB · 1h45</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">Redis nel Compose, cache-aside su catalog, tempi con e senza cache, esplorazione delle chiavi con redis-cli.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FCFBF8;padding:48px;border:1px solid #DDD6C8;border-radius:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B04A1A">Lezione 6 · 3 ore</p>
+<h3 style="font-size:44px;font-weight:700;line-height:1.2">Caching nei microservizi</h3>
+<p style="font-size:24px;font-weight:700;color:#2F5D8A">TEORIA · 1h</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">Cache locale vs distribuita, Cache-Control ed ETag, cache sul gateway, invalidazione tra servizi, hit ratio.</p>
+<p style="font-size:24px;font-weight:700;color:#2F5D8A">LAB · 2h</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">Cache HTTP con Nginx, invalidazione quando un prodotto cambia, load test con k6, cache stampede simulato e mitigato.</p>
+</div>
+</div>
+<aside>Qui i numeri parlano: si misura la latenza prima e dopo la cache, e con k6 si vede l'effetto sotto carico. Poi si scopre il lato difficile: l'invalidazione.</aside>
+</section>

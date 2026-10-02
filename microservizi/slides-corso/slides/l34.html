@@ -1,0 +1,22 @@
+<section id="l34" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Lezioni 3–4: servizi che collaborano</h2>
+<div style="display:flex;gap:32px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FCFBF8;padding:48px;border:1px solid #DDD6C8;border-radius:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B04A1A">Lezione 3 · 3 ore</p>
+<h3 style="font-size:44px;font-weight:700;line-height:1.2">Progettare e far comunicare i servizi</h3>
+<p style="font-size:24px;font-weight:700;color:#2F5D8A">TEORIA · 1h15</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">Database per servizio, API REST e versionamento, API Gateway, comunicazione sincrona.</p>
+<p style="font-size:24px;font-weight:700;color:#2F5D8A">LAB · 1h45</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">orders chiama catalog via HTTP, Nginx come gateway, service discovery con il DNS di Compose.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FCFBF8;padding:48px;border:1px solid #DDD6C8;border-radius:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B04A1A">Lezione 4 · 3 ore</p>
+<h3 style="font-size:44px;font-weight:700;line-height:1.2">Resilienza e configurazione</h3>
+<p style="font-size:24px;font-weight:700;color:#2F5D8A">TEORIA · 1h</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">Fallimenti parziali, timeout, retry con backoff, circuit breaker, health check, log e correlation ID.</p>
+<p style="font-size:24px;font-weight:700;color:#2F5D8A">LAB · 2h</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">Si spegne catalog e si osserva orders. Timeout, retry e circuit breaker con opossum, endpoint /health, log strutturati.</p>
+</div>
+</div>
+<aside>La lezione 4 parte da un esperimento: spegniamo catalog e vediamo orders bloccarsi. È il modo più efficace per far capire perché servono timeout e circuit breaker.</aside>
+</section>

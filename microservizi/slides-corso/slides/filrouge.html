@@ -1,0 +1,27 @@
+<section id="filrouge" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Progetto fil rouge: mini e-commerce</h2>
+<div style="position:absolute;left:128px;top:410px;width:220px;height:100px;background:#EAE5DB;border:2px solid #12202E;border-radius:12px;display:flex;flex-direction:column;justify-content:center;align-items:center"><p style="font-size:28px;font-weight:600">Client</p></div>
+<div style="position:absolute;left:480px;top:410px;width:260px;height:100px;background:#EAE5DB;border:2px solid #12202E;border-radius:12px;display:flex;flex-direction:column;justify-content:center;align-items:center"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700">nginx</p><p style="font-size:24px;color:#4A5260">gateway</p></div>
+<div style="position:absolute;left:860px;top:260px;width:340px;height:100px;background:#FCFBF8;border:2px solid #12202E;border-radius:12px;display:flex;flex-direction:column;justify-content:center;align-items:center"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700">catalog</p><p style="font-size:24px;color:#4A5260">prodotti</p></div>
+<div style="position:absolute;left:860px;top:410px;width:340px;height:100px;background:#FCFBF8;border:2px solid #12202E;border-radius:12px;display:flex;flex-direction:column;justify-content:center;align-items:center"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700">orders</p><p style="font-size:24px;color:#4A5260">ordini</p></div>
+<div style="position:absolute;left:860px;top:560px;width:340px;height:100px;background:#F7E3D3;border:2px dashed #B04A1A;border-radius:12px;display:flex;flex-direction:column;justify-content:center;align-items:center"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700">RabbitMQ</p><p style="font-size:24px;color:#4A5260">broker di eventi</p></div>
+<div style="position:absolute;left:860px;top:710px;width:340px;height:100px;background:#FCFBF8;border:2px solid #12202E;border-radius:12px;display:flex;flex-direction:column;justify-content:center;align-items:center"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700">notifications</p><p style="font-size:24px;color:#4A5260">email e avvisi</p></div>
+<div style="position:absolute;left:1360px;top:260px;width:300px;height:100px;background:#2F5D8A;border-radius:12px;display:flex;flex-direction:column;justify-content:center;align-items:center"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#F5F2EC">Redis</p><p style="font-size:24px;color:#DCE6F0">cache</p></div>
+<div style="position:absolute;left:1360px;top:410px;width:300px;height:100px;background:#2F5D8A;border-radius:12px;display:flex;flex-direction:column;justify-content:center;align-items:center"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#F5F2EC">PostgreSQL</p><p style="font-size:24px;color:#DCE6F0">un DB per servizio</p></div>
+<x-connector x1="348" y1="460" x2="480" y2="460" head="end" route="straight" style="color:#12202E;border-width:3px"></x-connector>
+<x-connector x1="740" y1="460" x2="860" y2="460" head="end" route="straight" style="color:#12202E;border-width:3px"></x-connector>
+<x-connector x1="610" y1="410" x2="860" y2="310" head="end" route="vh" style="color:#12202E;border-width:3px"></x-connector>
+<x-connector x1="1030" y1="410" x2="1030" y2="360" head="end" route="straight" style="color:#12202E;border-width:3px"></x-connector>
+<x-connector x1="1030" y1="510" x2="1030" y2="560" head="end" route="straight" style="color:#B04A1A;border-width:3px;border-style:dashed"></x-connector>
+<x-connector x1="1030" y1="660" x2="1030" y2="710" head="end" route="straight" style="color:#B04A1A;border-width:3px;border-style:dashed"></x-connector>
+<x-connector x1="1200" y1="310" x2="1360" y2="310" head="both" route="straight" style="color:#2F5D8A;border-width:3px"></x-connector>
+<x-connector x1="1200" y1="460" x2="1360" y2="460" head="both" route="straight" style="color:#2F5D8A;border-width:3px"></x-connector>
+<p style="position:absolute;left:1050px;top:366px;width:120px;font-size:24px;color:#4A5260">HTTP</p>
+<p style="position:absolute;left:1050px;top:516px;width:300px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#B04A1A">OrderCreated</p>
+<p style="position:absolute;left:128px;top:600px;width:620px;font-size:28px;line-height:1.4;color:#4A5260">Si parte da un solo servizio e si aggiunge un pezzo a ogni lezione, fino al sistema completo.</p>
+<div style="position:absolute;left:128px;top:740px;width:620px;display:flex;flex-direction:column;gap:8px">
+<p style="font-size:24px;color:#12202E">— chiamata sincrona (HTTP)</p>
+<p style="font-size:24px;color:#B04A1A">- - evento asincrono</p>
+</div>
+<aside>Questa è la meta: alla lezione 8 tutti i gruppi hanno questo sistema funzionante con un solo docker compose up. Orders chiama catalog in modo sincrono per verificare il prodotto; quando un ordine è creato pubblica un evento che notifications consuma.</aside>
+</section>

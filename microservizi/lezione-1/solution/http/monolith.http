@@ -1,0 +1,36 @@
+# Richieste per il monolite (porta 3000): catalogo e ordini nello stesso processo.
+
+@mono = http://localhost:3000
+
+### Health check
+GET {{mono}}/health
+
+### Prodotti
+GET {{mono}}/products
+
+### Crea un ordine
+POST {{mono}}/orders
+Content-Type: application/json
+
+{
+  "customerEmail": "mario@example.com",
+  "items": [
+    { "productId": "p-1", "quantity": 1 },
+    { "productId": "p-2", "quantity": 2 }
+  ]
+}
+
+### Le scorte sono cambiate? (l'ordine ha toccato i dati del catalogo)
+GET {{mono}}/products
+
+### Ordine con scorte insufficienti (atteso: 409)
+POST {{mono}}/orders
+Content-Type: application/json
+
+{
+  "customerEmail": "lucia@example.com",
+  "items": [{ "productId": "p-3", "quantity": 100 }]
+}
+
+### Elenco ordini
+GET {{mono}}/orders
