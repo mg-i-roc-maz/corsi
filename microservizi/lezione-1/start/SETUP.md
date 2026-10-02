@@ -28,7 +28,7 @@ code .
 Non serve installare Node.js sul tuo computer: gira tutto dentro un container.
 
 1. In VS Code installa l'estensione **Dev Containers**.
-2. Quando VS Code propone *"Reopen in Container"*, accetta. In alternativa: `F1` → `Dev Containers: Reopen in Container`.
+2. Quando VS Code propone *"Reopen in Container"*, accetta. In alternativa apri la palette dei comandi (`Cmd+Shift+P` su Mac, `Ctrl+Shift+P` su Windows e Linux) e scegli `Dev Containers: Reopen in Container`.
 3. La prima volta servono alcuni minuti: il container installa Node.js 22 e le dipendenze.
 
 ### Opzione B: Node.js in locale
