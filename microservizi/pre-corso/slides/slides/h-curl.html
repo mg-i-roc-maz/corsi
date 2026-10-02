@@ -1,0 +1,11 @@
+<section id="h-curl" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#2F5D8A">Parte 2 · HTTP</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">curl: HTTP dal terminale</h2>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;gap:32px;align-items:center"><p style="width:440px;font-size:28px;font-weight:700">Una GET</p><p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#F5F2EC;background:#12202E;padding:20px 28px;border-radius:10px">curl https://jsonplaceholder.typicode.com/todos/1</p></div>
+<div style="display:flex;gap:32px;align-items:center"><p style="width:440px;font-size:28px;font-weight:700">Con gli header della risposta</p><p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#F5F2EC;background:#12202E;padding:20px 28px;border-radius:10px">curl -i https://jsonplaceholder.typicode.com/todos/1</p></div>
+<div style="display:flex;gap:32px;align-items:center"><p style="width:440px;font-size:28px;font-weight:700">Una POST con un corpo JSON</p><p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.5;color:#F5F2EC;background:#12202E;padding:20px 28px;border-radius:10px">curl -X POST https://jsonplaceholder.typicode.com/posts \<br>&#160;&#160;-H "Content-Type: application/json" \<br>&#160;&#160;-d '{"title":"ciao","userId":1}'</p></div>
+</div>
+<p style="font-size:26px;line-height:1.4;color:#4A5260"><b>-i</b> mostra gli header · <b>-X</b> sceglie il metodo · <b>-H</b> aggiunge un header · <b>-d</b> invia un corpo. Su Windows scrivi <b>curl.exe</b>.</p>
+<aside>Su Windows PowerShell 5, curl è un alias di un altro comando (Invoke-WebRequest) con opzioni diverse: per questo si scrive curl.exe. Le virgolette del corpo JSON in PowerShell sono scomode: per la POST conviene il terminale del Dev Container, Git Bash o REST Client in VS Code. La barra rovesciata a fine riga serve solo ad andare a capo nei terminali Mac e Linux.</aside>
+</section>

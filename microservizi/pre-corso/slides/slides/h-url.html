@@ -1,0 +1,14 @@
+<section id="h-url" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#2F5D8A">Parte 2 · HTTP</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Anatomia di un URL</h2>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:40px;font-weight:700;line-height:1.4;background:#12202E;padding:36px 40px;border-radius:12px"><span style="color:#F0915A">http</span><span style="color:#8FA3B8">://</span><span style="color:#6E9CC8">localhost</span><span style="color:#8FA3B8">:</span><span style="color:#E8C99A">3001</span><span style="color:#F5F2EC">/products/p-1</span><span style="color:#B8D8A8">?q=mouse</span></p>
+<table style="font-size:26px;color:#12202E">
+<tr><th style="width:22%;text-align:left">Parte</th><th style="width:30%;text-align:left">Nell'esempio</th><th style="width:48%;text-align:left">A cosa serve</th></tr>
+<tr><td>Schema</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">http</td><td>Il protocollo; https se cifrato</td></tr>
+<tr style="background:#EAE5DB"><td>Host</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">localhost</td><td>Il computer: localhost è il tuo</td></tr>
+<tr><td>Porta</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">3001</td><td>Quale programma su quel computer</td></tr>
+<tr style="background:#EAE5DB"><td>Percorso</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">/products/p-1</td><td>Quale risorsa</td></tr>
+<tr><td>Query</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">?q=mouse</td><td>Parametri extra: filtri, ricerche</td></tr>
+</table>
+<aside>Se la porta non è scritta si usano quelle standard: 80 per http, 443 per https. Più parametri di query si separano con &amp;: ?q=mouse&amp;limit=10. Domanda: in https://github.com/mg-i-roc-maz/corsi qual è l'host e qual è il percorso?</aside>
+</section>

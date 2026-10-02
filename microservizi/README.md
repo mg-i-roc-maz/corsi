@@ -10,6 +10,7 @@ Stack: Node.js + TypeScript (Fastify), Docker Compose, PostgreSQL, Redis, Rabbit
 | Cartella | Cosa contiene |
 |---|---|
 | `slides-corso/` | Presentazione del corso (sorgenti delle slide) |
+| `pre-corso/slides/` | Modulo pre-corso facoltativo (2 ore): terminale, HTTP, JSON, Git |
 | `lezione-1/slides/` | Slide della lezione 1: teoria, laboratorio passo passo, esercizi extra |
 | `lezione-1/start/` | Codice di partenza del laboratorio |
 | `lezione-1/solution/` | Soluzione del laboratorio |

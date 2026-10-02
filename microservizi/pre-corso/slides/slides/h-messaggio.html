@@ -1,0 +1,20 @@
+<section id="h-messaggio" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#2F5D8A">Parte 2 · HTTP</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Una richiesta e la sua risposta</h2>
+<div style="display:flex;gap:40px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#2F5D8A">Richiesta</p>
+<p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;line-height:1.6;color:#F5F2EC;background:#12202E;padding:32px;border-radius:12px"><span style="color:#F0915A">GET /todos/1 HTTP/1.1</span><br><span style="color:#8FA3B8">Host: jsonplaceholder.typicode.com</span><br><span style="color:#8FA3B8">Accept: application/json</span></p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B04A1A">Risposta</p>
+<p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;line-height:1.6;color:#F5F2EC;background:#12202E;padding:32px;border-radius:12px"><span style="color:#F0915A">HTTP/1.1 200 OK</span><br><span style="color:#8FA3B8">Content-Type: application/json</span><br><br>{ "userId": 1, "id": 1,<br>&#160;&#160;"title": "delectus aut autem",<br>&#160;&#160;"completed": false }</p>
+</div>
+</div>
+<div style="display:flex;gap:32px">
+<p style="flex:1;font-size:26px;line-height:1.4"><span style="color:#F0915A;font-weight:700">Prima riga</span>: metodo e percorso, o il codice di stato</p>
+<p style="flex:1;font-size:26px;line-height:1.4"><span style="color:#2F5D8A;font-weight:700">Header</span>: informazioni sul messaggio</p>
+<p style="flex:1;font-size:26px;line-height:1.4"><b>Corpo</b>: i dati, dopo una riga vuota</p>
+</div>
+<aside>jsonplaceholder.typicode.com è un'API pubblica gratuita per fare prove: risponde con dati finti e accetta anche POST, PUT e DELETE senza salvare davvero nulla. La useremo nell'esercizio con curl. Una GET di solito non ha corpo: tutto quello che serve è nell'URL.</aside>
+</section>

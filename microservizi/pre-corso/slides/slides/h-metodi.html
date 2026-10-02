@@ -1,0 +1,14 @@
+<section id="h-metodi" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#2F5D8A">Parte 2 · HTTP</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">I metodi: il verbo della richiesta</h2>
+<table style="font-size:28px;color:#12202E">
+<tr><th style="width:18%;text-align:left">Metodo</th><th style="width:36%;text-align:left">Significato</th><th style="width:46%;text-align:left">Esempio</th></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-weight:700;color:#2F5D8A">GET</td><td>Leggi</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">GET /products</td></tr>
+<tr style="background:#EAE5DB"><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-weight:700;color:#2F5D8A">POST</td><td>Crea qualcosa di nuovo</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">POST /orders</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-weight:700;color:#2F5D8A">PUT</td><td>Sostituisci tutto</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">PUT /products/p-1</td></tr>
+<tr style="background:#EAE5DB"><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-weight:700;color:#2F5D8A">PATCH</td><td>Modifica una parte</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">PATCH /products/p-1</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-weight:700;color:#2F5D8A">DELETE</td><td>Cancella</td><td style="font-family:'JetBrains Mono', 'Courier New', monospace">DELETE /products/p-1</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">Quando scrivi un indirizzo nel browser fai sempre una <b>GET</b>. Per gli altri metodi servono strumenti come curl o REST Client.</p>
+<aside>Il percorso dice su cosa si lavora, il metodo dice che cosa si fa. Per questo lo stesso percorso /products/p-1 può comparire con GET, PUT, PATCH e DELETE: sono quattro operazioni diverse sulla stessa risorsa.</aside>
+</section>
