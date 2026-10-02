@@ -1,0 +1,30 @@
+<section id="lab-2-file" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B04A1A">Lab · Parte 2 · 50'</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">2.2 · Orientati nel codice</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-size:32px;font-weight:700">I file</h3>
+<table style="font-size:24px;color:#12202E">
+<tr><th style="width:52%;text-align:left">File</th><th style="width:48%;text-align:left">Lo tocchi?</th></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">src/server.ts</td><td>No: avvio</td></tr>
+<tr style="background:#EAE5DB"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">src/app.ts</td><td>No: registra rotte</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">src/store.ts</td><td>No, ma leggilo</td></tr>
+<tr style="background:#EAE5DB"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">src/schemas.ts</td><td>No, ma leggilo</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace;color:#B04A1A">src/routes.ts</td><td><b>Sì: 4 TODO</b></td></tr>
+<tr style="background:#EAE5DB"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">test/products.test.ts</td><td>No: checkpoint</td></tr>
+</table>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-size:32px;font-weight:700">Le funzioni dello store</h3>
+<table style="font-size:24px;color:#12202E">
+<tr><th style="width:50%;text-align:left">Funzione</th><th style="width:50%;text-align:left">Restituisce</th></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">list(q?)</td><td>Array di prodotti</td></tr>
+<tr style="background:#EAE5DB"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">get(id)</td><td>Prodotto o undefined</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">create(input)</td><td>Nuovo prodotto con id</td></tr>
+<tr style="background:#EAE5DB"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">replace(id, input)</td><td>Prodotto o undefined</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">remove(id)</td><td>true o false</td></tr>
+</table>
+</div>
+</div>
+<aside>Differenza chiave con il monolite: qui nessuno può toccare la Map dei prodotti dall'esterno. Dentro il servizio si passa dalle funzioni dello store; da fuori, solo dall'API HTTP. È il principio "ogni servizio possiede i suoi dati" messo in pratica.</aside>
+</section>

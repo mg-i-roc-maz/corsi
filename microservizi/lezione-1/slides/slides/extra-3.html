@@ -1,0 +1,20 @@
+<section id="extra-3" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#2F5D8A">Extra 3 · medio · 20'</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Aggiornamento parziale con PATCH</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<p style="font-size:28px;line-height:1.4">Con PUT si inviano tutti i campi anche per cambiare solo il prezzo. Aggiungi <b>PATCH /products/:id</b>, che aggiorna solo i campi presenti.</p>
+<ul style="font-size:24px;line-height:1.5;color:#4A5260">
+<li>Nuova funzione store.patch(id, changes) con lo spread { ...vecchio, ...modifiche }</li>
+<li>Schema come productInputSchema ma senza campi obbligatori e con minProperties: 1</li>
+<li>Togli il default di description, o ogni PATCH la svuoterebbe</li>
+<li>Tipo del corpo: Partial&lt;ProductInput&gt;</li>
+</ul>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FCFBF8;padding:40px;border:1px solid #DDD6C8;border-radius:16px">
+<h3 style="font-size:32px;font-weight:700">Atteso</h3>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.6">{ "priceCents": 7990 }<br><span style="color:#2F5D8A">→ 200, nome invariato</span><br>{ }<br><span style="color:#B04A1A">→ 400</span><br>{ "priceCents": -1 }<br><span style="color:#B04A1A">→ 400</span><br>p-999<br><span style="color:#B04A1A">→ 404</span></p>
+</div>
+</div>
+<aside>Soluzione. In store.ts: export function patch(id: string, changes: Partial<ProductInput>): Product | undefined { const current = products.get(id); if (!current) return undefined; const product: Product = { ...current, ...changes, id }; products.set(id, product); return product; } (l'id in fondo impedisce di cambiarlo). In schemas.ts: export const productPatchSchema = { ...productInputSchema, required: [], minProperties: 1, properties: { ...productInputSchema.properties, description: { type: "string", maxLength: 500 } } } as const; In routes.ts: app.patch<{ Params: IdParams; Body: Partial<store.ProductInput> }>("/products/:id", { schema: { params: idParamSchema, body: productPatchSchema } }, async (request, reply) => { const product = store.patch(request.params.id, request.body); if (!product) return reply.code(404).send({ error: "Prodotto non trovato" }); return product; }). Riflessione: due utenti, uno fa PATCH sul prezzo e l'altro un PUT basato sulla versione vecchia: il PUT riporta indietro il prezzo. È il lost update, lo ritroveremo con cache e consistenza.</aside>
+</section>

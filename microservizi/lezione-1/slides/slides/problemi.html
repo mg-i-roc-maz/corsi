@@ -1,0 +1,15 @@
+<section id="problemi" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B04A1A">Lab · Se qualcosa non va</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Problemi frequenti</h2>
+<table style="font-size:24px;color:#12202E">
+<tr><th style="width:38%;text-align:left">Sintomo</th><th style="width:62%;text-align:left">Soluzione</th></tr>
+<tr><td>node: command not found</td><td>Usa il Dev Container, o installa Node 22 e riapri il terminale</td></tr>
+<tr style="background:#EAE5DB"><td>EADDRINUSE :::3001</td><td>C'è già un server acceso: Ctrl+C nell'altro terminale, o PORT=3002 npm run dev</td></tr>
+<tr><td>Cannot find module 'fastify'</td><td>Manca npm install in quella cartella</td></tr>
+<tr style="background:#EAE5DB"><td>Connection refused</td><td>Server spento o porta sbagliata: monolite 3000, catalog 3001</td></tr>
+<tr><td>p-4 dà 404 dopo averlo creato</td><td>Il server si è riavviato al salvataggio: rifai la POST</td></tr>
+<tr style="background:#EAE5DB"><td>Test 6: undefined !== '/products/p-4'</td><td>Manca l'header Location</td></tr>
+<tr><td>Test 10: 200 !== 204</td><td>Usa reply.code(204).send() invece di return</td></tr>
+</table>
+<aside>In PowerShell la variabile d'ambiente si imposta con $env:PORT=3002; npm run dev. Nel Dev Container e su Mac/Linux vale PORT=3002 npm run dev.</aside>
+</section>

@@ -1,0 +1,16 @@
+<section id="lab-1-richieste" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B04A1A">Lab · Parte 1 · 30'</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">1.2 · Prova le richieste</h2>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">Apri <b>http/monolith.http</b> e clicca Send Request sopra ogni richiesta, nell'ordine.</p>
+<table style="font-size:26px;color:#12202E">
+<tr><th style="width:40%;text-align:left">Richiesta</th><th style="width:60%;text-align:left">Cosa aspettarti</th></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">GET /health</td><td>{"status":"ok","service":"monolith"}</td></tr>
+<tr style="background:#EAE5DB"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">GET /products</td><td>Tre prodotti; la tastiera ha stock 12</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">POST /orders</td><td>201, ordine o-1, totalCents 16970</td></tr>
+<tr style="background:#EAE5DB"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">GET /products</td><td>Tastiera a 11, mouse a 28: le scorte sono cambiate</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">POST /orders (100 monitor)</td><td>409, «Scorte insufficienti»</td></tr>
+<tr style="background:#EAE5DB"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">GET /orders</td><td>L'elenco con l'ordine creato</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4">Nel primo terminale compare <span style="color:#B04A1A">📧 Email di conferma a mario@example.com</span>: la «notifica» del monolite.</p>
+<aside>Domanda: perché i prezzi sono in centesimi? 8990 significa 89,90 euro. Con i numeri decimali i computer sbagliano gli arrotondamenti (provare 0.1 + 0.2 nella console di Node: dà 0.30000000000000004). Con i centesimi interi i conti tornano sempre.</aside>
+</section>

@@ -1,0 +1,22 @@
+<section id="extra-1" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#2F5D8A">Extra 1 · base · 15'</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Paginazione</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<p style="font-size:28px;line-height:1.4">Con migliaia di prodotti, GET /products sarebbe enorme. Aggiungi due parametri di query:</p>
+<table style="font-size:24px;color:#12202E">
+<tr><th style="width:24%;text-align:left">Parametro</th><th style="width:44%;text-align:left">Significato</th><th style="width:32%;text-align:left">Default, limiti</th></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">limit</td><td>Quanti restituirne</td><td>20, da 1 a 50</td></tr>
+<tr style="background:#EAE5DB"><td style="font-family:'JetBrains Mono', 'Courier New', monospace">offset</td><td>Quanti saltarne</td><td>0, da 0 in su</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.4">E l'header <b>X-Total-Count</b> con il totale prima della paginazione.</p>
+<p style="font-size:24px;line-height:1.4;color:#4A5260">Suggerimenti: uno schema per la query string (default e type integer convertono da soli); array.slice(inizio, fine).</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FCFBF8;padding:40px;border:1px solid #DDD6C8;border-radius:16px">
+<h3 style="font-size:32px;font-weight:700">Atteso</h3>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.6">?limit=2<br><span style="color:#2F5D8A">→ 2 prodotti, X-Total-Count: 3</span><br><br>?limit=2&amp;offset=2<br><span style="color:#2F5D8A">→ solo il terzo</span><br><br>?limit=500<br><span style="color:#B04A1A">→ 400</span></p>
+<p style="font-size:24px;line-height:1.4;color:#4A5260">Per riflettere: e se tra pagina 1 e pagina 2 qualcuno cancella un prodotto?</p>
+</div>
+</div>
+<aside>Soluzione. In schemas.ts: export const listQuerySchema = { type: "object", properties: { q: { type: "string" }, limit: { type: "integer", minimum: 1, maximum: 50, default: 20 }, offset: { type: "integer", minimum: 0, default: 0 } } } as const; In routes.ts: type ListQuery = { q?: string; limit: number; offset: number }; e la rotta app.get("/products", { schema: { querystring: listQuerySchema } }, async (request, reply) => { const { q, limit, offset } = request.query; const all = store.list(q); reply.header("X-Total-Count", all.length); return all.slice(offset, offset + limit); }). Riflessione: con l'offset un elemento può essere saltato o ripetuto se l'elenco cambia tra una pagina e l'altra; per questo esiste la paginazione a cursore (?after=p-20).</aside>
+</section>

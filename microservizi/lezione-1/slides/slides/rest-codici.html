@@ -1,0 +1,15 @@
+<section id="rest-codici" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">I codici di stato che useremo</h2>
+<table style="font-size:28px;color:#12202E">
+<tr><th style="width:14%;text-align:left">Codice</th><th style="width:30%;text-align:left">Nome</th><th style="width:56%;text-align:left">Quando</th></tr>
+<tr><td><b>200</b></td><td>OK</td><td>Tutto bene, con un corpo</td></tr>
+<tr style="background:#EAE5DB"><td><b>201</b></td><td>Created</td><td>Creato; <span style="color:#B04A1A">Location</span> dice dove</td></tr>
+<tr><td><b>204</b></td><td>No Content</td><td>Tutto bene, senza corpo</td></tr>
+<tr style="background:#EAE5DB"><td><b>400</b></td><td>Bad Request</td><td>Dati inviati non validi</td></tr>
+<tr><td><b>404</b></td><td>Not Found</td><td>La risorsa non esiste</td></tr>
+<tr style="background:#EAE5DB"><td><b>409</b></td><td>Conflict</td><td>Valida ma in conflitto (scorte finite)</td></tr>
+<tr><td><b>500</b></td><td>Internal Server Error</td><td>Errore imprevisto nel server</td></tr>
+<tr style="background:#EAE5DB"><td><b>501</b></td><td>Not Implemented</td><td>Non ancora fatto: i nostri TODO</td></tr>
+</table>
+<aside>Regola pratica: 2xx è andato bene, 4xx è colpa del client (ha mandato qualcosa di sbagliato), 5xx è colpa del server. Nel laboratorio vedremo un 500 nel monolite che dovrebbe essere un 400.</aside>
+</section>

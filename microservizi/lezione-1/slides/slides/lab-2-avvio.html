@@ -1,0 +1,17 @@
+<section id="lab-2-avvio" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B04A1A">Lab · Parte 2 · 50'</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">2.1 · Avvia il servizio catalog</h2>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">Ferma il monolite con Ctrl+C. Il nuovo servizio è un'applicazione indipendente, sulla porta <b>3001</b>.</p>
+<div style="display:flex;gap:32px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;line-height:1.6;color:#F5F2EC;background:#12202E;padding:32px;border-radius:12px">cd ../services/catalog<br>npm install<br>npm run dev</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">Con <b>http/catalog.http</b>: GET /health e GET /products funzionano già.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700">Prova GET /products/p-1:</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.5;color:#12202E;background:#EAE5DB;padding:24px;border-radius:12px">501 Not Implemented<br>{"error":"TODO 1: da implementare"}</p>
+<p style="font-size:28px;line-height:1.4">È il tuo punto di partenza: quattro TODO da completare.</p>
+</div>
+</div>
+<aside>Il percorso cd ../services/catalog vale se si è nella cartella monolith. In alternativa aprire un nuovo terminale e partire da lezione-1/start.</aside>
+</section>

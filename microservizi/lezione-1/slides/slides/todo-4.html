@@ -1,0 +1,20 @@
+<section id="todo-4" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B04A1A">Lab · Parte 2 · 50'</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">TODO 4 · DELETE /products/:id</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<ol style="font-size:28px;line-height:1.5">
+<li>store.remove(request.params.id)</li>
+<li>Se restituisce false: 404</li>
+<li>Altrimenti 204 senza corpo</li>
+</ol>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;line-height:1.5;color:#F5F2EC;background:#12202E;padding:24px;border-radius:12px">return reply.code(204).send();</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">Perché il secondo DELETE dà 404? La risorsa non c'è più. Alcune API rispondono 204 anche la seconda volta: entrambe le scelte sono legittime.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FCFBF8;padding:40px;border:1px solid #DDD6C8;border-radius:16px">
+<h3 style="font-size:32px;font-weight:700">Verifica</h3>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.6">DELETE /products/p-3<br><span style="color:#2F5D8A">→ 204, corpo vuoto</span><br><br>DELETE /products/p-3 (di nuovo)<br><span style="color:#B04A1A">→ 404</span><br><br>GET /products/p-3<br><span style="color:#B04A1A">→ 404</span></p>
+</div>
+</div>
+<aside>Errore tipico: return {} invece di reply.code(204).send(): la risposta diventa 200 con un oggetto vuoto e il test 10 fallisce con 200 !== 204.</aside>
+</section>

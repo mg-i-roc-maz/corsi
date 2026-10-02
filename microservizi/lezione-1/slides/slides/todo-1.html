@@ -1,0 +1,20 @@
+<section id="todo-1" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B04A1A">Lab · Parte 2 · 50'</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">TODO 1 · GET /products/:id</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<p style="font-size:28px;line-height:1.4"><b>:id</b> è un parametro del percorso: in /products/p-1 vale "p-1". Si legge con <span style="font-family:'JetBrains Mono', 'Courier New', monospace;color:#B04A1A">request.params.id</span>.</p>
+<ol style="font-size:28px;line-height:1.5">
+<li>Cerca il prodotto con store.get(...)</li>
+<li>Se non c'è: 404 con { error: "Prodotto non trovato" }</li>
+<li>Altrimenti restituisci il prodotto</li>
+</ol>
+<p style="font-size:24px;line-height:1.4;color:#4A5260">Rinomina _request in request: il trattino basso indicava un parametro non usato.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FCFBF8;padding:40px;border:1px solid #DDD6C8;border-radius:16px">
+<h3 style="font-size:32px;font-weight:700">Verifica con catalog.http</h3>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.6">GET /products/p-1<br><span style="color:#2F5D8A">→ 200, la tastiera</span><br><br>GET /products/p-999<br><span style="color:#B04A1A">→ 404, Prodotto non trovato</span></p>
+</div>
+</div>
+<aside>Suggerimento da dare a chi è bloccato: const product = store.get(request.params.id); if (!product) { return reply.code(404).send({ error: "Prodotto non trovato" }); } return product;</aside>
+</section>
