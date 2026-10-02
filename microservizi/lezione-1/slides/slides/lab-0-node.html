@@ -1,0 +1,21 @@
+<section id="lab-0-node" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:36px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B04A1A">Lab · Parte 0</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">0.5 · Se node -v è sotto la 22</h2>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">La via più semplice è il Dev Container (0.4). Se vuoi Node sul tuo computer, usa un <b>version manager</b>: installa più versioni e passi da una all'altra.</p>
+<div style="display:flex;gap:32px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FCFBF8;padding:36px;border:1px solid #DDD6C8;border-radius:16px">
+<h3 style="font-size:32px;font-weight:700">Mac e Linux · nvm</h3>
+<p style="font-size:24px;line-height:1.4;color:#4A5260">Installa nvm con il comando indicato su github.com/nvm-sh/nvm, riapri il terminale, poi:</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.6;color:#F5F2EC;background:#12202E;padding:24px;border-radius:12px">nvm install 22<br>nvm use 22<br>nvm alias default 22</p>
+<p style="font-size:24px;line-height:1.4;color:#4A5260">Su Mac, in alternativa: brew install node@22</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FCFBF8;padding:36px;border:1px solid #DDD6C8;border-radius:16px">
+<h3 style="font-size:32px;font-weight:700">Windows</h3>
+<p style="font-size:24px;line-height:1.4;color:#4A5260">Con nvm-windows (github.com/coreybutler/nvm-windows), da un terminale come amministratore:</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.6;color:#F5F2EC;background:#12202E;padding:24px;border-radius:12px">nvm install 22<br>nvm use 22</p>
+<p style="font-size:24px;line-height:1.4;color:#4A5260">Oppure l'installer LTS da nodejs.org, o: winget install OpenJS.NodeJS.LTS</p>
+</div>
+</div>
+<p style="font-size:28px;line-height:1.4"><b>Poi chiudi e riapri il terminale</b> e ricontrolla: <span style="font-family:'JetBrains Mono', 'Courier New', monospace;color:#B04A1A">node -v</span> deve dare v22 o successiva.</p>
+<aside>Nel repo c'è il file .nvmrc con scritto 22: dentro la cartella start basta digitare nvm install e poi nvm use, senza numero di versione. La versione LTS attuale su nodejs.org può essere più recente della 22 (per esempio la 24): va bene, il progetto richiede almeno la 22. Se dopo l'installazione node -v mostra ancora la versione vecchia, il terminale non è stato riaperto oppure c'è un'altra installazione di Node che viene prima nel PATH: which node (Mac, Linux) o where node (Windows) mostra quale viene usata.</aside>
+</section>

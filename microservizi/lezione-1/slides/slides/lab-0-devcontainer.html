@@ -1,0 +1,20 @@
+<section id="lab-0-devcontainer" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:36px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B04A1A">Lab · Parte 0</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">0.4 · Il Dev Container</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#12202E;padding:40px;border-radius:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#F0915A">Che cos'è</p>
+<p style="font-size:28px;line-height:1.4;color:#F5F2EC">Un ambiente di sviluppo dentro un container Docker. VS Code si «sposta» dentro il container, dove Node 22 e le estensioni sono già installati.</p>
+<p style="font-size:28px;line-height:1.4;color:#C9D2DC">Sul tuo computer servono solo <b>Docker Desktop</b> e VS Code con l'estensione <b>Dev Containers</b>. La configurazione è in .devcontainer/devcontainer.json.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;gap:20px;align-items:start"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#B04A1A;width:36px">1</p><p style="flex:1;font-size:26px;line-height:1.4">Avvia Docker Desktop e aspetta che sia pronto</p></div>
+<div style="display:flex;gap:20px;align-items:start"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#B04A1A;width:36px">2</p><p style="flex:1;font-size:26px;line-height:1.4">In VS Code apri la cartella lezione-1/start</p></div>
+<div style="display:flex;gap:20px;align-items:start"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#B04A1A;width:36px">3</p><p style="flex:1;font-size:26px;line-height:1.4">In basso a destra compare l'avviso: clicca <b>Reopen in Container</b>. Se non compare: <b>F1</b> (o Cmd+Shift+P) → «Dev Containers: Reopen in Container»</p></div>
+<div style="display:flex;gap:20px;align-items:start"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#B04A1A;width:36px">4</p><p style="flex:1;font-size:26px;line-height:1.4">La prima volta servono alcuni minuti: scarica l'immagine e lancia npm install da solo</p></div>
+<div style="display:flex;gap:20px;align-items:start"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#B04A1A;width:36px">5</p><p style="flex:1;font-size:26px;line-height:1.4">Sei dentro quando in basso a sinistra leggi <b>Dev Container: Corso microservizi</b></p></div>
+</div>
+</div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#F5F2EC;background:#12202E;padding:24px 32px;border-radius:12px">node -v  →  v22.x       cd monolith  →  npm run dev  →  http://localhost:3000</p>
+<aside>"Reopen in Container" significa: riapri questa stessa cartella, ma con VS Code collegato a un container. I file restano sul computer dello studente (la cartella viene montata nel container), mentre terminale, Node e npm girano dentro il container. Per questo node -v dà 22 anche se sul computer Node non è installato. Le porte 3000 e 3001 sono inoltrate automaticamente (forwardPorts), quindi REST Client e il browser raggiungono localhost come al solito. Per tornare all'apertura normale: F1 → "Dev Containers: Reopen Folder Locally". Problema tipico: Docker Desktop non avviato, l'errore dice che non riesce a connettersi al daemon Docker.</aside>
+</section>
