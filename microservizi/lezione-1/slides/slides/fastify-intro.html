@@ -1,0 +1,13 @@
+<section id="fastify-intro" data-transition="fade" style="background:#F5F2EC;color:#12202E;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<p style="position:absolute;right:128px;top:64px;width:600px;text-align:right;font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#2F5D8A">Approfondimento · Fastify</p>
+<h2 style="font-size:72px;font-weight:700;line-height:1.1">Fastify in cinque minuti</h2>
+<p style="font-size:28px;line-height:1.4;color:#4A5260">Un framework web per Node.js, progetto della OpenJS Foundation. Prende una richiesta HTTP, trova la funzione giusta e spedisce la risposta. Tutto il server sta in quattro righe:</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;line-height:1.6;color:#F5F2EC;background:#12202E;padding:28px 32px;border-radius:12px">import Fastify from "fastify";<br>const app = Fastify({ logger: true });<br>app.get("/health", async () =&gt; ({ status: "ok" }));<br>await app.listen({ port: 3001 });</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px;border-top:4px solid #2F5D8A;padding:20px 0 0 0"><h3 style="font-size:28px;font-weight:700">Istanza</h3><p style="font-size:24px;line-height:1.4;color:#4A5260">app: il server. In app.ts</p></div>
+<div style="display:flex;flex-direction:column;gap:8px;border-top:4px solid #2F5D8A;padding:20px 0 0 0"><h3 style="font-size:28px;font-weight:700">Rotte</h3><p style="font-size:24px;line-height:1.4;color:#4A5260">app.get, post, put, delete. In routes.ts</p></div>
+<div style="display:flex;flex-direction:column;gap:8px;border-top:4px solid #2F5D8A;padding:20px 0 0 0"><h3 style="font-size:28px;font-weight:700">Schema</h3><p style="font-size:24px;line-height:1.4;color:#4A5260">Regole JSON Schema sui dati. In schemas.ts</p></div>
+<div style="display:flex;flex-direction:column;gap:8px;border-top:4px solid #2F5D8A;padding:20px 0 0 0"><h3 style="font-size:28px;font-weight:700">Plugin</h3><p style="font-size:24px;line-height:1.4;color:#4A5260">Gruppi di rotte aggiunti con app.register</p></div>
+</div>
+<aside>Far notare che productRoutes in routes.ts è un plugin: una funzione async che riceve app e registra rotte. In app.ts viene aggiunto con app.register(productRoutes). Nel monolite catalogRoutes e orderRoutes sono due plugin nello stesso processo: è la forma "modulare" del monolite. logger: true attiva i log in JSON (libreria pino): sono le righe {"level":30,...} che si vedono nel terminale.</aside>
+</section>
