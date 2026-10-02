@@ -1,10 +1,10 @@
 {
   "name": "Corso microservizi",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
-  },
-  "forwardPorts": [3000, 3001],
+  "forwardPorts": [
+    3000,
+    3001
+  ],
   "postCreateCommand": "cd monolith && npm install && cd ../services/catalog && npm install",
   "customizations": {
     "vscode": {
