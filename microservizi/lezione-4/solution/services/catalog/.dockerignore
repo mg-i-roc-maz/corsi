@@ -1,0 +1,8 @@
+# File che NON devono finire nel "build context" inviato a Docker.
+node_modules
+dist
+test
+*.log
+.env
+Dockerfile
+.dockerignore

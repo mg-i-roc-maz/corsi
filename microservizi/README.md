@@ -23,6 +23,10 @@ Stack: Node.js + TypeScript (Fastify), Docker Compose, PostgreSQL, Redis, Rabbit
 | `lezione-3/start/` | Codice di partenza: catalog con prenotazione delle scorte, client HTTP di orders e gateway Nginx da completare |
 | `lezione-3/solution/` | Soluzione del laboratorio |
 | `lezione-3/extra/` | Esercizi extra, test e soluzioni |
+| `lezione-4/slides.pdf` | Slide della lezione 4: resilienza e configurazione |
+| `lezione-4/start/` | Codice di partenza: timeout, retry, circuit breaker e correlation ID da completare |
+| `lezione-4/solution/` | Soluzione del laboratorio |
+| `lezione-4/extra/` | Esercizi extra, test e soluzioni |
 
 ## Per gli studenti
 

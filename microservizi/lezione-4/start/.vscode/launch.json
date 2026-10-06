@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug catalog (Docker)",
+      "type": "node",
+      "request": "attach",
+      "address": "localhost",
+      "port": 9229,
+      "localRoot": "${workspaceFolder}/services/catalog",
+      "remoteRoot": "/app",
+      "sourceMaps": true,
+      "restart": true
+    },
+    {
+      "name": "Debug catalog (Docker, da Dev Container)",
+      "type": "node",
+      "request": "attach",
+      "address": "host.docker.internal",
+      "port": 9229,
+      "localRoot": "${workspaceFolder}/services/catalog",
+      "remoteRoot": "/app",
+      "sourceMaps": true,
+      "restart": true
+    }
+  ]
+}

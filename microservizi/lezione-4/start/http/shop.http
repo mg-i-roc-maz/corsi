@@ -1,0 +1,78 @@
+# Il negozio visto da fuori: tutte le richieste passano dal gateway (porta 8080).
+# In VS Code con l'estensione REST Client: clicca "Send Request" sopra ogni richiesta.
+
+@shop = http://localhost:8080/api/v1
+
+### Il gateway è vivo?
+GET http://localhost:8080/health
+
+### catalog è pronto? (controlla anche il database)
+GET http://localhost:8080/health/catalog
+
+### orders è pronto? Guarda lo stato del circuito verso catalog
+GET http://localhost:8080/health/orders
+
+### Elenco prodotti (gateway -> catalog)
+GET {{shop}}/products
+
+### Ricerca per nome
+GET {{shop}}/products?q=mouse
+
+### Un prodotto: guarda le scorte prima e dopo un ordine
+GET {{shop}}/products/p-1
+
+### Crea un ordine (gateway -> orders -> catalog). Atteso: 201, status "confirmed"
+POST {{shop}}/orders
+Content-Type: application/json
+
+{
+  "customerEmail": "anna@example.com",
+  "items": [
+    { "productId": "p-1", "quantity": 1 },
+    { "productId": "p-2", "quantity": 2 }
+  ]
+}
+
+### Elenco ordini
+GET {{shop}}/orders
+
+### Un ordine
+GET {{shop}}/orders/o-1
+
+### Più pezzi di quelli disponibili (atteso: 409)
+POST {{shop}}/orders
+Content-Type: application/json
+
+{
+  "customerEmail": "anna@example.com",
+  "items": [{ "productId": "p-3", "quantity": 99 }]
+}
+
+### Prodotto inesistente (atteso: 422)
+POST {{shop}}/orders
+Content-Type: application/json
+
+{
+  "customerEmail": "anna@example.com",
+  "items": [{ "productId": "p-999", "quantity": 1 }]
+}
+
+### Rotta interna di catalog: il gateway la blocca (atteso: 403)
+POST {{shop}}/products/p-1/reservations
+Content-Type: application/json
+
+{ "quantity": 1 }
+
+### Crea un prodotto (atteso: 201, Location con l'indirizzo pubblico)
+POST {{shop}}/products
+Content-Type: application/json
+
+{
+  "name": "Cuffie",
+  "description": "Over-ear",
+  "priceCents": 5990,
+  "stock": 8
+}
+
+### Indirizzo inesistente (atteso: 404 dal gateway)
+GET http://localhost:8080/qualcosa
