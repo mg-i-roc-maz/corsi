@@ -1,0 +1,55 @@
+# Il negozio completo: avvialo con  docker compose up --build
+# Obiettivo della lezione 3: dall'esterno si entra SOLO dal gateway (porta 8080).
+name: shop
+
+services:
+  # Database del catalogo. Solo catalog lo usa: ogni servizio ha i suoi dati.
+  catalog-db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: shop
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-shop}
+      POSTGRES_DB: catalog
+    volumes:
+      # Volume con nome: i dati sopravvivono a "docker compose down".
+      - catalog-data:/var/lib/postgresql/data
+      # Bind mount: lo script SQL eseguito al primo avvio, quando il volume è vuoto.
+      - ./services/catalog/db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - "5432:5432" # facoltativo: serve solo per collegarsi dal tuo PC (test, client SQL)
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shop -d catalog"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+
+  catalog:
+    build: ./services/catalog
+    environment:
+      PORT: 3001
+      # "catalog-db" è il nome del servizio qui sopra: nella rete di Compose
+      # ogni servizio si raggiunge con il suo nome. Non usare localhost!
+      DATABASE_URL: postgres://shop:${POSTGRES_PASSWORD:-shop}@catalog-db:5432/catalog
+    ports:
+      - "3001:3001" # Parte 3 · TODO 3: togli la porta, si entra solo dal gateway
+    depends_on:
+      catalog-db:
+        condition: service_healthy # parte solo quando Postgres accetta connessioni
+
+  orders:
+    build: ./services/orders
+    environment:
+      PORT: 3002
+      # Parte 3 · TODO 2: aggiungi CATALOG_URL. Che nome usi per raggiungere catalog?
+    ports:
+      - "3002:3002" # Parte 3 · TODO 3: togli la porta, si entra solo dal gateway
+    # Parte 3 · TODO 2: orders dipende da catalog (depends_on)
+
+  # Parte 3 · TODO 1: il servizio "gateway"
+  #   - immagine nginx:1.28
+  #   - bind mount di ./gateway/nginx.conf su /etc/nginx/nginx.conf, in sola lettura
+  #   - porta 8080 del PC sulla 80 del container
+  #   - depends_on: catalog e orders
+
+volumes:
+  catalog-data:

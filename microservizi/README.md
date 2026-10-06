@@ -19,6 +19,10 @@ Stack: Node.js + TypeScript (Fastify), Docker Compose, PostgreSQL, Redis, Rabbit
 | `lezione-2/start/` | Codice di partenza: catalog con PostgreSQL, servizio orders, Dockerfile e Compose da completare |
 | `lezione-2/solution/` | Soluzione del laboratorio |
 | `lezione-2/extra/` | Esercizi extra e soluzioni |
+| `lezione-3/slides.pdf` | Slide della lezione 3: progettare e far comunicare i servizi |
+| `lezione-3/start/` | Codice di partenza: catalog con prenotazione delle scorte, client HTTP di orders e gateway Nginx da completare |
+| `lezione-3/solution/` | Soluzione del laboratorio |
+| `lezione-3/extra/` | Esercizi extra, test e soluzioni |
 
 ## Per gli studenti
 

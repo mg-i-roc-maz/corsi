@@ -1,0 +1,8 @@
+# Aggiunte per il debug con VS Code. Si usa INSIEME a compose.yaml:
+#   docker compose -f compose.yaml -f compose.debug.yaml up --build
+# Poi in VS Code: Run and Debug -> "Debug catalog (Docker)".
+services:
+  catalog:
+    command: ["node", "--enable-source-maps", "--inspect=0.0.0.0:9229", "dist/server.js"]
+    ports:
+      - "9229:9229"
