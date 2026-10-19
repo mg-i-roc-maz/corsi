@@ -27,6 +27,10 @@ Stack: Node.js + TypeScript (Fastify), Docker Compose, PostgreSQL, Redis, Rabbit
 | `lezione-4/start/` | Codice di partenza: timeout, retry, circuit breaker e correlation ID da completare |
 | `lezione-4/solution/` | Soluzione del laboratorio |
 | `lezione-4/extra/` | Esercizi extra, test e soluzioni |
+| `lezione-5/slides.pdf` | Slide della lezione 5: caching, i fondamenti |
+| `lezione-5/start/` | Codice di partenza: cache-aside su catalog, Redis nel Compose e invalidazione da completare |
+| `lezione-5/solution/` | Soluzione del laboratorio |
+| `lezione-5/extra/` | Esercizi extra, test e soluzioni |
 
 ## Per gli studenti
 
