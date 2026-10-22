@@ -1,0 +1,18 @@
+{
+  "name": "Corso microservizi",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
+  "forwardPorts": [
+    3001,
+    3002
+  ],
+  "postCreateCommand": "cd services/catalog && npm install && cd ../orders && npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "humao.rest-client",
+        "ms-vscode-remote.remote-containers"
+      ]
+    }
+  }
+}

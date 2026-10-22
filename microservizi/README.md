@@ -31,6 +31,18 @@ Stack: Node.js + TypeScript (Fastify), Docker Compose, PostgreSQL, Redis, Rabbit
 | `lezione-5/start/` | Codice di partenza: cache-aside su catalog, Redis nel Compose e invalidazione da completare |
 | `lezione-5/solution/` | Soluzione del laboratorio |
 | `lezione-5/extra/` | Esercizi extra, test e soluzioni |
+| `lezione-6/slides.pdf` | Slide della lezione 6: caching nei microservizi |
+| `lezione-6/start/` | Codice di partenza: ETag, cache nel gateway, single flight e invalidazione tra servizi da completare |
+| `lezione-6/solution/` | Soluzione del laboratorio |
+| `lezione-6/extra/` | Esercizi extra, test e soluzioni |
+| `lezione-7/slides.pdf` | Slide della lezione 7: architetture event-driven |
+| `lezione-7/start/` | Codice di partenza: RabbitMQ, OrderCreated in orders e consumo in notifications da completare |
+| `lezione-7/solution/` | Soluzione del laboratorio |
+| `lezione-7/extra/` | Esercizi extra, test e soluzioni |
+| `lezione-8/slides.pdf` | Slide della lezione 8: pattern avanzati e progetto finale |
+| `lezione-8/start/` | Codice di partenza: tentativi e DLQ, consumer idempotente e Outbox da completare; PROGETTO.md per le demo |
+| `lezione-8/solution/` | Soluzione del laboratorio: il negozio completo |
+| `lezione-8/extra/` | Esercizi extra, test e soluzioni |
 
 ## Per gli studenti
 
